@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServicesGateways
+namespace Domain.VoiceUseCases.NoiseDetectedUseCase
 {
-    public class Class1
+    class NoiseDetectedInteractor
     {
     }
 }
