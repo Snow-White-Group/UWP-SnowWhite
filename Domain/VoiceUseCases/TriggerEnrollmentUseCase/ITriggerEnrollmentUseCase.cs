@@ -1,9 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace Domain.VoiceUseCases.TriggerEnrollmentUseCase
 {
     public interface ITriggerEnrollmentUseCase
     {
-        void TriggerEnrollment();
+        bool TriggerEnrollment(TriggerEnrollmentRequest request);
     }
 }

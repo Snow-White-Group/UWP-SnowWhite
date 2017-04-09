@@ -1,4 +1,10 @@
-﻿namespace Domain.VoiceUseCases.TriggerEnrollmentUseCase
+﻿using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using Domain.Entities;
+using Domain.Services;
+
+namespace Domain.VoiceUseCases.TriggerEnrollmentUseCase
 {
     using Domain.VoiceUseCases.NoiseDetectedUseCase;
     using Domain.VoiceUseCases.Services;
@@ -6,19 +12,29 @@
 
     public class TriggerEnrollmentInteractor : ITriggerEnrollmentUseCase
     {
-        private readonly IVoiceUseCasesStateService voiceUseCasesStateService;
-        private readonly IDeliveryBoundary deliveryBoundary;
+        private readonly IVoiceUseCasesStateService _voiceUseCasesStateService;
+        private readonly IDeliveryBoundary _deliveryBoundary;
+        private readonly IMirrorStateServices _mirrorStateServices;
 
-        public TriggerEnrollmentInteractor(IVoiceUseCasesStateService voiceUseCasesStateService, IDeliveryBoundary deliveryBoundary)
+        public TriggerEnrollmentInteractor(IVoiceUseCasesStateService voiceUseCasesStateService, IMirrorStateServices mirrorStateServices, IDeliveryBoundary deliveryBoundary)
         {
-            this.voiceUseCasesStateService = voiceUseCasesStateService;
-            this.deliveryBoundary = deliveryBoundary;
+            this._voiceUseCasesStateService = voiceUseCasesStateService;
+            this._mirrorStateServices = mirrorStateServices;
+            this._deliveryBoundary = deliveryBoundary;
         }
 
-        public void TriggerEnrollment()
+        public bool TriggerEnrollment(TriggerEnrollmentRequest request)
         {
-            voiceUseCasesStateService.SetCurrentDetectionState(VoiceUseCasesState.EnrollmentDetection);
-            deliveryBoundary.DeliverEnrollmentPage();
+            if (!_mirrorStateServices.GetCurrentUser().IsDefaultUser)
+            {
+                return false;
+            }
+
+            _voiceUseCasesStateService.SetCurrentDetectionState(VoiceUseCasesState.EnrollmentDetection);
+            _voiceUseCasesStateService.SetUserForEnrollment(request.SnowUser);
+            _mirrorStateServices.SetCurrentUserTO(new MirrorUser(request.SnowUser,false,false,null));
+            _deliveryBoundary.DeliverEnrollmentPage();
+            return true;
         }
     }
 }

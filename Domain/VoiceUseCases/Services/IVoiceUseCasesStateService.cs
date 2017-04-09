@@ -1,11 +1,15 @@
-﻿using Domain.VoiceUseCases.Services;
+﻿using Domain.Entities;
 
-namespace Domain.VoiceUseCases.NoiseDetectedUseCase
+namespace Domain.VoiceUseCases.Services
 {
     public interface IVoiceUseCasesStateService
     {
         VoiceUseCasesState GetCurrentDetectionState();
 
         void SetCurrentDetectionState(VoiceUseCasesState state);
+
+        SnowUser GetUserForEnrollment();
+
+        void SetUserForEnrollment(SnowUser user);
     }
 }
