@@ -25,7 +25,8 @@ namespace Domain.VoiceUseCases.TriggerEnrollmentUseCase
 
         public bool TriggerEnrollment(TriggerEnrollmentRequest request)
         {
-            if (!_mirrorStateServices.GetCurrentUser().IsDefaultUser)
+            if (!_mirrorStateServices.GetCurrentUser().IsDefaultUser 
+                || _voiceUseCasesStateService.GetCurrentDetectionState() == VoiceUseCasesState.EnrollmentDetection)
             {
                 return false;
             }

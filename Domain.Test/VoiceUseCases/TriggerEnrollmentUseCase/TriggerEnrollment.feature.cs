@@ -65,24 +65,68 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Gatway triggers the enrollment", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Succsessfully trigger enrollment", new string[] {
                 "SNOW-UC-UE"}, SourceLine=6)]
-        public virtual void GatwayTriggersTheEnrollment()
+        public virtual void SuccsessfullyTriggerEnrollment()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gatway triggers the enrollment", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Succsessfully trigger enrollment", new string[] {
                         "SNOW-UC-UE"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
-       testRunner.Given("The mirror is currently displaying the deault mockSnowUser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+       testRunner.Given("The mirror is currently displaying the deault user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
-       testRunner.When("The gateway passes a EnrollmentRequest", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.And("the miror state is detection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
-       testRunner.Then("The mirror should show the enrollment page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+       testRunner.When("The gateway passes a EnrollmentRequest to the TriggerEnrollmentInteractor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
-    testRunner.And("The mirror mockState should switch to enrollment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+       testRunner.Then("The mirror should show the enrollment page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
-    testRunner.And("The mirror mockState should persit the mockSnowUser to enroll", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("The mirror state should switch to enrollment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+    testRunner.And("The mirror state should persit the user to enroll", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Can not trigger enrollment, because someone is using the mirror", new string[] {
+                "SNOW-UC-UE"}, SourceLine=15)]
+        public virtual void CanNotTriggerEnrollmentBecauseSomeoneIsUsingTheMirror()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not trigger enrollment, because someone is using the mirror", new string[] {
+                        "SNOW-UC-UE"});
+#line 16
+this.ScenarioSetup(scenarioInfo);
+#line 17
+       testRunner.Given("The mirror is currently displaying some user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 18
+    testRunner.And("the miror state is detection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+       testRunner.When("The gateway passes a EnrollmentRequest to the TriggerEnrollmentInteractor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+       testRunner.Then("The mirror should reject this trigger", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 21
+    testRunner.And("No state should be changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Can not trigger enrollment, because some is using this mirror for enrollment", new string[] {
+                "SNOW-UC-UE"}, SourceLine=23)]
+        public virtual void CanNotTriggerEnrollmentBecauseSomeIsUsingThisMirrorForEnrollment()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not trigger enrollment, because some is using this mirror for enrollment", new string[] {
+                        "SNOW-UC-UE"});
+#line 24
+this.ScenarioSetup(scenarioInfo);
+#line 25
+       testRunner.Given("The mirror is currently enrolling some user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 26
+       testRunner.When("The gateway passes a EnrollmentRequest to the TriggerEnrollmentInteractor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+       testRunner.Then("The mirror should reject this trigger", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 28
+    testRunner.And("No state should be changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
