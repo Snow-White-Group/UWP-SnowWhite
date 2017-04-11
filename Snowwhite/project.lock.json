@@ -24409,16 +24409,16 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\freim\\onedrive\\documents\\visual studio 2017\\Projects\\Snowwhite\\Snowwhite\\Snowwhite.csproj",
+      "projectUniqueName": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Snowwhite\\Snowwhite.csproj",
       "projectName": "Snowwhite",
-      "projectPath": "C:\\Users\\freim\\onedrive\\documents\\visual studio 2017\\Projects\\Snowwhite\\Snowwhite\\Snowwhite.csproj",
-      "projectJsonPath": "C:\\Users\\freim\\onedrive\\documents\\visual studio 2017\\Projects\\Snowwhite\\Snowwhite\\project.json",
+      "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Snowwhite\\Snowwhite.csproj",
+      "projectJsonPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Snowwhite\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\freim\\onedrive\\documents\\visual studio 2017\\Projects\\Snowwhite\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\freim\\onedrive\\documents\\visual studio 2017\\Projects\\Snowwhite\\Domain\\Domain.csproj"
+            "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj"
             }
           }
         }

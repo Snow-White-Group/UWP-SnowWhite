@@ -24409,16 +24409,16 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\freim\\onedrive\\documents\\visual studio 2017\\Projects\\Snowwhite\\ServicesGateways\\ServicesGateways.csproj",
+      "projectUniqueName": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\ServicesGateways\\ServicesGateways.csproj",
       "projectName": "ServicesGateways",
-      "projectPath": "C:\\Users\\freim\\onedrive\\documents\\visual studio 2017\\Projects\\Snowwhite\\ServicesGateways\\ServicesGateways.csproj",
-      "projectJsonPath": "C:\\Users\\freim\\onedrive\\documents\\visual studio 2017\\Projects\\Snowwhite\\ServicesGateways\\project.json",
+      "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\ServicesGateways\\ServicesGateways.csproj",
+      "projectJsonPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\ServicesGateways\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\freim\\onedrive\\documents\\visual studio 2017\\Projects\\Snowwhite\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\freim\\onedrive\\documents\\visual studio 2017\\Projects\\Snowwhite\\Domain\\Domain.csproj"
+            "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj"
             }
           }
         }

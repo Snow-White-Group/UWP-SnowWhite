@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26403.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowwhite", "Snowwhite\Snowwhite.csproj", "{5C78CE36-2F3C-4402-AE6F-CF1F42E1733F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CB637B1E-8011-42A9-A6BC-D7D29C5FE69C} = {CB637B1E-8011-42A9-A6BC-D7D29C5FE69C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesGateways", "ServicesGateways\ServicesGateways.csproj", "{CB637B1E-8011-42A9-A6BC-D7D29C5FE69C}"
 EndProject

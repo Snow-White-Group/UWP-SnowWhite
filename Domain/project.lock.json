@@ -18471,10 +18471,10 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\freim\\onedrive\\documents\\visual studio 2017\\Projects\\Snowwhite\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\freim\\onedrive\\documents\\visual studio 2017\\Projects\\Snowwhite\\Domain\\Domain.csproj",
-      "projectJsonPath": "C:\\Users\\freim\\onedrive\\documents\\visual studio 2017\\Projects\\Snowwhite\\Domain\\project.json",
+      "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj",
+      "projectJsonPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {
