@@ -66,11 +66,11 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Succsessfully trigger enrollment", new string[] {
-                "SNOW-UC-UE"}, SourceLine=6)]
+                "SNOW-UC-TE"}, SourceLine=6)]
         public virtual void SuccsessfullyTriggerEnrollment()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Succsessfully trigger enrollment", new string[] {
-                        "SNOW-UC-UE"});
+                        "SNOW-UC-TE"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
@@ -90,11 +90,11 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Can not trigger enrollment, because someone is using the mirror", new string[] {
-                "SNOW-UC-UE"}, SourceLine=15)]
+                "SNOW-UC-TE"}, SourceLine=15)]
         public virtual void CanNotTriggerEnrollmentBecauseSomeoneIsUsingTheMirror()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not trigger enrollment, because someone is using the mirror", new string[] {
-                        "SNOW-UC-UE"});
+                        "SNOW-UC-TE"});
 #line 16
 this.ScenarioSetup(scenarioInfo);
 #line 17
@@ -112,11 +112,11 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Can not trigger enrollment, because some is using this mirror for enrollment", new string[] {
-                "SNOW-UC-UE"}, SourceLine=23)]
+                "SNOW-UC-TE"}, SourceLine=23)]
         public virtual void CanNotTriggerEnrollmentBecauseSomeIsUsingThisMirrorForEnrollment()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not trigger enrollment, because some is using this mirror for enrollment", new string[] {
-                        "SNOW-UC-UE"});
+                        "SNOW-UC-TE"});
 #line 24
 this.ScenarioSetup(scenarioInfo);
 #line 25
