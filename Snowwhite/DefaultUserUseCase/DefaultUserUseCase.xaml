@@ -3,11 +3,30 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Snowwhite.DefaultUserUseCase"
+    xmlns:snowcontrols="using:Snowwhite.Controls.ClockControl"
+
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    </Grid>
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock 
+            x:Name="mirrorName"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignTopWithPanel="True"/>
+        
+        <snowcontrols:MyClockControl RelativePanel.Below="mirrorName"/>
+        
+        <ListView 
+            RelativePanel.AlignBottomWithPanel="True"
+            RelativePanel.AlignLeftWithPanel="True">
+            <DataTemplate>
+               <StackPanel Orientation="Vertical">
+                   <Ellipse>
+     
+                   </Ellipse>
+               </StackPanel>
+            </DataTemplate>
+        </ListView>
+    </RelativePanel>
 </Page>

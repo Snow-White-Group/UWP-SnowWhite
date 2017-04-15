@@ -5,9 +5,12 @@
     xmlns:local="using:Snowwhite"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:clockControl="using:Snowwhite.Controls.ClockControl"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <clockControl:MyClockControl RelativePanel.Below="mirrorName"/>
 
+        
     </Grid>
 </Page>
