@@ -2210,6 +2210,13 @@
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
         }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        }
       }
     },
     "UAP,Version=v10.0/win10-arm": {
@@ -4503,6 +4510,13 @@
         "dependencies": {
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
         }
       }
     },
@@ -6837,6 +6851,13 @@
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
         }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        }
       }
     },
     "UAP,Version=v10.0/win10-x64": {
@@ -9139,6 +9160,13 @@
         "dependencies": {
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
         }
       }
     },
@@ -11482,6 +11510,13 @@
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
         }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        }
       }
     },
     "UAP,Version=v10.0/win10-x86": {
@@ -13784,6 +13819,13 @@
         "dependencies": {
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
         }
       }
     },
@@ -16126,6 +16168,13 @@
         "dependencies": {
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
         }
       }
     }
@@ -24396,6 +24445,11 @@
       "type": "project",
       "path": "../Domain/project.json",
       "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "DwarfLibrary/1.0.0": {
+      "type": "project",
+      "path": "../DwarfLibrary/DwarfLibrary.csproj",
+      "msbuildProject": "../DwarfLibrary/DwarfLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -24419,6 +24473,9 @@
           "projectReferences": {
             "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj"
+            },
+            "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\DwarfLibrary\\DwarfLibrary.csproj": {
+              "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\DwarfLibrary\\DwarfLibrary.csproj"
             }
           }
         }

@@ -1,31 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.System.Threading;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace Snowwhite.Controls.ClockControl
+namespace DwarfLibrary.ClockDwarf
 {
-    public sealed partial class MyClockControl : UserControl
+    public sealed partial class ClockDwarfControl : UserControl
     {
-        public static string Fdate { get; } = " ddd, MM yyyy";
+        public static string Fdate { get; } = " ddd, MM. yyyy";
         public static string Ftime { get; } = "hh:mm:ss";
+        public static readonly DependencyProperty TimeProperty =
+            DependencyProperty.Register("time", typeof(string), typeof(ClockDwarfControl), null);
+        public static readonly DependencyProperty DateProperty =
+            DependencyProperty.Register("date", typeof(string), typeof(ClockDwarfControl), null);
 
-        public MyClockControl()
+        public ClockDwarfControl()
         {
             this.InitializeComponent();
             
@@ -46,11 +38,6 @@ namespace Snowwhite.Controls.ClockControl
             get => (string) GetValue(DateProperty);
             set => SetValue(DateProperty, value);
         }
-
-        public static readonly DependencyProperty TimeProperty =
-            DependencyProperty.Register("time", typeof(string), typeof(MyClockControl), null);
-        public static readonly DependencyProperty DateProperty =
-            DependencyProperty.Register("date", typeof(string), typeof(MyClockControl), null);
 
         private void AutoUpdate()
         {
