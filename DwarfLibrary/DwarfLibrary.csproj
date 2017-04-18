@@ -46,7 +46,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -112,6 +112,9 @@
     <Compile Include="ClockDwarf\ClockDwarfControl.xaml.cs">
       <DependentUpon>ClockDwarfControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NewsDwarf\NewsDwarfControl.xaml.cs">
+      <DependentUpon>NewsDwarfControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewsDwarf\NewsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\DwarfLibrary.rd.xml" />
@@ -123,6 +126,14 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="ClockDwarf\ClockDwarfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NewsDwarf\NewsDwarfControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
