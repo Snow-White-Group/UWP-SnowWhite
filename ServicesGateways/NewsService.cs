@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Domain.Services;
+using Domain.Entities;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using System;
 
 namespace ServicesGateways
 {
-    public class NewsService
+    public class NewsService : INewsService
     {
         // api key
         private static readonly string API_KEY = "de79b1bf710e4d319ce44f6ef3de9df9";
