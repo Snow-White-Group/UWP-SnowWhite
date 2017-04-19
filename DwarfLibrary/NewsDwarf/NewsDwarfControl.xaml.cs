@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -12,6 +13,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.System.Threading;
+using Windows.UI.Core;
+using ExtensionMethods;
+
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -20,18 +25,40 @@ namespace DwarfLibrary.NewsDwarf
     public sealed partial class NewsDwarfControl : UserControl
     {
         #region public fields
-        public List<NewsModel> News
+        public List<NewsDwarfModel> News
         {
-            get => (List<NewsModel>)GetValue(NewsProperty);
+            get => (List<NewsDwarfModel>) GetValue(NewsProperty);
             set => SetValue(NewsProperty, value);
         }
         public static readonly DependencyProperty NewsProperty =
-            DependencyProperty.Register("news", typeof(List<NewsModel>), typeof(NewsDwarfControl), null);
+            DependencyProperty.Register("News", typeof(List<NewsDwarfModel>), typeof(NewsDwarfControl), null);
+        #endregion
+
+        #region private fields
+        private int currentIndex = 0;
         #endregion
 
         public NewsDwarfControl()
         {
             this.InitializeComponent();
+            AutoScroll();
         }
+
+        #region function
+        private void AutoScroll()
+        {
+            var period = TimeSpan.FromSeconds(10);
+            ThreadPoolTimer.CreatePeriodicTimer((source) =>
+            {
+                Dispatcher?.RunAsync(CoreDispatcherPriority.High,
+                () =>
+                {
+                    currentIndex = (currentIndex + 1) % News.Count;
+                    NewsList?.ScrollToIndex(currentIndex).ConfigureAwait(false);
+                });
+            }, period);
+        }
+        #endregion
+
     }
 }

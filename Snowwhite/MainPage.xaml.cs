@@ -23,17 +23,17 @@ namespace Snowwhite
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public List<NewsModel> News;
+        public List<NewsDwarfModel> News;
         public MainPage()
         {
             this.InitializeComponent();
             var img = "http://www.rd.com/wp-content/uploads/sites/2/2016/04/01-cat-wants-to-tell-you-laptop.jpg";
-            News = new List<NewsModel>();
-            News.Add(new NewsModel("Test", "Das ist ein test", img, "Bild"));
-            News.Add(new NewsModel("Bombe in München", "In Schwabing wurde eine Bombe gefunden", img, "Süddeutsche"));
-            News.Add(new NewsModel("Lol ist schlechter als Dota", "Dota ist awesome, dass bestätigt das Fraunhofer institute", img, "Giga"));
-            News.Add(new NewsModel("Morgen ist Donnerstag", "Studien beweisen das nach Dienstag Donnerstag kommt", img, "Bild"));
-            News.Add(new NewsModel("Schalf ist geil", "Viele Menschen sind vom Schlaf sexuel erregt, so das Frauenhofer Institute", img, "Bild"));
+            News = new List<NewsDwarfModel>();
+            News.Add(new NewsDwarfModel("Test", "Das ist ein test", img, "Bild"));
+            News.Add(new NewsDwarfModel("Bombe in München", "In Schwabing wurde eine Bombe gefunden", img, "Süddeutsche"));
+            News.Add(new NewsDwarfModel("Lol ist schlechter als Dota", "Dota ist awesome, dass bestätigt das Fraunhofer institute", img, "Giga"));
+            News.Add(new NewsDwarfModel("Morgen ist Donnerstag", "Studien beweisen das nach Dienstag Donnerstag kommt", img, "Bild"));
+            News.Add(new NewsDwarfModel("Schalf ist geil", "Viele Menschen sind vom Schlaf sexuel erregt, so das Frauenhofer Institute", img, "Bild"));
         }
     }
 }

@@ -10,21 +10,22 @@
     d:DesignWidth="400">
 
     <ListView x:Name="NewsList"
+              Height="456"
               ItemsSource="{x:Bind News}">
         <ListView.ItemTemplate>
             <DataTemplate
-                x:DataType="local:NewsModel">
-                <StackPanel Orientation="Horizontal" Padding="16">
-                    <Ellipse Width="100" Height="100">
+                x:DataType="local:NewsDwarfModel">
+                <StackPanel Orientation="Horizontal" Padding="16" Height="152">
+                    <Ellipse Width="120" Height="120">
                         <Ellipse.Fill>
                             <ImageBrush ImageSource="{x:Bind ImageUrl}"/>
                         </Ellipse.Fill>
                     </Ellipse>
-                    <StackPanel Orientation="Vertical" Width="250" Height="100" Margin="0,0,8,0">
-                        <TextBlock Text="{x:Bind Headline}" FontSize="12px"/>
-                        <TextBlock Text="{x:Bind ShortLine}" FontSize="10px" MaxLines="3"/>
-                        <TextBlock Text="{x:Bind Source}" FontSize="9px" TextAlignment="Right"/>
-                    </StackPanel>
+                    <RelativePanel Width="250" Height="120" Margin="0,0,0,0" Padding="16,0,0,0">
+                        <TextBlock x:Name="HeadinText" Text="{x:Bind Headline}" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" FontSize="20px" />
+                        <TextBlock x:Name="SortText" Text="{x:Bind ShortLine}" RelativePanel.Below="HeadinText" FontSize="16px" TextWrapping="Wrap" TextTrimming="Clip" MaxLines="3"/>
+                        <TextBlock Text="{x:Bind Source}" RelativePanel.Below="SortText" RelativePanel.AlignRightWithPanel="True" FontSize="14px" TextAlignment="Right"/>
+                    </RelativePanel>
                 </StackPanel>
             </DataTemplate>
         </ListView.ItemTemplate>

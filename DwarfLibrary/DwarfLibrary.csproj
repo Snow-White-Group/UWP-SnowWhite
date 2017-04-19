@@ -112,10 +112,11 @@
     <Compile Include="ClockDwarf\ClockDwarfControl.xaml.cs">
       <DependentUpon>ClockDwarfControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyExtensions.cs" />
     <Compile Include="NewsDwarf\NewsDwarfControl.xaml.cs">
       <DependentUpon>NewsDwarfControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NewsDwarf\NewsModel.cs" />
+    <Compile Include="NewsDwarf\NewsDwarfModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\DwarfLibrary.rd.xml" />
   </ItemGroup>
