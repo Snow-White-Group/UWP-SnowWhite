@@ -18467,14 +18467,14 @@
     ".NETPlatform,Version=v5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Mario\\.nuget\\packages\\": {}
+    "C:\\Users\\maku\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj",
-      "projectJsonPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Domain\\project.json",
+      "projectPath": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj",
+      "projectJsonPath": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Domain\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {
