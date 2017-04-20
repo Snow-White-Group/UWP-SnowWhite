@@ -21565,7 +21565,7 @@
       ]
     },
     "System.ComponentModel.Primitives/4.3.0": {
-      "sha512": "j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
+      "sha512": "Y5MFxZZV7AS8HclIhwJPaQIH0lTwHKrLar2o+fk8xBQGzBOCGhepdhw1GsLhXRrLfHtacZrq6Gq+vCA7/BfVmQ==",
       "type": "package",
       "path": "system.componentmodel.primitives/4.3.0",
       "files": [
@@ -21602,7 +21602,7 @@
       ]
     },
     "System.ComponentModel.TypeConverter/4.3.0": {
-      "sha512": "16pQ6P+EdhcXzPiEK4kbA953Fu0MNG2ovxTZU81/qsCd1zPRsKc3uif5NgvllCY598k6bI0KUyKW8fanlfaDQg==",
+      "sha512": "EnHFW5X8l/75sPh8oHBsTJWXekWwBcw5vTeZ7ahZYbCatghNeM4LWsg3vXp2zCcdVdZZkEPUwL6n9ccutdIhyw==",
       "type": "package",
       "path": "system.componentmodel.typeconverter/4.3.0",
       "files": [
@@ -21738,7 +21738,7 @@
       ]
     },
     "System.Diagnostics.Contracts/4.3.0": {
-      "sha512": "eelRRbnm+OloiQvp9CXS0ixjNQldjjkHO4iIkR5XH2VIP8sUB/SIpa1TdUW6/+HDcQ+MlhP3pNa1u5SbzYuWGA==",
+      "sha512": "dQFC+P9RRnsJgmxP7a15W57bCLWyhc6bSTYse5l+dt0syo84+UWn2IODx5ul0aqcDo+AwRO3OyTyEuevDXG1eA==",
       "type": "package",
       "path": "system.diagnostics.contracts/4.3.0",
       "files": [
@@ -24616,7 +24616,7 @@
       ]
     },
     "System.Runtime.Serialization.Primitives/4.3.0": {
-      "sha512": "Wz+0KOukJGAlXjtKr+5Xpuxf8+c8739RI1C+A2BoQZT+wMCCoMDDdO8/4IRHfaVINqL78GO8dW8G2lW/e45Mcw==",
+      "sha512": "ZDXKY+p80yz4ilmEISs6Ta39Rq/DuI/5waIhgCwE9aLRimPVus48MQj12ZlaxOp8G0z54cQd6iWLzsbH4vMSIg==",
       "type": "package",
       "path": "system.runtime.serialization.primitives/4.3.0",
       "files": [
@@ -26274,20 +26274,20 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Mario\\.nuget\\packages\\": {}
+    "C:\\Users\\freim\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj",
+      "projectUniqueName": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\ServicesGateways\\ServicesGateways.csproj",
       "projectName": "ServicesGateways",
-      "projectPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj",
-      "projectJsonPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\project.json",
+      "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\ServicesGateways\\ServicesGateways.csproj",
+      "projectJsonPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\ServicesGateways\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj"
+            "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj"
             }
           }
         }
@@ -26295,10 +26295,7 @@
     },
     "dependencies": {
       "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
-      "Newtonsoft.Json": {
-        "target": "Package",
-        "version": "[10.0.2, )"
-      }
+      "Newtonsoft.Json": "10.0.2"
     },
     "frameworks": {
       "uap10.0": {}
