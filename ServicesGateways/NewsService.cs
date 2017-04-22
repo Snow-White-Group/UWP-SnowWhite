@@ -15,7 +15,7 @@ namespace ServicesGateways
         private static readonly string API_KEY = "de79b1bf710e4d319ce44f6ef3de9df9";
 
         // instantiate the service for making requests and get responses
-        private static WebService service = new WebService();
+        private static readonly WebService service = new WebService();
 
         // sources => target news sources
         // returns news from the target sources
@@ -26,10 +26,11 @@ namespace ServicesGateways
             // get newest news from each source
             foreach (string source in sources)
             {
-                string jsonResponse = await service.MakeRequest("https://newsapi.org/v1/articles?source=" + source + "&sortBy=latest&apiKey=" + API_KEY);
+                // request for news
+                string newsResponse = await service.MakeRequest("https://newsapi.org/v1/articles?source=" + source + "&sortBy=latest&apiKey=" + API_KEY);
 
                 // parse json to news object and add to list
-                news.Add(JObject.Parse(jsonResponse).ToObject<News>());
+                news.Add(JObject.Parse(newsResponse).ToObject<News>());
             }
 
             return news.OrderBy(x => x.Source).ToList();

@@ -24459,23 +24459,23 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\freim\\.nuget\\packages\\": {}
+    "C:\\Users\\Mario\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Snowwhite\\Snowwhite.csproj",
+      "projectUniqueName": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\Snowwhite.csproj",
       "projectName": "Snowwhite",
-      "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Snowwhite\\Snowwhite.csproj",
-      "projectJsonPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Snowwhite\\project.json",
+      "projectPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\Snowwhite.csproj",
+      "projectJsonPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj"
+            "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\DwarfLibrary\\DwarfLibrary.csproj": {
-              "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\DwarfLibrary\\DwarfLibrary.csproj"
+            "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\DwarfLibrary\\DwarfLibrary.csproj": {
+              "projectPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\DwarfLibrary\\DwarfLibrary.csproj"
             }
           }
         }
