@@ -55,7 +55,7 @@ namespace DwarfLibrary.NewsDwarf
         #region function
         private void AutoScroll()
         {
-            var period = TimeSpan.FromSeconds(10);
+            var period = TimeSpan.FromSeconds(1);
             ThreadPoolTimer.CreatePeriodicTimer((source) =>
             {
                 Dispatcher?.RunAsync(CoreDispatcherPriority.High,
