@@ -14,11 +14,8 @@ namespace ServicesGateways
         // api key
         private static readonly string API_KEY = "de79b1bf710e4d319ce44f6ef3de9df9";
 
-        // http client with timeout
-        private static readonly HttpClient httpClient = new HttpClient(new HttpClientHandler())
-        {
-            Timeout = TimeSpan.FromSeconds(5)
-        };
+        // instantiate the service for making requests and get responses
+        private static WebService service = new WebService();
 
         // sources => target news sources
         // returns news from the target sources
@@ -29,11 +26,10 @@ namespace ServicesGateways
             // get newest news from each source
             foreach (string source in sources)
             {
-                // request => return json response
-                HttpResponseMessage response = await httpClient.GetAsync("https://newsapi.org/v1/articles?source=" + source + "&sortBy=latest&apiKey=" + API_KEY);
+                string jsonResponse = await service.MakeRequest("https://newsapi.org/v1/articles?source=" + source + "&sortBy=latest&apiKey=" + API_KEY);
 
                 // parse json to news object and add to list
-                news.Add(JObject.Parse(await response.Content.ReadAsStringAsync()).ToObject<News>());
+                news.Add(JObject.Parse(jsonResponse).ToObject<News>());
             }
 
             return news.OrderBy(x => x.Source).ToList();
@@ -45,10 +41,10 @@ namespace ServicesGateways
             List<NewsSource> sources = new List<NewsSource>();
 
             // request
-            HttpResponseMessage response = await httpClient.GetAsync("https://newsapi.org/v1/sources?language=" + language);
+            string jsonResponse = await service.MakeRequest("https://newsapi.org/v1/sources?language=" + language);
 
-            // add all returned sources
-            sources.AddRange(JObject.Parse(await response.Content.ReadAsStringAsync()).ToObject<List<NewsSource>>());
+            // parse json to source object and add to list
+            sources.AddRange(JObject.Parse(jsonResponse).ToObject<List<NewsSource>>());
 
             return sources.OrderBy(x => x.Name).ToList();
         }
