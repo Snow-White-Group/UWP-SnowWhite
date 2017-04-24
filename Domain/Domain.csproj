@@ -44,8 +44,11 @@
     <Compile Include="Entities\IProfile.cs" />
     <Compile Include="Entities\IVoiceFile.cs" />
     <Compile Include="Entities\MirrorUser.cs" />
+    <Compile Include="Entities\News.cs" />
+    <Compile Include="Entities\NewsSource.cs" />
     <Compile Include="Entities\SnowUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\INewsService.cs" />
     <Compile Include="Services\MirrorStateServices.cs" />
     <Compile Include="VoiceUseCases\EnrollmentUseCase\EnrollmentUseCaseRequest.cs" />
     <Compile Include="VoiceUseCases\EnrollmentUseCase\IEnrollmentUseCase.cs" />

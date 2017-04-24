@@ -1,0 +1,39 @@
+﻿<UserControl
+    x:Class="DwarfLibrary.NewsDwarf.NewsDwarfControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DwarfLibrary.NewsDwarf"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    
+    <UserControl.Resources>
+        <local:ShownItemsConverter x:Name="ShownConverter"/>
+    </UserControl.Resources>
+    
+    <ListView x:Name="NewsList"
+              Height="{x:Bind ShownItems, FallbackValue=456, Converter={StaticResource ShownConverter}}"
+              MaxWidth="450"
+              ItemsSource="{x:Bind News}">
+        <ListView.ItemTemplate>
+            <DataTemplate
+                x:DataType="local:NewsDwarfModel">
+                <StackPanel Orientation="Horizontal" Padding="0" Height="152">
+                    <Ellipse Width="120" Height="120">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{x:Bind ImageUrl}"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <RelativePanel Width="250" Height="120" Padding="16,0,0,0">
+                        <TextBlock x:Name="HeadinText" Text="{x:Bind Headline}" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" FontSize="20px" FontWeight="Bold" TextTrimming="CharacterEllipsis" />
+                        <TextBlock x:Name="SortText" Text="{x:Bind ShortLine}" RelativePanel.Below="HeadinText" FontSize="16px" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" MaxLines="3"/>
+                        <TextBlock Text="{x:Bind Source}" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" FontSize="14px" TextAlignment="Right" FontWeight="SemiLight" TextTrimming="CharacterEllipsis"/>
+                    </RelativePanel>
+                </StackPanel>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        
+    </ListView>
+</UserControl>

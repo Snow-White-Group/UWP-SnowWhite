@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.15063.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -46,7 +46,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -112,19 +112,41 @@
     <Compile Include="ClockDwarf\ClockDwarfControl.xaml.cs">
       <DependentUpon>ClockDwarfControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NewsDwarf\NewsModel.cs" />
+    <Compile Include="MyExtensions.cs" />
+    <Compile Include="NewsDwarf\NewsDwarfControl.xaml.cs">
+      <DependentUpon>NewsDwarfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewsDwarf\NewsDwarfModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeatherDwarf\ForecastModel.cs" />
+    <Compile Include="WeatherDwarf\WeatherDwarfControl.xaml.cs">
+      <DependentUpon>WeatherDwarfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WeatherDwarf\WeatherDwarfModel.cs" />
+    <Compile Include="WeatherDwarf\WeatherState.cs" />
     <EmbeddedResource Include="Properties\DwarfLibrary.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>5.2.3</Version>
+      <Version>5.3.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="ClockDwarf\ClockDwarfControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NewsDwarf\NewsDwarfControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WeatherDwarf\WeatherDwarfControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup />
