@@ -17,13 +17,23 @@ namespace ServicesGateways
         // instantiate the service for making requests and get responses
         private static readonly WebService service = new WebService();
 
+        // db context for the local db
+        private static readonly ServicesDbContext db = new ServicesDbContext();
+
         public async Task<Weather> GetWeather(string city)
         {
+            // delete all existing rows
+            //db.Weather.RemoveRange(db.Weather);
+
             // request for weather
             string weatherResponse = await service.MakeRequest("api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + API_KEY);
 
             // parse json to weather object
             Weather weather =  JObject.Parse(weatherResponse).ToObject<Weather>();
+            weather.LastUpdate = Convert.ToInt64(DateTime.Now.ToString("yyyymmddhhmmssffff"));
+
+            db.Weather.Add(weather);
+            db.SaveChanges();
 
             return weather;
         }
