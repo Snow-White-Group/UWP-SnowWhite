@@ -20,7 +20,7 @@
         <ListView.ItemTemplate>
             <DataTemplate
                 x:DataType="local:NewsDwarfModel">
-                <StackPanel Orientation="Horizontal" Padding="0" Height="152">
+                <StackPanel Orientation="Horizontal" Height="152">
                     <Ellipse Width="120" Height="120">
                         <Ellipse.Fill>
                             <ImageBrush ImageSource="{x:Bind ImageUrl}"/>

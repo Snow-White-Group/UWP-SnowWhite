@@ -55,10 +55,10 @@ namespace DwarfLibrary.NewsDwarf
         #region function
         private void AutoScroll()
         {
-            var period = TimeSpan.FromSeconds(1);
+            var period = TimeSpan.FromSeconds(5);
             ThreadPoolTimer.CreatePeriodicTimer((source) =>
             {
-                Dispatcher?.RunAsync(CoreDispatcherPriority.High,
+                Dispatcher?.RunAsync(CoreDispatcherPriority.Low,
                 () =>
                 {
                     currentIndex = (currentIndex + 1) % News.Count;

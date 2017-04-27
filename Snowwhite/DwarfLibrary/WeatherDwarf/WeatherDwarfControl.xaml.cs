@@ -50,10 +50,10 @@ namespace DwarfLibrary.WeatherDwarf
         #region function
         private void EnableAutomaticSwitch()
         {
-            var period = TimeSpan.FromSeconds(5);
+            var period = TimeSpan.FromSeconds(15);
             ThreadPoolTimer.CreatePeriodicTimer((source) =>
             {
-                Dispatcher?.RunAsync(CoreDispatcherPriority.High,
+                Dispatcher?.RunAsync(CoreDispatcherPriority.Low,
                     () =>
                     {
                         VisualStateManager.GoToState(this, this.VisualStateGroup.States.ToArray()[_currentState].Name, true);

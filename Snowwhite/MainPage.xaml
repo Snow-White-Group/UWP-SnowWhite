@@ -11,10 +11,11 @@
     xmlns:weatherDwarf="using:DwarfLibrary.WeatherDwarf"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Vertical" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <clockDwarf1:ClockDwarfControl x:Name="clock" FontSize="30"/>
-        <newsDwarf1:NewsDwarfControl  News="{x:Bind News}" ShownItems="2" />
-        <weatherDwarf:WeatherDwarfControl Model="{x:Bind Weather}" />
-    </StackPanel>
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="16,16,16,16">
+        <TextBlock x:Name="mirrorName" RelativePanel.AlignTopWithPanel="true" RelativePanel.AlignLeftWithPanel="true" Text="MIRROR NAME" FontSize="34"/>
+        <clockDwarf1:ClockDwarfControl x:Name="clock" RelativePanel.Below="mirrorName" RelativePanel.AlignLeftWithPanel="true" FontWeight="Light" />
+        <newsDwarf1:NewsDwarfControl  News="{x:Bind News}" ShownItems="3" RelativePanel.AlignBottomWithPanel="true" RelativePanel.AlignLeftWithPanel="true" />
+        <weatherDwarf:WeatherDwarfControl Model="{x:Bind Weather}" RelativePanel.AlignTopWithPanel="true" RelativePanel.AlignRightWithPanel="true"/>
+    </RelativePanel>
 </Page>
 

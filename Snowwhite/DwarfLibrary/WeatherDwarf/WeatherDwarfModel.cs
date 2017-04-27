@@ -11,6 +11,8 @@ namespace DwarfLibrary.WeatherDwarf
         public readonly List<ForecastModel> Forecasts;
         public readonly string LocationName;
 
+        public string DisplayText => CurrentTempeture + "°C";
+
         public WeatherDwarfModel(int currentTempeture, WeatherState currentState, DateTime currentDate, List<ForecastModel> forecasts, string locationName)
         {
             CurrentTempeture = currentTempeture;

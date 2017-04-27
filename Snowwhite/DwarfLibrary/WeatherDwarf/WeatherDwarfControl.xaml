@@ -13,7 +13,8 @@
         <local:WeatherStateToImageConverter x:Name="converter"/>
     </UserControl.Resources>
 
-    <RelativePanel x:Name="Content">
+    <RelativePanel x:Name="Content"
+                   Width="280">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualStateGroup.Transitions>
@@ -36,21 +37,22 @@
         </VisualStateManager.VisualStateGroups>
         <StackPanel Orientation="Horizontal"
             x:Name="CurrentWeather">
-            <StackPanel x:Name="stackPanel" Orientation="Vertical">
-                <TextBlock x:Name="Temperature" Text="{x:Bind Model.CurrentTempeture}" TextAlignment="Right" FontWeight="Bold" FontSize="34"/>
-                <TextBlock x:Name="Location"  Text="{x:Bind Model.LocationName}" FontWeight="Light" FontSize="24"/>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="{x:Bind Model.DisplayText}" TextAlignment="Right" FontWeight="Bold" FontSize="45"/>
+                <TextBlock Text="{x:Bind Model.LocationName}" FontWeight="Light" FontSize="34"/>
             </StackPanel>
-            <Image x:Name="WeatherImage"  Height="150" Width="150" Source="{x:Bind Model.CurrentState, Converter={StaticResource converter}}" />
+            <Image Height="150" Width="150" Source="{x:Bind Model.CurrentState, Converter={StaticResource converter}}" />
         </StackPanel>
         <ListView 
             x:Name="ForcastWeather"
+            RelativePanel.AlignRightWithPanel="true"
             ItemsSource="{x:Bind Model.Forecasts}" Opacity="0">
             <ListView.ItemTemplate> 
                 <DataTemplate x:DataType="local:ForecastModel">
-                    <StackPanel Orientation="Horizontal" Height="50">
-                        <TextBlock Text="{x:Bind DisplayText, Mode=OneTime}" FontSize="20" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <Image Height="50" Width="50" Source="{x:Bind WeatherState, Converter={StaticResource converter}}" Margin="0,0,16,0" />
-                    </StackPanel>
+                   <RelativePanel Height="50" Width="250" >
+                        <TextBlock RelativePanel.AlignLeftWithPanel="True" Text="{x:Bind DisplayText, Mode=OneTime}" FontSize="20" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,15" />
+                        <Image RelativePanel.AlignRightWithPanel="True" Height="50" Width="50" Source="{x:Bind WeatherState, Converter={StaticResource converter}}" />
+                    </RelativePanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

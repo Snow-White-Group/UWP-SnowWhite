@@ -8,6 +8,8 @@ namespace DwarfLibrary.WeatherDwarf
         public readonly int Tempeture;
         public readonly WeatherState WeatherState;
 
+        public string DisplayText => Date.ToString("ddd, ") + Tempeture + "°C";
+
         public ForecastModel(DateTime date, int tempeture, WeatherState state)
         {
             Date = date;
@@ -15,9 +17,5 @@ namespace DwarfLibrary.WeatherDwarf
             WeatherState = state;
         }
 
-        public string DisplayText
-        {
-            get => "Mo, 21°C";
-        }
     }
 }

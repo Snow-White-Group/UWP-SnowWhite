@@ -9,8 +9,8 @@
     d:DesignWidth="400">
 
     <RelativePanel>
-        <TextBlock x:Name="time" Text="{x:Bind Time, Mode=OneWay}" RelativePanel.AlignTopWithPanel="True" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="date" Text="{x:Bind Date, Mode=OneWay}" RelativePanel.RightOf="time" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="time" Text="{x:Bind Time, Mode=OneWay}" RelativePanel.AlignTopWithPanel="True" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="date" Text="{x:Bind Date, Mode=OneWay}" RelativePanel.RightOf="time" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
     </RelativePanel>
     
 </UserControl>
