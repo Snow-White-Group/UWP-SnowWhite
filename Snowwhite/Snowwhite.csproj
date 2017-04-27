@@ -99,6 +99,20 @@
     <Compile Include="DefaultUserUseCase\DefaultUserUseCase.xaml.cs">
       <DependentUpon>DefaultUserUseCase.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DwarfLibrary\ClockDwarf\ClockDwarfControl.xaml.cs">
+      <DependentUpon>ClockDwarfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DwarfLibrary\MyExtensions.cs" />
+    <Compile Include="DwarfLibrary\NewsDwarf\NewsDwarfControl.xaml.cs">
+      <DependentUpon>NewsDwarfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DwarfLibrary\NewsDwarf\NewsDwarfModel.cs" />
+    <Compile Include="DwarfLibrary\WeatherDwarf\ForecastModel.cs" />
+    <Compile Include="DwarfLibrary\WeatherDwarf\WeatherDwarfControl.xaml.cs">
+      <DependentUpon>WeatherDwarfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DwarfLibrary\WeatherDwarf\WeatherDwarfModel.cs" />
+    <Compile Include="DwarfLibrary\WeatherDwarf\WeatherState.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -111,6 +125,34 @@
     <None Include="Snowwhite_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\weather-big-snow.png" />
+    <Content Include="Assets\weather-clear-night.png" />
+    <Content Include="Assets\weather-clear.png" />
+    <Content Include="Assets\weather-clouds-night.png" />
+    <Content Include="Assets\weather-clouds.png" />
+    <Content Include="Assets\weather-drizzle-day.png" />
+    <Content Include="Assets\weather-drizzle-night.png" />
+    <Content Include="Assets\weather-few-clouds-night.png" />
+    <Content Include="Assets\weather-few-clouds.png" />
+    <Content Include="Assets\weather-fog.png" />
+    <Content Include="Assets\weather-hail.png" />
+    <Content Include="Assets\weather-haze.png" />
+    <Content Include="Assets\weather-mist.png" />
+    <Content Include="Assets\weather-none-available.png" />
+    <Content Include="Assets\weather-rain-day.png" />
+    <Content Include="Assets\weather-rain-night.png" />
+    <Content Include="Assets\weather-showers-day.png" />
+    <Content Include="Assets\weather-showers-night.png" />
+    <Content Include="Assets\weather-showers-scattered-day.png" />
+    <Content Include="Assets\weather-showers-scattered-night.png" />
+    <Content Include="Assets\weather-snow-rain.png" />
+    <Content Include="Assets\weather-snow-scattered-day.png" />
+    <Content Include="Assets\weather-snow-scattered-night.png" />
+    <Content Include="Assets\weather-snow.png" />
+    <Content Include="Assets\weather-storm-day.png" />
+    <Content Include="Assets\weather-storm-night.png" />
+    <Content Include="Assets\weather-storm.png" />
+    <Content Include="Assets\weather-wind.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -129,6 +171,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DwarfLibrary\ClockDwarf\ClockDwarfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DwarfLibrary\NewsDwarf\NewsDwarfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DwarfLibrary\WeatherDwarf\WeatherDwarfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -138,10 +192,6 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{4282ca9c-94b9-4c39-81cd-fe2499ac80fc}</Project>
       <Name>Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DwarfLibrary\DwarfLibrary.csproj">
-      <Project>{16641e2f-fa6d-4eba-8b72-2bbef8ffaf75}</Project>
-      <Name>DwarfLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

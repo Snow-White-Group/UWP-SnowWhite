@@ -8,11 +8,13 @@
     xmlns:newsDwarf="using:DwarfLibrary"
     xmlns:clockDwarf1="using:DwarfLibrary.ClockDwarf"
     xmlns:newsDwarf1="using:DwarfLibrary.NewsDwarf"
+    xmlns:weatherDwarf="using:DwarfLibrary.WeatherDwarf"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <clockDwarf1:ClockDwarfControl x:Name="clock" FontSize="30" RelativePanel.Below="mirrorName"/>
-        <newsDwarf1:NewsDwarfControl RelativePanel.Below="clock" News="{x:Bind News}" ShownItems="2" />
-    </Grid>
+    <StackPanel Orientation="Vertical" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <clockDwarf1:ClockDwarfControl x:Name="clock" FontSize="30"/>
+        <newsDwarf1:NewsDwarfControl  News="{x:Bind News}" ShownItems="2" />
+        <weatherDwarf:WeatherDwarfControl Model="{x:Bind Weather}" />
+    </StackPanel>
 </Page>
 

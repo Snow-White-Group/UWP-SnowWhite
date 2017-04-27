@@ -9,6 +9,10 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
+    <UserControl.Resources>
+        <local:WeatherStateToImageConverter x:Name="converter"/>
+    </UserControl.Resources>
+
     <RelativePanel>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
@@ -29,20 +33,20 @@
         </VisualStateManager.VisualStateGroups>
         <RelativePanel
             x:Name="CurrentWeather">
-            <TextBlock x:Name="Temperature" Text="{x:Bind Model.DisplayText}" FontWeight="Bold" FontSize="20"/>
+            <TextBlock x:Name="Temperature" Text="{x:Bind Model.CurrentTempeture}" FontWeight="Bold" FontSize="20"/>
             <TextBlock x:Name="Location" RelativePanel.Below="Temperature" Text="{x:Bind Model.LocationName}" FontWeight="Light" FontSize="16"/>
-            <Image x:Name="WeatherImage" RelativePanel.RightOf="Location"/>
+            <BitmapIcon x:Name="WeatherImage" UriSource="{x:Bind Model.CurrentState, Converter={StaticResource converter}}" RelativePanel.RightOf="Location"/>
         </RelativePanel>
         <ListView 
             x:Name="ForcastWeather"
             ItemsSource="{x:Bind Model.Forecasts}">
-            <ListView.ItemTemplate>
+            <!--<ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:ForecastModel">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{x:Bind DisplayText, Mode=OneTime}" />
                     </StackPanel>
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListView.ItemTemplate>-->
         </ListView>
     </RelativePanel>
 </UserControl>

@@ -150,6 +150,36 @@
     </Page>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Assets\weather-big-snow.png" />
+    <Content Include="Assets\weather-clear-night.png" />
+    <Content Include="Assets\weather-clear.png" />
+    <Content Include="Assets\weather-clouds-night.png" />
+    <Content Include="Assets\weather-clouds.png" />
+    <Content Include="Assets\weather-drizzle-day.png" />
+    <Content Include="Assets\weather-drizzle-night.png" />
+    <Content Include="Assets\weather-few-clouds-night.png" />
+    <Content Include="Assets\weather-few-clouds.png" />
+    <Content Include="Assets\weather-fog.png" />
+    <Content Include="Assets\weather-hail.png" />
+    <Content Include="Assets\weather-haze.png" />
+    <Content Include="Assets\weather-mist.png" />
+    <Content Include="Assets\weather-none-available.png" />
+    <Content Include="Assets\weather-rain-day.png" />
+    <Content Include="Assets\weather-rain-night.png" />
+    <Content Include="Assets\weather-showers-day.png" />
+    <Content Include="Assets\weather-showers-night.png" />
+    <Content Include="Assets\weather-showers-scattered-day.png" />
+    <Content Include="Assets\weather-showers-scattered-night.png" />
+    <Content Include="Assets\weather-snow-rain.png" />
+    <Content Include="Assets\weather-snow-scattered-day.png" />
+    <Content Include="Assets\weather-snow-scattered-night.png" />
+    <Content Include="Assets\weather-snow.png" />
+    <Content Include="Assets\weather-storm-day.png" />
+    <Content Include="Assets\weather-storm-night.png" />
+    <Content Include="Assets\weather-storm.png" />
+    <Content Include="Assets\weather-wind.png" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
