@@ -24,5 +24,10 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.impl
             });
 
         }
+
+        public Task<bool> DeliverDefaultUserPage()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
