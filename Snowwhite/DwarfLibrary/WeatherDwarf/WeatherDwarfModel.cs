@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using PropertyChanged;
 
 namespace DwarfLibrary.WeatherDwarf
 {
+    [ImplementPropertyChanged]
     public class WeatherDwarfModel
     {
         public readonly int CurrentTempeture;

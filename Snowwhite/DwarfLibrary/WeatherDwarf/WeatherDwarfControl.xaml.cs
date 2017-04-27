@@ -16,11 +16,13 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using PropertyChanged;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace DwarfLibrary.WeatherDwarf
 {
+    [ImplementPropertyChanged]
     public sealed partial class WeatherDwarfControl : UserControl
     {
         #region public fields

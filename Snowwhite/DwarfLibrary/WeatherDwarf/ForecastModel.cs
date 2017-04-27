@@ -1,7 +1,9 @@
 ﻿using System;
+using PropertyChanged;
 
 namespace DwarfLibrary.WeatherDwarf
 {
+    [ImplementPropertyChanged]
     public class ForecastModel
     {
         public readonly DateTime Date;

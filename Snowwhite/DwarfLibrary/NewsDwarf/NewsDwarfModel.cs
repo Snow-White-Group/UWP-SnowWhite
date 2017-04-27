@@ -1,5 +1,8 @@
-﻿namespace DwarfLibrary.NewsDwarf
+﻿using PropertyChanged;
+
+namespace DwarfLibrary.NewsDwarf
 {
+    [ImplementPropertyChanged]
     public class NewsDwarfModel
     {
         public string Headline { get; set; }

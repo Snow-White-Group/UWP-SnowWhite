@@ -22,9 +22,12 @@ namespace Snowwhite.DefaultUserUseCase
     /// </summary>
     public sealed partial class DefaultUserUseCase : Page
     {
+        public DefaultUserViewModel ViewModel { get; set; }
+
         public DefaultUserUseCase()
         {
             this.InitializeComponent();
+            this.DataContext = ViewModel;
         }
     }
 }

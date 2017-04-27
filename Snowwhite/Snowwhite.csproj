@@ -99,6 +99,7 @@
     <Compile Include="DefaultUserUseCase\DefaultUserUseCase.xaml.cs">
       <DependentUpon>DefaultUserUseCase.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DefaultUserUseCase\DefaultUserViewModel.cs" />
     <Compile Include="DwarfLibrary\ClockDwarf\ClockDwarfControl.xaml.cs">
       <DependentUpon>ClockDwarfControl.xaml</DependentUpon>
     </Compile>
@@ -153,6 +154,7 @@
     <Content Include="Assets\weather-storm-night.png" />
     <Content Include="Assets\weather-storm.png" />
     <Content Include="Assets\weather-wind.png" />
+    <Content Include="FodyWeavers.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
