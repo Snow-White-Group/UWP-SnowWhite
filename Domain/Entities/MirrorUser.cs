@@ -16,6 +16,5 @@ namespace Domain.Entities
             this.IsValiedUser = isValiedUser;
             this.annonymousId = anannonymousId;
         }
-
     }
 }

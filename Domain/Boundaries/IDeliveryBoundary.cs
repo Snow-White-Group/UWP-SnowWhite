@@ -5,5 +5,7 @@
     public interface IDeliveryBoundary
     {
         Task<bool> DeliverEnrollmentPage();
+
+        Task<bool> DeliverDefaultUserPage();
     }
 }

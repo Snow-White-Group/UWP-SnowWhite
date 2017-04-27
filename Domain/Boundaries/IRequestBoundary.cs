@@ -1,6 +1,6 @@
 ﻿namespace Domain.Boundaries
 {
-    public interface IRequetBoundary
+    public interface IRequestBoundary
     {
         
     }
