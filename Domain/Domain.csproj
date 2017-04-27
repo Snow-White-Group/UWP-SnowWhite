@@ -50,6 +50,7 @@
     <Compile Include="Entities\Weather.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\INewsService.cs" />
+    <Compile Include="Services\IWeatherService.cs" />
     <Compile Include="Services\MirrorStateServices.cs" />
     <Compile Include="VoiceUseCases\EnrollmentUseCase\EnrollmentUseCaseRequest.cs" />
     <Compile Include="VoiceUseCases\EnrollmentUseCase\IEnrollmentUseCase.cs" />

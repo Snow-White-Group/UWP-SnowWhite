@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Domain.Services;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ServicesGateways
 {
-    public class WeatherService
+    public class WeatherService : IWeatherService
     {
         // api key
         private static readonly string API_KEY = "c55bfb1d2457c2568fa1dfb92dd07606";
