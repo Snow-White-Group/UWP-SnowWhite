@@ -17,6 +17,7 @@ namespace Domain.Entities
         public string Category { get; set; }
         public Logos URLToLogos { get; set; }
         public string[] SortBysAvailable { get; set; }
+        public long LastUpdate { get; set; }
     }
 
     public class Logos

@@ -18,7 +18,7 @@ namespace Domain.Entities
         public long ID { get; set; }
         public string Name { get; set; }
         public  int COD { get; set; }
-
+        public long LastUpdate { get; set; }
     }
 
     public class Coord
