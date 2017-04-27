@@ -15,22 +15,33 @@ namespace ServicesGateways
         private static readonly string API_KEY = "de79b1bf710e4d319ce44f6ef3de9df9";
 
         // instantiate the service for making requests and get responses
-        private static WebService service = new WebService();
+        private static readonly WebService service = new WebService();
+
+        // db context for the local db
+        private static readonly ServicesDbContext db = new ServicesDbContext();
 
         // sources => target news sources
         // returns news from the target sources
         public async Task<List<News>> GetNews(string[] sources)
         {
             List<News> news = new List<News>();
+            
+            // delete all existing rows
+            //db.News.RemoveRange(db.News);
 
             // get newest news from each source
             foreach (string source in sources)
             {
-                string jsonResponse = await service.MakeRequest("https://newsapi.org/v1/articles?source=" + source + "&sortBy=latest&apiKey=" + API_KEY);
+                // request for news
+                string newsResponse = await service.MakeRequest("https://newsapi.org/v1/articles?source=" + source + "&sortBy=latest&apiKey=" + API_KEY);
 
                 // parse json to news object and add to list
-                news.Add(JObject.Parse(jsonResponse).ToObject<News>());
+                News targetnews = JObject.Parse(newsResponse).ToObject<News>();
+                news.Add(targetnews);
+                db.News.Add(targetnews);
             }
+
+            db.SaveChanges();
 
             return news.OrderBy(x => x.Source).ToList();
         }

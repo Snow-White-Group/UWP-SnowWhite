@@ -13,6 +13,7 @@ namespace Domain.Entities
         public string Source { get; set; }
         public string SortBy { get; set; }
         public List<Article> Articles { get; set; }
+        public long LastUpdate { get; set; }
     }
 
     public class Article

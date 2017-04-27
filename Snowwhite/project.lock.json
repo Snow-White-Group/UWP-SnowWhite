@@ -2210,6 +2210,13 @@
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
         }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
+        }
       }
     },
     "UAP,Version=v10.0/win10-arm": {
@@ -4503,6 +4510,13 @@
         "dependencies": {
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       }
     },
@@ -6837,6 +6851,13 @@
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
         }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
+        }
       }
     },
     "UAP,Version=v10.0/win10-x64": {
@@ -9139,6 +9160,13 @@
         "dependencies": {
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       }
     },
@@ -11482,6 +11510,13 @@
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
         }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
+        }
       }
     },
     "UAP,Version=v10.0/win10-x86": {
@@ -13784,6 +13819,13 @@
         "dependencies": {
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       }
     },
@@ -16126,6 +16168,13 @@
         "dependencies": {
           "Microsoft.NETCore": "5.0.0",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        }
+      },
+      "DwarfLibrary/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       }
     }
@@ -24396,6 +24445,11 @@
       "type": "project",
       "path": "../Domain/project.json",
       "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "DwarfLibrary/1.0.0": {
+      "type": "project",
+      "path": "../DwarfLibrary/DwarfLibrary.csproj",
+      "msbuildProject": "../DwarfLibrary/DwarfLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -24405,20 +24459,23 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\freim\\.nuget\\packages\\": {}
+    "C:\\Users\\maku\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Snowwhite\\Snowwhite.csproj",
+      "projectUniqueName": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\Snowwhite.csproj",
       "projectName": "Snowwhite",
-      "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Snowwhite\\Snowwhite.csproj",
-      "projectJsonPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Snowwhite\\project.json",
+      "projectPath": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\Snowwhite.csproj",
+      "projectJsonPath": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite2\\Domain\\Domain.csproj"
+            "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj"
+            },
+            "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\DwarfLibrary\\DwarfLibrary.csproj": {
+              "projectPath": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\DwarfLibrary\\DwarfLibrary.csproj"
             }
           }
         }
