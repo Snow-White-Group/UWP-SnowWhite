@@ -5,12 +5,12 @@
 
 @SNOW-UC-TE
 Scenario: Succsessfully trigger enrollment
-       Given The mirror is currently displaying the deault user
+       Given The mirror is currently displaying the default user
 	   And the miror state is detection
        When The gateway passes a EnrollmentRequest to the TriggerEnrollmentInteractor
        Then The mirror should show the enrollment page
 	   And The mirror state should switch to enrollment
-	   And The mirror state should persit the user to enroll
+	   And The mirror state should permit the user to enroll
 
 @SNOW-UC-TE
 Scenario: Can not trigger enrollment, because someone is using the mirror

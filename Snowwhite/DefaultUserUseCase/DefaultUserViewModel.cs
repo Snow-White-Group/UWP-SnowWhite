@@ -14,7 +14,7 @@ namespace Snowwhite.DefaultUserUseCase
     {
         #region public
         public WeatherDwarfModel WeatherDwarfModel { get; set; }
-        public NewsDwarfModel NewsDwarf { get; set; }
+        public List<NewsDwarfModel> NewsDwarf { get; set; }
         public int ShownNews { get; set; }
         public string MirrorName { get; set; }
         #endregion

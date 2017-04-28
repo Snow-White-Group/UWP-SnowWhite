@@ -11,38 +11,38 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.impl
 {
     class MockStateService : IVoiceUseCasesStateService, IMirrorStateServices
     {
-        private VoiceUseCasesState mockState;
-        private SnowUser mockSnowUser;
-        private MirrorUser mockMirrorUser;
+        private VoiceUseCasesState _mockState;
+        private SnowUser _mockSnowUser;
+        private MirrorUser _mockMirrorUser;
 
         public VoiceUseCasesState GetCurrentDetectionState()
         {
-            return mockState;
+            return _mockState;
         }
 
         public void SetCurrentDetectionState(VoiceUseCasesState state)
         {
-            this.mockState = state;
+            this._mockState = state;
         }
 
         public SnowUser GetUserForEnrollment()
         {
-            return mockSnowUser;
+            return _mockSnowUser;
         }
 
         public void SetUserForEnrollment(SnowUser user)
         {
-            this.mockSnowUser = user;
+            this._mockSnowUser = user;
         }
 
         public void SetCurrentUserTO(MirrorUser user)
         {
-            this.mockMirrorUser = user;
+            this._mockMirrorUser = user;
         }
 
         public MirrorUser GetCurrentUser()
         {
-            return mockMirrorUser;
+            return _mockMirrorUser;
         }
     }
 }

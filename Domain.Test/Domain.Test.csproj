@@ -57,8 +57,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DefaultUserUseCase\DefaultUser.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefaultUser.feature</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultUserUseCase\impl\DefaultUserFeatureSteps.cs" />
+    <Compile Include="DefaultUserUseCase\impl\MockConfigurationPageService.cs" />
+    <Compile Include="DefaultUserUseCase\impl\MockDefaultUserPresenter.cs" />
+    <Compile Include="DefaultUserUseCase\impl\MockNewsService.cs" />
+    <Compile Include="DefaultUserUseCase\impl\MockWeatherService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\impl\MockBoundary.cs" />
+    <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\impl\MockDeliveryBoundary.cs" />
     <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\impl\MockStateService.cs" />
     <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\impl\TriggerEnrollmentFeatureSteps.cs" />
     <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\TriggerEnrollment.feature.cs">
@@ -77,6 +87,10 @@
     <None Include="App.config" />
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DefaultUserUseCase\DefaultUser.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DefaultUser.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />

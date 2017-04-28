@@ -11,7 +11,7 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.impl
     public class TriggerEnrollmentFeatureSteps
     {
         private readonly MockStateService _mockStateService;
-        private readonly MockBoundary _mockBoundary;
+        private readonly MockDeliveryBoundary _mockDeliveryBoundary;
 
         private readonly SnowUser _defaultSnowUser;
         private readonly SnowUser _someSnowUser;
@@ -26,16 +26,16 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.impl
         public TriggerEnrollmentFeatureSteps()
         {
             _mockStateService = new MockStateService();
-            _mockBoundary = new MockBoundary();
+            _mockDeliveryBoundary = new MockDeliveryBoundary();
             _defaultSnowUser = new SnowUser("Default", "Default", "test@test.de", "SOME_ID");
             _someSnowUser = new SnowUser("Cem", "Freimoser", "test@test.de", "SOME_ID");
             _defaultMirrorUser = new MirrorUser(_defaultSnowUser, true, true, null);
             _someMirrorUser = new MirrorUser(_someSnowUser, false, true, null);
-            _interactor = new TriggerEnrollmentInteractor(_mockStateService, _mockStateService, _mockBoundary);
+            _interactor = new TriggerEnrollmentInteractor(_mockStateService, _mockStateService, _mockDeliveryBoundary);
         }
 
-        [Given(@"The mirror is currently displaying the deault user")]
-        public void GivenTheMirrorIsCurrentlyDisplayingTheDeaultUser()
+        [Given(@"The mirror is currently displaying the default user")]
+        public void GivenTheMirrorIsCurrentlyDisplayingTheDefaultUser()
         {
             _mockStateService.SetCurrentUserTO(_defaultMirrorUser);
         }
@@ -77,7 +77,7 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.impl
         public void ThenTheMirrorShouldShowTheEnrollmentPage()
         {
             Assert.IsTrue(_useCaseResult);
-            Assert.IsTrue(_mockBoundary.HasBeenCalled);
+            Assert.IsTrue(_mockDeliveryBoundary.HasBeenCalled);
         }
 
         [Then(@"The mirror state should switch to enrollment")]
@@ -87,8 +87,8 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.impl
             Assert.AreEqual(VoiceUseCasesState.EnrollmentDetection, currentState);
         }
 
-        [Then(@"The mirror state should persit the user to enroll")]
-        public void ThenTheMirrorStateShouldPersitTheUserToEnroll()
+        [Then(@"The mirror state should permit the user to enroll")]
+        public void ThenTheMirrorStateShouldPermitTheUserToEnroll()
         {
             var currentUser = _mockStateService.GetCurrentUser();
             Assert.AreEqual(_someSnowUser, currentUser.SnowUser);
