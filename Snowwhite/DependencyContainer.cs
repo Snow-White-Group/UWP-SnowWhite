@@ -12,6 +12,15 @@ namespace Snowwhite
     {
         private static IContainer container;
 
+        public static void LaunchApplication()
+        {
+            RegistrationRoot();
+            using (var scope = container.BeginLifetimeScope())
+            {
+                container.Resolve<IDefaultUserUseCase>().TriggerDefaultUser();
+            }
+        }
+
         private static void RegistrationRoot()
         {
             var builder = new ContainerBuilder();
@@ -19,6 +28,7 @@ namespace Snowwhite
             //Services
             builder.RegisterType<WeatherService>().As<IWeatherService>().SingleInstance();
             builder.RegisterType<NewsService>().As<INewsService>().SingleInstance();
+            builder.RegisterType<MirrorStateService>().As<IMirrorStateServices>().SingleInstance();
             builder.Register<NavigateService>(
                 context =>
                 {

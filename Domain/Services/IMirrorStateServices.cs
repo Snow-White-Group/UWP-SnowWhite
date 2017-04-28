@@ -6,5 +6,6 @@ namespace Domain.Services
     {
         void SetCurrentUserTO(MirrorUser user);
         MirrorUser GetCurrentUser();
+        MirrorUser LoadDefaultUser();
     }
 }

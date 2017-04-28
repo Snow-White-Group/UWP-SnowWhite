@@ -70,6 +70,7 @@ namespace Snowwhite
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
+                DependencyContainer.LaunchApplication();
             }
         }
 
