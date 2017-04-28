@@ -37,5 +37,10 @@ namespace ServicesGateways
 
             return weather;
         }
+
+        public WeatherData LoadWeatherData()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

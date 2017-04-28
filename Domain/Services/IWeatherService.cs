@@ -1,4 +1,7 @@
-﻿namespace Domain.Services
+﻿using System.Threading.Tasks;
+using Domain.Entities;
+
+namespace Domain.Services
 {
     public interface IWeatherService
     {
