@@ -6,15 +6,15 @@ namespace Domain.Entities
     {
         public SnowUser SnowUser { get; set; }
         public bool IsDefaultUser { get; set; }
-        public bool IsValiedUser { get; set; }
-        public string annonymousId { get; set; }
+        public bool IsValidUser { get; set; }
+        public string AnnonymousId { get; set; }
 
-        public MirrorUser(SnowUser user, bool isDefaultUser, bool isValiedUser, string anannonymousId)
+        public MirrorUser(SnowUser user, bool isDefaultUser, bool isValidUser, string anannonymousId)
         {
             this.SnowUser = user;
             this.IsDefaultUser = isDefaultUser;
-            this.IsValiedUser = isValiedUser;
-            this.annonymousId = anannonymousId;
+            this.IsValidUser = isValidUser;
+            this.AnnonymousId = anannonymousId;
         }
     }
 }

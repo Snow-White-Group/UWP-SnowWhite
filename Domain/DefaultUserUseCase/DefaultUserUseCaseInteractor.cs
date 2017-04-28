@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Domain.Boundaries;
 using Domain.Entities;
 using Domain.Services;
@@ -8,8 +7,6 @@ namespace Domain.DefaultUserUseCase
 {
     public class DefaultUserUseCaseInteractor : IDefaultUserUseCase
     {
-        private static readonly string LANGUAGE_DE = "de";
-
         private readonly IConfigurationPageService _configurationPageService;
         private readonly IWeatherService _weatherService;
         private readonly INewsService _newsService;
@@ -28,18 +25,14 @@ namespace Domain.DefaultUserUseCase
             _defaultUserPresenter = defaultUserPresenter;
         }
 
-        public void TriggerDefaultUser()
+        public async void TriggerDefaultUser()
         {
-            WeatherData weather = _weatherService.LoadWeatherData();
-            List<NewsSource> newsSources = _newsService.GetSources(LANGUAGE_DE).Result; // verwende ich den Task so richtig?
+            var weather = _weatherService.LoadWeatherData();
+            var newsSources = await _newsService.GetSources().ConfigureAwait(false);
+            var news = await _newsService.GetNews(newsSources.Select(s => s.Name).ToArray()).ConfigureAwait(false);
 
-            // @mario sind die sources einfach die urls?
-            // @mario eigentlich nicht schön string[] zu übergeben das sollte man vll kapseln
-            // TODO @mario BROKEN DA NUR URL ÜBERGEBEN WIRD PLS FIX
-            List<News> news = _newsService.GetNews(newsSources.Select(s => s.URL).ToArray()).Result; // verwende ich den Task so richtig?
-
-            _defaultUserPresenter.OnPresent(weather, news);
-            _deliveryBoundary.DeliverDefaultUserPage();
+            _defaultUserPresenter.OnPresent(new DwarfData(weather, news));
+            await _deliveryBoundary.DeliverDefaultUserPage().ConfigureAwait(false);
             _mirrorStateServices.SetCurrentUserTO(_configurationPageService.LoadDefaultUser());
         }
     }
