@@ -14,8 +14,13 @@ namespace Domain.DefaultUserUseCase
         private readonly IMirrorStateServices _mirrorStateServices;
         private readonly IDefaultUserPresenter _defaultUserPresenter;
 
-        public DefaultUserUseCaseInteractor(IConfigurationPageService configurationPageService, IWeatherService weatherService, INewsService newsService, 
-            IDeliveryBoundary deliveryBoundary, IMirrorStateServices mirrorStateServices, IDefaultUserPresenter defaultUserPresenter)
+        public DefaultUserUseCaseInteractor(
+            IConfigurationPageService configurationPageService,
+            IWeatherService weatherService, 
+            INewsService newsService, 
+            IDeliveryBoundary deliveryBoundary,
+            IMirrorStateServices mirrorStateServices, 
+            IDefaultUserPresenter defaultUserPresenter)
         {
             _configurationPageService = configurationPageService;
             _weatherService = weatherService;

@@ -38,9 +38,11 @@ namespace ServicesGateways
             return weather;
         }
 
-        public WeatherData LoadWeatherData()
+        //TODO define mapping!
+        public async Task<WeatherData> LoadWeatherData(string city)
         {
             throw new NotImplementedException();
         }
+
     }
 }

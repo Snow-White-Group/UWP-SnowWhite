@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Domain.Entities;
 using PropertyChanged;
 
 namespace DwarfLibrary.WeatherDwarf

@@ -1,4 +1,4 @@
-﻿namespace DwarfLibrary.WeatherDwarf
+﻿namespace Domain.Entities
 {
     public enum WeatherState
     {

@@ -1,4 +1,5 @@
 ﻿using System;
+using Domain.Entities;
 using PropertyChanged;
 
 namespace DwarfLibrary.WeatherDwarf

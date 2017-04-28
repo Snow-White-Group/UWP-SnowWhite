@@ -17,7 +17,7 @@ namespace Domain.Entities
         public Sys Sys { get; set; }
         public long ID { get; set; }
         public string Name { get; set; }
-        public  int COD { get; set; }
+        public int COD { get; set; }
         public long LastUpdate { get; set; }
     }
 

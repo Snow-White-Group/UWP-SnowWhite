@@ -54,6 +54,7 @@
     <Compile Include="Entities\SnowUser.cs" />
     <Compile Include="Entities\Weather.cs" />
     <Compile Include="Entities\WeatherData.cs" />
+    <Compile Include="Entities\WeatherState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IConfigurationPageService.cs" />
     <Compile Include="Services\IMirrorStateServices.cs" />

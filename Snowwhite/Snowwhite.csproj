@@ -113,7 +113,6 @@
       <DependentUpon>WeatherDwarfControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="DwarfLibrary\WeatherDwarf\WeatherDwarfModel.cs" />
-    <Compile Include="DwarfLibrary\WeatherDwarf\WeatherState.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

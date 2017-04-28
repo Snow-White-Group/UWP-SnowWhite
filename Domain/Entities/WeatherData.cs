@@ -6,18 +6,18 @@ namespace Domain.Entities
     public class WeatherData
     {
         public readonly int CurrentTempeture;
-        public readonly String CurrentState;
+        public readonly WeatherState CurrentState;
         public readonly DateTime CurrentDate;
-        public readonly List<String> Forecasts;
+        public readonly List<Tuple<int, WeatherState>> Forecasts;
         public readonly string LocationName;
 
-        public WeatherData(int currentTempeture, string currentState, DateTime currentDate, List<string> forecasts, string locationName)
+        public WeatherData(int currentTempeture, WeatherState currentState, DateTime currentDate, List<Tuple<int, WeatherState>> forecasts, string locationName)
         {
-            CurrentTempeture = currentTempeture;
-            CurrentState = currentState;
-            CurrentDate = currentDate;
-            Forecasts = forecasts;
-            LocationName = locationName;
+            this.CurrentTempeture = currentTempeture;
+            this.CurrentState = currentState;
+            this.CurrentDate = currentDate;
+            this.Forecasts = forecasts;
+            this.LocationName = locationName;
         }
     }
 }
