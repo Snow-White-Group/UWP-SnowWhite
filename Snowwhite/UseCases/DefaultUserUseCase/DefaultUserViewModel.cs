@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Domain.DefaultUserUseCase;
@@ -10,9 +8,8 @@ using Domain.Entities;
 using DwarfLibrary.NewsDwarf;
 using DwarfLibrary.WeatherDwarf;
 using PropertyChanged;
-using static Windows.ApplicationModel.Core.CoreApplication;
 
-namespace Snowwhite.DefaultUserUseCase
+namespace Snowwhite.UseCases.DefaultUserUseCase
 {
     [ImplementPropertyChanged]
     public class DefaultUserViewModel : IDefaultUserPresenter

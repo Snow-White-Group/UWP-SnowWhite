@@ -32,11 +32,11 @@ namespace Domain.DefaultUserUseCase
 
         public async void TriggerDefaultUser()
         {
-            var weather = _weatherService.LoadWeatherData();
+            var weather = _weatherService.LoadWeatherData("");
             var newsSources = await _newsService.GetSources().ConfigureAwait(false);
             var news = await _newsService.GetNews(newsSources.Select(s => s.Name).ToArray()).ConfigureAwait(false);
 
-            _defaultUserPresenter.OnPresent(new DwarfData(weather, news));
+            _defaultUserPresenter.OnPresent(new DwarfData(null, news));
             await _deliveryBoundary.DeliverDefaultUserPage().ConfigureAwait(false);
             _mirrorStateServices.SetCurrentUserTO(_configurationPageService.LoadDefaultUser());
         }

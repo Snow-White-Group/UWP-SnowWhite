@@ -96,10 +96,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DefaultUserUseCase\DefaultUserUseCase.xaml.cs">
-      <DependentUpon>DefaultUserUseCase.xaml</DependentUpon>
+    <Compile Include="DependencyContainer.cs" />
+    <Compile Include="Services\NavigateService.cs" />
+    <Compile Include="UseCases\DefaultUserUseCase\DefaultUserPage.xaml.cs">
+      <DependentUpon>DefaultUserPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DefaultUserUseCase\DefaultUserViewModel.cs" />
+    <Compile Include="UseCases\DefaultUserUseCase\DefaultUserViewModel.cs" />
     <Compile Include="DwarfLibrary\ClockDwarf\ClockDwarfControl.xaml.cs">
       <DependentUpon>ClockDwarfControl.xaml</DependentUpon>
     </Compile>
@@ -168,7 +170,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="DefaultUserUseCase\DefaultUserUseCase.xaml">
+    <Page Include="UseCases\DefaultUserUseCase\DefaultUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +195,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{4282ca9c-94b9-4c39-81cd-fe2499ac80fc}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServicesGateways\ServicesGateways.csproj">
+      <Project>{cb637b1e-8011-42a9-a6bc-d7d29c5fe69c}</Project>
+      <Name>ServicesGateways</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

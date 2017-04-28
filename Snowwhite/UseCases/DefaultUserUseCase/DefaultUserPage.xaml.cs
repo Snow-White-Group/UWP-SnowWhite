@@ -15,19 +15,18 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Snowwhite.DefaultUserUseCase
+namespace Snowwhite.UseCases.DefaultUserUseCase
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class DefaultUserUseCase : Page
+    public sealed partial class DefaultUserPage : Page
     {
-        public DefaultUserViewModel ViewModel { get; set; }
+        public DefaultUserViewModel ViewModel => (DefaultUserViewModel) this.DataContext;
 
-        public DefaultUserUseCase()
+        public DefaultUserPage()
         {
             this.InitializeComponent();
-            this.DataContext = ViewModel;
         }
     }
 }
