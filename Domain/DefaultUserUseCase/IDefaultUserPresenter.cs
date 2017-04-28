@@ -5,6 +5,6 @@ namespace Domain.DefaultUserUseCase
 {
     public interface IDefaultUserPresenter
     {
-        void OnPresent(WeatherData weather, List<News> news);
+        void OnPresent(DwarfData dwarfData);
     }
 }

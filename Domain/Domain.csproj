@@ -43,6 +43,7 @@
     <Compile Include="Boundaries\IRequestBoundary.cs" />
     <Compile Include="DefaultUserUseCase\DefaultUserResponse.cs" />
     <Compile Include="DefaultUserUseCase\DefaultUserUseCaseInteractor.cs" />
+    <Compile Include="Entities\DwarfData.cs" />
     <Compile Include="DefaultUserUseCase\IDefaultUserPresenter.cs" />
     <Compile Include="DefaultUserUseCase\IDefaultUserUseCase.cs" />
     <Compile Include="Entities\IProfile.cs" />

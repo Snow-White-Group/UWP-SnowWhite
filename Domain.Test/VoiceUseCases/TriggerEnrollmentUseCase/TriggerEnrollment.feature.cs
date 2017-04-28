@@ -74,7 +74,7 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
-       testRunner.Given("The mirror is currently displaying the deault user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+       testRunner.Given("The mirror is currently displaying the default user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
     testRunner.And("the miror state is detection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
@@ -84,7 +84,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 12
     testRunner.And("The mirror state should switch to enrollment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
-    testRunner.And("The mirror state should persit the user to enroll", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("The mirror state should permit the user to enroll", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

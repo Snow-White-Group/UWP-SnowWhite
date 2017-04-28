@@ -7,27 +7,25 @@ using Domain.Boundaries;
 
 namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.impl
 {
-    class MockBoundary : IDeliveryBoundary
+    class MockDeliveryBoundary : IDeliveryBoundary
     {
         public bool HasBeenCalled { get; set; }
 
-        public MockBoundary()
+        public MockDeliveryBoundary()
         {
             HasBeenCalled = false;
         }
         public Task<bool> DeliverEnrollmentPage()
         {
             HasBeenCalled = true;
-            return Task<bool>.Factory.StartNew(() =>
-            {
-                return true;
-            });
+            return Task<bool>.Factory.StartNew(() => true);
 
         }
 
         public Task<bool> DeliverDefaultUserPage()
         {
-            throw new NotImplementedException();
+            HasBeenCalled = true;
+            return Task<bool>.Factory.StartNew(() => true);
         }
     }
 }

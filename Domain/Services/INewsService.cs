@@ -10,6 +10,6 @@ namespace Domain.Services
     public interface INewsService
     {
         Task<List<News>> GetNews(string[] sources);
-        Task<List<NewsSource>> GetSources(string language);
+        Task<List<NewsSource>> GetSources(string language = "de");
     }
 }
