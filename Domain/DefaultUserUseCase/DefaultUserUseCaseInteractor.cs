@@ -2,6 +2,8 @@
 using Domain.Boundaries;
 using Domain.Entities;
 using Domain.Services;
+using System;
+using System.Diagnostics;
 
 namespace Domain.DefaultUserUseCase
 {
@@ -29,9 +31,11 @@ namespace Domain.DefaultUserUseCase
 
         public async void TriggerDefaultUser()
         {
-            var weather = _weatherService.LoadWeatherData("Karlsruhe");
-            var newsSources = await _newsService.GetSources().ConfigureAwait(false);
-            var news = await _newsService.GetNews(newsSources.Select(s => s.Name).ToArray()).ConfigureAwait(false);
+            // warum?!
+            //var weatherdata = await _weatherService.LoadWeatherData("Karlsruhe");
+            var weather = await _weatherService.GetWeather("Karlsruhe");
+            var newsSources = await _newsService.GetSources();
+            var news = await _newsService.GetNews(newsSources);
 
             _defaultUserPresenter.OnPresent(new DwarfData(null, news));
             await _deliveryBoundary.DeliverDefaultUserPage().ConfigureAwait(false);

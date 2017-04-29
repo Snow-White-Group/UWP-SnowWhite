@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using System;
+using Newtonsoft.Json;
 
 namespace ServicesGateways
 {
@@ -22,7 +23,7 @@ namespace ServicesGateways
 
         // sources => target news sources
         // returns news from the target sources
-        public async Task<List<News>> GetNews(string[] sources)
+        public async Task<List<News>> GetNews(NewsSource sources)
         {
             List<News> news = new List<News>();
             
@@ -30,34 +31,34 @@ namespace ServicesGateways
             //db.News.RemoveRange(db.News);
 
             // get newest news from each source
-            foreach (string source in sources)
+            foreach (Source newsSource in sources.Sources)
             {
                 // request for news
-                string newsResponse = await service.MakeRequest("https://newsapi.org/v1/articles?source=" + source + "&sortBy=latest&apiKey=" + API_KEY);
+                string newsResponse = await service.MakeRequest("https://newsapi.org/v1/articles?source=" + newsSource.ID + "&sortBy=latest&apiKey=" + API_KEY);
 
                 // parse json to news object and add to list
-                News targetnews = JObject.Parse(newsResponse).ToObject<News>();
+                News targetnews = JsonConvert.DeserializeObject<News>(newsResponse);
+                targetnews.LastUpdate = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
                 news.Add(targetnews);
-                db.News.Add(targetnews);
+                //db.News.Add(targetnews);
             }
 
-            db.SaveChanges();
+            //db.SaveChanges();
 
             return news.OrderBy(x => x.Source).ToList();
         }
 
         // get all possible sources
-        public async Task<List<NewsSource>> GetSources(string language="de")
+        public async Task<NewsSource> GetSources(string language="de")
         {
-            List<NewsSource> sources = new List<NewsSource>();
-
             // request
-            string jsonResponse = await service.MakeRequest("https://newsapi.org/v1/sources?language=" + language);
+            string sourcesResponse = await service.MakeRequest("https://newsapi.org/v1/sources?language=" + language + "&apiKey=" + API_KEY);
 
             // parse json to source object and add to list
-            sources.AddRange(JObject.Parse(jsonResponse).ToObject<List<NewsSource>>());
+            NewsSource sources = JsonConvert.DeserializeObject<NewsSource>(sourcesResponse);
+            sources.LastUpdate = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
 
-            return sources.OrderBy(x => x.Name).ToList();
+            return sources;
         }
     }
 }

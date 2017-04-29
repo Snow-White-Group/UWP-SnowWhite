@@ -13,7 +13,7 @@ namespace ServicesGateways
     public class ServicesDbContext : DbContext
     {
         public DbSet<News> News { get; set; }
-        public DbSet<Weather> Weather { get; set; }
+        public DbSet<WeatherForecast> Weather { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
