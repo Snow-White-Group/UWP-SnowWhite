@@ -29562,23 +29562,23 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Mario\\.nuget\\packages\\": {}
+    "C:\\Users\\maku\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\Snowwhite.csproj",
+      "projectUniqueName": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\Snowwhite.csproj",
       "projectName": "Snowwhite",
-      "projectPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\Snowwhite.csproj",
-      "projectJsonPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\project.json",
+      "projectPath": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\Snowwhite.csproj",
+      "projectJsonPath": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj"
+            "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj": {
-              "projectPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj"
+            "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj": {
+              "projectPath": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj"
             }
           }
         }

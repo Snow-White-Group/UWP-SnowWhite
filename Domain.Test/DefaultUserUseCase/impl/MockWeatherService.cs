@@ -17,7 +17,12 @@ namespace Domain.Test.DefaultUserUseCase.impl
         public WeatherData LoadWeatherData()
         {
             Called = true;
-            return new WeatherData(23,"Sunny", new DateTime(), new List<string>(), "Achern");
+            return new WeatherData(23, WeatherState.Sunny, new DateTime(), null, "Achern");
+        }
+
+        public Task<WeatherData> LoadWeatherData(string city)
+        {
+            throw new NotImplementedException();
         }
     }
 }

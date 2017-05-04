@@ -22685,7 +22685,7 @@
       ]
     },
     "Microsoft.NETCore.UniversalWindowsPlatform/5.3.3": {
-      "sha512": "aCy8WhdcWqIl+gUoY905OWPCP1NqVOtT4Oejn7SIZb9KPKkB5cUfvLEmsY3xwud0TIaJaExKTUhrFluzKtSblQ==",
+      "sha512": "bOdvBN2PmFvUKdbRq2ZRkOdRoF1POP2+eQd/iOG5tyhQpW20q5+wFFofT3GOHvFqrq1ayiZKxZLMr9ssctTS6g==",
       "type": "package",
       "path": "microsoft.netcore.universalwindowsplatform/5.3.3",
       "files": [
@@ -29201,20 +29201,20 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Mario\\.nuget\\packages\\": {}
+    "C:\\Users\\maku\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj",
+      "projectUniqueName": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj",
       "projectName": "ServicesGateways",
-      "projectPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj",
-      "projectJsonPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\project.json",
+      "projectPath": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj",
+      "projectJsonPath": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Mario\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj"
+            "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\maku\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj"
             }
           }
         }

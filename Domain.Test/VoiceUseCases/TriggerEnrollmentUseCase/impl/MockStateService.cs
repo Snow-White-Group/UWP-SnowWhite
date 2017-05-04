@@ -44,5 +44,10 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.impl
         {
             return _mockMirrorUser;
         }
+
+        public MirrorUser LoadDefaultUser()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
