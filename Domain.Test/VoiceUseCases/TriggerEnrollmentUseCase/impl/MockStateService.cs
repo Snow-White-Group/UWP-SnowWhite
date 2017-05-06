@@ -45,7 +45,7 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.Impl
             return this.mockMirrorUser;
         }
 
-        public MirrorUser LoadDefaultUser()
+        MirrorUser IMirrorStateServices.LoadDefaultUser()
         {
             throw new NotImplementedException();
         }

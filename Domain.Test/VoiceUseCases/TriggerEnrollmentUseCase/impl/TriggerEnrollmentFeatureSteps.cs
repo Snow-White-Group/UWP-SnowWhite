@@ -10,101 +10,103 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.Impl
     [Binding]
     public class TriggerEnrollmentFeatureSteps
     {
-        private readonly MockStateService _mockStateService;
-        private readonly MockDeliveryBoundary _mockDeliveryBoundary;
+        private readonly MockStateService mockStateService;
+        private readonly MockDeliveryBoundary mockDeliveryBoundary;
 
-        private readonly SnowUser _defaultSnowUser;
-        private readonly SnowUser _someSnowUser;
-        private readonly MirrorUser _defaultMirrorUser;
-        private readonly MirrorUser _someMirrorUser;
+        private readonly SnowUser defaultSnowUser;
+        private readonly SnowUser someSnowUser;
+        private readonly MirrorUser defaultMirrorUser;
+        private readonly MirrorUser someMirrorUser;
 
 
-        private readonly TriggerEnrollmentInteractor _interactor;
+        private readonly TriggerEnrollmentInteractor interactor;
 
-        private bool _useCaseResult;
-        private VoiceUseCasesState _stateBefore;
+        private bool useCaseResult;
+
+        private VoiceUseCasesState stateBefore;
+
         public TriggerEnrollmentFeatureSteps()
         {
-            _mockStateService = new MockStateService();
-            _mockDeliveryBoundary = new MockDeliveryBoundary();
-            _defaultSnowUser = new SnowUser("Default", "Default", "test@test.de", "SOME_ID");
-            _someSnowUser = new SnowUser("Cem", "Freimoser", "test@test.de", "SOME_ID");
-            _defaultMirrorUser = new MirrorUser(_defaultSnowUser, true, true, null);
-            _someMirrorUser = new MirrorUser(_someSnowUser, false, true, null);
-            _interactor = new TriggerEnrollmentInteractor(_mockStateService, _mockStateService, _mockDeliveryBoundary);
+            this.mockStateService = new MockStateService();
+            this.mockDeliveryBoundary = new MockDeliveryBoundary();
+            this.defaultSnowUser = new SnowUser("Default", "Default", "test@test.de", "SOME_ID");
+            this.someSnowUser = new SnowUser("Cem", "Freimoser", "test@test.de", "SOME_ID");
+            this.defaultMirrorUser = new MirrorUser(this.defaultSnowUser, true, true, null);
+            this.someMirrorUser = new MirrorUser(this.someSnowUser, false, true, null);
+            this.interactor = new TriggerEnrollmentInteractor(this.mockStateService, this.mockStateService, this.mockDeliveryBoundary);
         }
 
         [Given(@"The mirror is currently displaying the default user")]
         public void GivenTheMirrorIsCurrentlyDisplayingTheDefaultUser()
         {
-            _mockStateService.SetCurrentUserTO(_defaultMirrorUser);
+            this.mockStateService.SetCurrentUserTO(this.defaultMirrorUser);
         }
 
         [Given(@"The mirror is currently displaying some user")]
         public void GivenTheMirrorIsCurrentlyDisplayingSomeUser()
         {
-            _mockStateService.SetCurrentUserTO(_someMirrorUser);
+            this.mockStateService.SetCurrentUserTO(this.someMirrorUser);
         }
 
         [Given(@"the miror state is detection")]
         public void GivenTheMirorStateIsDetection()
         {
-            _mockStateService.SetCurrentDetectionState(VoiceUseCasesState.UserDetection);
+            this.mockStateService.SetCurrentDetectionState(VoiceUseCasesState.UserDetection);
         }
 
         [Given(@"The mirror is currently enrolling some user")]
         public void GivenTheMirrorIsCurrentlyEnrollingSomeUser()
         {
-            _mockStateService.SetCurrentUserTO(_someMirrorUser);
-            _mockStateService.SetCurrentDetectionState(VoiceUseCasesState.EnrollmentDetection);
+            this.mockStateService.SetCurrentUserTO(this.someMirrorUser);
+            this.mockStateService.SetCurrentDetectionState(VoiceUseCasesState.EnrollmentDetection);
         }
 
         [Given(@"the mirror state is detection")]
         public void GivenTheMirrorStateIsDetection()
         {
-            _mockStateService.SetCurrentDetectionState(VoiceUseCasesState.UserDetection);
+            this.mockStateService.SetCurrentDetectionState(VoiceUseCasesState.UserDetection);
         }
 
         [When(@"The gateway passes a EnrollmentRequest to the TriggerEnrollmentInteractor")]
         public void WhenTheGatewayPassesAEnrollmentRequestToTheTriggerEnrollmentInteractor()
         {
-            _stateBefore = _mockStateService.GetCurrentDetectionState();
-            var request = new TriggerEnrollmentRequest(_someSnowUser);
-            _useCaseResult = _interactor.TriggerEnrollment(request);
+            this.stateBefore = this.mockStateService.GetCurrentDetectionState();
+            var request = new TriggerEnrollmentRequest(this.someSnowUser);
+            this.useCaseResult = this.interactor.TriggerEnrollment(request);
         }
 
         [Then(@"The mirror should show the enrollment page")]
         public void ThenTheMirrorShouldShowTheEnrollmentPage()
         {
-            Assert.IsTrue(_useCaseResult);
-            Assert.IsTrue(_mockDeliveryBoundary.HasBeenCalled);
+            Assert.IsTrue(this.useCaseResult);
+            Assert.IsTrue(this.mockDeliveryBoundary.HasBeenCalled);
         }
 
         [Then(@"The mirror state should switch to enrollment")]
         public void ThenTheMirrorStateShouldSwitchToEnrollment()
         {
-            var currentState = _mockStateService.GetCurrentDetectionState();
+            var currentState = this.mockStateService.GetCurrentDetectionState();
             Assert.AreEqual(VoiceUseCasesState.EnrollmentDetection, currentState);
         }
 
         [Then(@"The mirror state should permit the user to enroll")]
         public void ThenTheMirrorStateShouldPermitTheUserToEnroll()
         {
-            var currentUser = _mockStateService.GetCurrentUser();
-            Assert.AreEqual(_someSnowUser, currentUser.SnowUser);
+            var currentUser = this.mockStateService.GetCurrentUser();
+            Assert.AreEqual(this.someSnowUser, currentUser.SnowUser);
         }
 
         [Then(@"The mirror should reject this trigger")]
         public void ThenTheMirrorShouldRejectThisTrigger()
         {
-            Assert.IsFalse(_useCaseResult);
+            Assert.IsFalse(this.useCaseResult);
         }
 
         [Then(@"No state should be changed")]
         public void ThenNoStateShouldBeChanged()
         {
-            var currentState = _mockStateService.GetCurrentDetectionState();
-            Assert.AreEqual(_stateBefore, currentState);
+            var currentState = this.mockStateService.GetCurrentDetectionState();
+            Assert.AreEqual(this.stateBefore, currentState);
         }
     }
 }
