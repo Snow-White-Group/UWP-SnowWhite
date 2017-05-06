@@ -26,7 +26,8 @@ namespace ServicesGateways
         public async Task<List<News>> GetNews(NewsSource sources)
         {
             List<News> news = new List<News>();
-            
+            List<News> badGuys = new List<News>(); // TODO @ mario -- remove list after debugging
+
             // delete all existing rows
             //db.News.RemoveRange(db.News);
 
@@ -36,8 +37,13 @@ namespace ServicesGateways
                 // request for news
                 string newsResponse = await service.MakeRequest("https://newsapi.org/v1/articles?source=" + newsSource.ID + "&sortBy=latest&apiKey=" + API_KEY);
 
-                // parse json to news object and add to list
+                // parse json to news object and add to list if no error occured
                 News targetnews = JsonConvert.DeserializeObject<News>(newsResponse);
+                if (targetnews.Status.Equals("error"))
+                {
+                    badGuys.Add(targetnews);
+                    continue;
+                };
                 targetnews.LastUpdate = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
                 news.Add(targetnews);
                 //db.News.Add(targetnews);
