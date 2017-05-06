@@ -49,5 +49,10 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.Impl
         {
             throw new NotImplementedException();
         }
+
+        public MirrorUser LoadDefaultUser()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
