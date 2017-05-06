@@ -5,7 +5,7 @@ using Domain.VoiceUseCases.TriggerEnrollmentUseCase;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 
-namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.impl
+namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.Impl
 {
     [Binding]
     public class TriggerEnrollmentFeatureSteps

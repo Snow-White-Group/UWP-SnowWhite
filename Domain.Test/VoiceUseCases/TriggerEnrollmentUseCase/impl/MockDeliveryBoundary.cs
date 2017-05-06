@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain.Boundaries;
 
-namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.impl
+namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.Impl
 {
     class MockDeliveryBoundary : IDeliveryBoundary
     {

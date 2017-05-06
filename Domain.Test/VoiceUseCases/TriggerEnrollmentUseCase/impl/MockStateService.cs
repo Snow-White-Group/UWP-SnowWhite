@@ -7,42 +7,47 @@ using Domain.Entities;
 using Domain.Services;
 using Domain.VoiceUseCases.Services;
 
-namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.impl
+namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.Impl
 {
-    class MockStateService : IVoiceUseCasesStateService, IMirrorStateServices
+    public class MockStateService : IVoiceUseCasesStateService, IMirrorStateServices
     {
-        private VoiceUseCasesState _mockState;
-        private SnowUser _mockSnowUser;
-        private MirrorUser _mockMirrorUser;
+        private VoiceUseCasesState mockState;
+        private SnowUser mockSnowUser;
+        private MirrorUser mockMirrorUser;
 
         public VoiceUseCasesState GetCurrentDetectionState()
         {
-            return _mockState;
+            return this.mockState;
         }
 
         public void SetCurrentDetectionState(VoiceUseCasesState state)
         {
-            this._mockState = state;
+            this.mockState = state;
         }
 
         public SnowUser GetUserForEnrollment()
         {
-            return _mockSnowUser;
+            return this.mockSnowUser;
         }
 
         public void SetUserForEnrollment(SnowUser user)
         {
-            this._mockSnowUser = user;
+            this.mockSnowUser = user;
         }
 
         public void SetCurrentUserTO(MirrorUser user)
         {
-            this._mockMirrorUser = user;
+            this.mockMirrorUser = user;
         }
 
         public MirrorUser GetCurrentUser()
         {
-            return _mockMirrorUser;
+            return this.mockMirrorUser;
+        }
+
+        public MirrorUser LoadDefaultUser()
+        {
+            throw new NotImplementedException();
         }
     }
 }

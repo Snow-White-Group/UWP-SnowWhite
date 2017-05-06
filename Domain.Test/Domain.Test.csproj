@@ -62,15 +62,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DefaultUser.feature</DependentUpon>
     </Compile>
-    <Compile Include="DefaultUserUseCase\impl\DefaultUserFeatureSteps.cs" />
-    <Compile Include="DefaultUserUseCase\impl\MockConfigurationPageService.cs" />
-    <Compile Include="DefaultUserUseCase\impl\MockDefaultUserPresenter.cs" />
-    <Compile Include="DefaultUserUseCase\impl\MockNewsService.cs" />
-    <Compile Include="DefaultUserUseCase\impl\MockWeatherService.cs" />
+    <Compile Include="DefaultUserUseCase\Impl\DefaultUserFeatureSteps.cs" />
+    <Compile Include="DefaultUserUseCase\Impl\MockConfigurationPageService.cs" />
+    <Compile Include="DefaultUserUseCase\Impl\MockDefaultUserPresenter.cs" />
+    <Compile Include="DefaultUserUseCase\Impl\MockNewsService.cs" />
+    <Compile Include="DefaultUserUseCase\Impl\MockWeatherService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\impl\MockDeliveryBoundary.cs" />
-    <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\impl\MockStateService.cs" />
-    <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\impl\TriggerEnrollmentFeatureSteps.cs" />
+    <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\Impl\MockDeliveryBoundary.cs" />
+    <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\Impl\MockStateService.cs" />
+    <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\Impl\TriggerEnrollmentFeatureSteps.cs" />
     <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\TriggerEnrollment.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -94,6 +94,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
+    <None Include="Settings.StyleCop" />
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>

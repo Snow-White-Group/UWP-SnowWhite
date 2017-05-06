@@ -1,0 +1,5 @@
+﻿<StyleCopSettings Version="105">
+  <GlobalSettings>
+    <BooleanProperty Name="Snowwhite">False</BooleanProperty>
+  </GlobalSettings>
+</StyleCopSettings>

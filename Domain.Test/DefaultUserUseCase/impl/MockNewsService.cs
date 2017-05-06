@@ -7,17 +7,22 @@ namespace Domain.Test.DefaultUserUseCase.impl
 {
     internal class MockNewsService : INewsService
     {
-        public bool Called;
+        public bool Called { get; private set; }
 
         public Task<List<News>> GetNews(string[] sources)
         {
-            Called = true;
+            this.Called = true;
             return Task<List<News>>.Factory.StartNew(() => new List<News>());
         }
 
-        public Task<List<NewsSource>> GetSources(string language = "de")
+        public Task<NewsSource> GetSources(string language = "de")
         {
-            return Task<List<NewsSource>>.Factory.StartNew(() => new List<NewsSource>());
+            return Task<NewsSource>.Factory.StartNew(() => new NewsSource());
+        }
+
+        public Task<List<News>> GetNews(NewsSource sources)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

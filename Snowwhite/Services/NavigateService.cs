@@ -11,7 +11,7 @@ using Snowwhite.UseCases.DefaultUserUseCase;
 
 namespace Snowwhite.Services
 {
-    class NavigateService : IDeliveryBoundary
+    public class NavigateService : IDeliveryBoundary
     {
         private readonly Dictionary<string, Type> pagesByKey = new Dictionary<string, Type>();
 
@@ -21,13 +21,11 @@ namespace Snowwhite.Services
 
         }
 
-        public async Task<bool> DeliverDefaultUserPage()
+        async Task<bool> IDeliveryBoundary.DeliverDefaultUserPage()
         {
-            var r = Window.Current.Dispatcher?.RunAsync(CoreDispatcherPriority.Normal,
-                () =>
-                {
-                    NavigateTo(typeof(DefaultUserPage).FullName);
-                }).AsTask();
+            var r = Window.Current.Dispatcher?.RunAsync(
+                CoreDispatcherPriority.Normal,
+                () => { this.NavigateTo(typeof(DefaultUserPage).FullName); }).AsTask();
 
             return r != null && r.Exception == null;
         }
@@ -39,11 +37,9 @@ namespace Snowwhite.Services
                 var key = typeof(T).FullName;
 
                 //check page
-                if (this.pagesByKey.ContainsKey(key))
-                    throw new ArgumentException("This page has been registrated before: " + key);
-                else if (this.pagesByKey.Any(p => p.Value == pageType))
-                    throw new ArgumentException("This page has been registrated before: " + key);
-                
+                if (this.pagesByKey.ContainsKey(key)) throw new ArgumentException("This page has been registrated before: " + key);
+                else if (this.pagesByKey.Any(p => p.Value == pageType)) throw new ArgumentException("This page has been registrated before: " + key);
+
                 //add page
                 this.pagesByKey.Add(key, pageType);
             }
