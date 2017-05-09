@@ -14,14 +14,14 @@
     </UserControl.Resources>
     
     <ListView x:Name="NewsList"
-              Height="{x:Bind ShownItems, FallbackValue=456, Converter={StaticResource ShownConverter}}"
+              Height="{x:Bind ShownItems, Mode=OneWay, Converter={StaticResource ShownConverter}}"
               MaxWidth="450"
-              ItemsSource="{x:Bind News}">
+              ItemsSource="{x:Bind News, Mode=OneTime}">
         <ListView.ItemTemplate>
             <DataTemplate
                 x:DataType="local:NewsDwarfModel">
                 <StackPanel Orientation="Horizontal" Height="152">
-                    <Ellipse Width="120" Height="120">
+                    <Ellipse Width="120" Height="120" >
                         <Ellipse.Fill>
                             <ImageBrush ImageSource="{x:Bind ImageUrl}"/>
                         </Ellipse.Fill>

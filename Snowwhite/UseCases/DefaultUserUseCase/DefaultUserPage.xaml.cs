@@ -17,16 +17,24 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Snowwhite.UseCases.DefaultUserUseCase
 {
+    using System.Diagnostics;
+
+    using Windows.System.Threading;
+    using Windows.UI.Core;
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class DefaultUserPage : Page
     {
-        public DefaultUserViewModel ViewModel => (DefaultUserViewModel) this.DataContext;
 
         public DefaultUserPage()
         {
             this.InitializeComponent();
+            this.DataContext = DependencyContainer.LoadDefaultUserViewModel();
         }
+
+        public DefaultUserViewModel ViewModel => (DefaultUserViewModel)this.DataContext;
+
     }
 }

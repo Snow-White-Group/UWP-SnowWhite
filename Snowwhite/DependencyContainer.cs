@@ -8,6 +8,8 @@ using Snowwhite.UseCases.DefaultUserUseCase;
 
 namespace Snowwhite
 {
+    using System;
+
     public class DependencyContainer
     {
         private static IContainer container;
@@ -18,6 +20,14 @@ namespace Snowwhite
             using (var scope = container.BeginLifetimeScope())
             {
                 container.Resolve<IDefaultUserUseCase>().TriggerDefaultUser();
+            }
+        }
+
+        public static DefaultUserViewModel LoadDefaultUserViewModel()
+        {
+            using (var scope = container.BeginLifetimeScope())
+            {
+               return container.Resolve<DefaultUserViewModel>();
             }
         }
 
@@ -34,15 +44,16 @@ namespace Snowwhite
                 {
                     var navigationService = new NavigateService();
                     navigationService.RegistratePage<DefaultUserViewModel>(typeof(DefaultUserPage));
-
                     return navigationService;
                 }).As<IDeliveryBoundary>().SingleInstance();
 
 
             //UseCase DefaultUser
             builder.RegisterType<DefaultUserUseCaseInteractor>().As<IDefaultUserUseCase>().SingleInstance();
-            builder.RegisterType<DefaultUserViewModel>().As<IDefaultUserPresenter>().SingleInstance();
-
+            builder.RegisterType<DefaultUserViewModel>()
+                .As<IDefaultUserPresenter>()
+                .As<DefaultUserViewModel>()
+                .SingleInstance();
 
             container = builder.Build();
         }

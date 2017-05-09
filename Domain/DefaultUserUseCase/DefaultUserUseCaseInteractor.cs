@@ -37,8 +37,8 @@ namespace Domain.DefaultUserUseCase
             var newsSources = await _newsService.GetSources();
             var news = await _newsService.GetNews(newsSources);
 
-            _defaultUserPresenter.OnPresent(new DwarfData(null, news));
             await _deliveryBoundary.DeliverDefaultUserPage().ConfigureAwait(false);
+            _defaultUserPresenter.OnPresent(new DwarfData(null, news));
             _mirrorStateServices.SetCurrentUserTO(_mirrorStateServices.LoadDefaultUser());
         }
     }
