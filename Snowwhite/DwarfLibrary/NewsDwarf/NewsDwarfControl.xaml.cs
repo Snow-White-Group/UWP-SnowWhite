@@ -37,17 +37,15 @@ namespace DwarfLibrary.NewsDwarf
         public List<NewsDwarfModel> News
         {
             get => (List<NewsDwarfModel>) GetValue(NewsProperty);
-            set  { SetValue(NewsProperty , value ); this.Bindings.Update(); }
+            set  => SetValue(NewsProperty , value );
         }
 
         public int ShownItems
         {
             get => (int) GetValue(ShownItemsProperty);
 
-        set
-        {
-            SetValue(ShownItemsProperty, value);
-        }
+        set => SetValue(ShownItemsProperty, value);
+        
         }
         #endregion
 

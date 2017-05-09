@@ -16,7 +16,7 @@
     <ListView x:Name="NewsList"
               Height="{x:Bind ShownItems, Mode=OneWay, Converter={StaticResource ShownConverter}}"
               MaxWidth="450"
-              ItemsSource="{x:Bind News, Mode=OneTime}">
+              ItemsSource="{x:Bind News, Mode=OneWay}">
         <ListView.ItemTemplate>
             <DataTemplate
                 x:DataType="local:NewsDwarfModel">
