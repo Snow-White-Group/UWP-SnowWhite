@@ -9,12 +9,6 @@ namespace Domain.Test.DefaultUserUseCase.impl
     {
         public bool Called { get; private set; }
 
-        public Task<List<News>> GetNews(string[] sources)
-        {
-            this.Called = true;
-            return Task<List<News>>.Factory.StartNew(() => new List<News>());
-        }
-
         public Task<NewsSource> GetSources(string language = "de")
         {
             return Task<NewsSource>.Factory.StartNew(() => new NewsSource());
@@ -22,7 +16,8 @@ namespace Domain.Test.DefaultUserUseCase.impl
 
         public Task<List<News>> GetNews(NewsSource sources)
         {
-            throw new System.NotImplementedException();
+            this.Called = true;
+            return Task<List<News>>.Factory.StartNew(() => new List<News>());
         }
     }
 }

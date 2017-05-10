@@ -40,12 +40,5 @@ namespace ServicesGateways
 
             return weather;
         }
-
-        //TODO define mapping!
-        public async Task<WeatherData> LoadWeatherData(string city)
-        {
-            return null;
-        }
-
     }
 }

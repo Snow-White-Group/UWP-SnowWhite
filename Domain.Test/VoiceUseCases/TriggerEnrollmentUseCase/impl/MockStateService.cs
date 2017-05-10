@@ -47,12 +47,9 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.Impl
 
         MirrorUser IMirrorStateServices.LoadDefaultUser()
         {
-            throw new NotImplementedException();
-        }
-
-        public MirrorUser LoadDefaultUser()
-        {
-            throw new NotImplementedException();
+            var snowUser = new SnowUser("Dominik", "Jülg", "hello@fresh.de", "JOJOJO_ID");
+            var mirrorUser = new MirrorUser(snowUser, true, true, "annoonnnyyymmmm");
+            return mirrorUser;
         }
     }
 }

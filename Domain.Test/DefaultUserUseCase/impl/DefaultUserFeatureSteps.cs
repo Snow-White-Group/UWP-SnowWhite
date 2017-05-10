@@ -15,47 +15,45 @@ namespace Domain.Test.DefaultUserUseCase.impl
     public class DefaultUserFeatureSteps
     {
 
-        private DefaultUserUseCaseInteractor interactor;
-        private MockConfigurationPageService configurationPageService;
-        private MockWeatherService weatherService;
-        private MockNewsService newsService;
-        private MockDeliveryBoundary deliveryBoundary;
-        private MockStateService mirrorStateServices;
-        private MockDefaultUserPresenter defaultUserPresenter;
+        private DefaultUserUseCaseInteractor _interactor;
+        private MockWeatherService _weatherService;
+        private MockNewsService _newsService;
+        private MockDeliveryBoundary _deliveryBoundary;
+        private MockStateService _mirrorStateServices;
+        private MockDefaultUserPresenter _defaultUserPresenter;
         
         [Given(@"the device gets booted")]
         public void GivenTheDeviceGetsBooted()
         {
-            this.configurationPageService = new MockConfigurationPageService();
-            this.weatherService = new MockWeatherService();
-            this.newsService = new MockNewsService();
-            this.deliveryBoundary = new MockDeliveryBoundary();
-            this.mirrorStateServices = new MockStateService();
-            this.defaultUserPresenter = new MockDefaultUserPresenter();
-            this.interactor = new DefaultUserUseCaseInteractor(
-                this.weatherService,
-                this.newsService,
-                this.deliveryBoundary,
-                this.mirrorStateServices,
-                this.defaultUserPresenter);
+            this._weatherService = new MockWeatherService();
+            this._newsService = new MockNewsService();
+            this._deliveryBoundary = new MockDeliveryBoundary();
+            this._mirrorStateServices = new MockStateService();
+            this._defaultUserPresenter = new MockDefaultUserPresenter();
+            this._interactor = new DefaultUserUseCaseInteractor(
+                this._weatherService,
+                this._newsService,
+                this._deliveryBoundary,
+                this._mirrorStateServices,
+                this._defaultUserPresenter);
         }
         
         [When(@"the default user gets triggered")]
         public void WhenTheDefaultUserGetsTriggered()
         {
-            this.interactor.TriggerDefaultUser();
+            this._interactor.TriggerDefaultUser();
         }
         
         [Then(@"the weather should be loaded")]
         public void ThenTheWeatherShouldBeLoaded()
         {
-            Assert.IsTrue(this.weatherService.Called);
+            Assert.IsTrue(this._weatherService.Called);
         }
         
         [Then(@"the news should be loaded")]
         public void ThenTheNewsShouldBeLoaded()
         {
-            Assert.IsTrue(this.newsService.Called);
+            Assert.IsTrue(this._newsService.Called);
         }
         
         [Then(@"the user should be switched to the DefaultUser")]
@@ -63,15 +61,17 @@ namespace Domain.Test.DefaultUserUseCase.impl
         {
             var snowUser = new SnowUser("Dominik", "Jülg", "hello@fresh.de", "JOJOJO_ID");
             var mirrorUser = new MirrorUser(snowUser, true, true, "annoonnnyyymmmm");
-            Assert.AreEqual(mirrorUser.AnnonymousId, this.mirrorStateServices.GetCurrentUser().AnnonymousId);
+            Assert.AreEqual(mirrorUser.AnnonymousId, this._mirrorStateServices.GetCurrentUser().AnnonymousId);
         }
         
         [Then(@"the DefaultUserPage should be delivered")]
         public void ThenTheDefaultUserPageShouldBeDelivered()
         {
-            var weather = new WeatherData(23, WeatherState.Sunny, new DateTime(), null, "Achern");
+            var weather = new WeatherForecast();
+            weather.city = new City();
+            weather.city.name = "Karlsruhe";
             var news = new List<News>();
-            Assert.AreEqual(new DwarfData(weather, news), this.defaultUserPresenter.DwarfData);
+            Assert.AreEqual(weather.city.name, this._defaultUserPresenter.DwarfData.Weather.city.name);
         }
     }
 }
