@@ -128,7 +128,7 @@
           "lib/netstandard1.3/Microsoft.Data.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/1.1.1": {
+      "Microsoft.EntityFrameworkCore/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Caching.Memory": "1.1.1",
@@ -148,11 +148,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Design/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Collections.NonGeneric": "4.3.0"
         },
@@ -163,14 +163,14 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "Microsoft.EntityFrameworkCore": "1.1.1",
+          "Microsoft.EntityFrameworkCore": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Data.Common": "4.3.0",
-          "System.Diagnostics.DiagnosticSource": "4.3.0"
+          "System.Diagnostics.DiagnosticSource": "4.3.1"
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
@@ -179,10 +179,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -192,11 +192,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Sqlite/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Sqlite/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.Sqlite": "1.1.0",
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -206,10 +206,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/1.1.0": {
+      "Microsoft.EntityFrameworkCore.Tools/1.1.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1"
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2"
         },
         "compile": {
           "lib/netstandard1.3/_._": {}
@@ -1140,7 +1140,7 @@
           "lib/win8/_._": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.3.0": {
+      "System.Diagnostics.DiagnosticSource/4.3.1": {
         "type": "package",
         "compile": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
@@ -2886,9 +2886,9 @@
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Tools": "1.1.1",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.3",
           "Newtonsoft.Json": "10.0.2"
         }
@@ -3021,7 +3021,7 @@
           "lib/netstandard1.3/Microsoft.Data.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/1.1.1": {
+      "Microsoft.EntityFrameworkCore/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Caching.Memory": "1.1.1",
@@ -3041,11 +3041,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Design/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Collections.NonGeneric": "4.3.0"
         },
@@ -3056,14 +3056,14 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "Microsoft.EntityFrameworkCore": "1.1.1",
+          "Microsoft.EntityFrameworkCore": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Data.Common": "4.3.0",
-          "System.Diagnostics.DiagnosticSource": "4.3.0"
+          "System.Diagnostics.DiagnosticSource": "4.3.1"
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
@@ -3072,10 +3072,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -3085,11 +3085,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Sqlite/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Sqlite/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.Sqlite": "1.1.0",
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -3099,10 +3099,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/1.1.0": {
+      "Microsoft.EntityFrameworkCore.Tools/1.1.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1"
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2"
         },
         "compile": {
           "lib/netstandard1.3/_._": {}
@@ -4211,7 +4211,7 @@
           "lib/win8/_._": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.3.0": {
+      "System.Diagnostics.DiagnosticSource/4.3.1": {
         "type": "package",
         "compile": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
@@ -5782,9 +5782,9 @@
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Tools": "1.1.1",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.3",
           "Newtonsoft.Json": "10.0.2"
         }
@@ -5917,7 +5917,7 @@
           "lib/netstandard1.3/Microsoft.Data.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/1.1.1": {
+      "Microsoft.EntityFrameworkCore/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Caching.Memory": "1.1.1",
@@ -5937,11 +5937,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Design/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Collections.NonGeneric": "4.3.0"
         },
@@ -5952,14 +5952,14 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "Microsoft.EntityFrameworkCore": "1.1.1",
+          "Microsoft.EntityFrameworkCore": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Data.Common": "4.3.0",
-          "System.Diagnostics.DiagnosticSource": "4.3.0"
+          "System.Diagnostics.DiagnosticSource": "4.3.1"
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
@@ -5968,10 +5968,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -5981,11 +5981,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Sqlite/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Sqlite/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.Sqlite": "1.1.0",
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -5995,10 +5995,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/1.1.0": {
+      "Microsoft.EntityFrameworkCore.Tools/1.1.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1"
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2"
         },
         "compile": {
           "lib/netstandard1.3/_._": {}
@@ -7146,7 +7146,7 @@
           "lib/win8/_._": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.3.0": {
+      "System.Diagnostics.DiagnosticSource/4.3.1": {
         "type": "package",
         "compile": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
@@ -8717,9 +8717,9 @@
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Tools": "1.1.1",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.3",
           "Newtonsoft.Json": "10.0.2"
         }
@@ -8852,7 +8852,7 @@
           "lib/netstandard1.3/Microsoft.Data.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/1.1.1": {
+      "Microsoft.EntityFrameworkCore/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Caching.Memory": "1.1.1",
@@ -8872,11 +8872,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Design/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Collections.NonGeneric": "4.3.0"
         },
@@ -8887,14 +8887,14 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "Microsoft.EntityFrameworkCore": "1.1.1",
+          "Microsoft.EntityFrameworkCore": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Data.Common": "4.3.0",
-          "System.Diagnostics.DiagnosticSource": "4.3.0"
+          "System.Diagnostics.DiagnosticSource": "4.3.1"
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
@@ -8903,10 +8903,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -8916,11 +8916,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Sqlite/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Sqlite/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.Sqlite": "1.1.0",
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -8930,10 +8930,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/1.1.0": {
+      "Microsoft.EntityFrameworkCore.Tools/1.1.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1"
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2"
         },
         "compile": {
           "lib/netstandard1.3/_._": {}
@@ -10051,7 +10051,7 @@
           "lib/win8/_._": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.3.0": {
+      "System.Diagnostics.DiagnosticSource/4.3.1": {
         "type": "package",
         "compile": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
@@ -11622,9 +11622,9 @@
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Tools": "1.1.1",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.3",
           "Newtonsoft.Json": "10.0.2"
         }
@@ -11757,7 +11757,7 @@
           "lib/netstandard1.3/Microsoft.Data.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/1.1.1": {
+      "Microsoft.EntityFrameworkCore/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Caching.Memory": "1.1.1",
@@ -11777,11 +11777,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Design/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Collections.NonGeneric": "4.3.0"
         },
@@ -11792,14 +11792,14 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "Microsoft.EntityFrameworkCore": "1.1.1",
+          "Microsoft.EntityFrameworkCore": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Data.Common": "4.3.0",
-          "System.Diagnostics.DiagnosticSource": "4.3.0"
+          "System.Diagnostics.DiagnosticSource": "4.3.1"
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
@@ -11808,10 +11808,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -11821,11 +11821,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Sqlite/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Sqlite/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.Sqlite": "1.1.0",
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -11835,10 +11835,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/1.1.0": {
+      "Microsoft.EntityFrameworkCore.Tools/1.1.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1"
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2"
         },
         "compile": {
           "lib/netstandard1.3/_._": {}
@@ -12995,7 +12995,7 @@
           "lib/win8/_._": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.3.0": {
+      "System.Diagnostics.DiagnosticSource/4.3.1": {
         "type": "package",
         "compile": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
@@ -14566,9 +14566,9 @@
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Tools": "1.1.1",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.3",
           "Newtonsoft.Json": "10.0.2"
         }
@@ -14701,7 +14701,7 @@
           "lib/netstandard1.3/Microsoft.Data.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/1.1.1": {
+      "Microsoft.EntityFrameworkCore/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Caching.Memory": "1.1.1",
@@ -14721,11 +14721,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Design/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Collections.NonGeneric": "4.3.0"
         },
@@ -14736,14 +14736,14 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "Microsoft.EntityFrameworkCore": "1.1.1",
+          "Microsoft.EntityFrameworkCore": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Data.Common": "4.3.0",
-          "System.Diagnostics.DiagnosticSource": "4.3.0"
+          "System.Diagnostics.DiagnosticSource": "4.3.1"
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
@@ -14752,10 +14752,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -14765,11 +14765,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Sqlite/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Sqlite/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.Sqlite": "1.1.0",
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -14779,10 +14779,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/1.1.0": {
+      "Microsoft.EntityFrameworkCore.Tools/1.1.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1"
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2"
         },
         "compile": {
           "lib/netstandard1.3/_._": {}
@@ -15900,7 +15900,7 @@
           "lib/win8/_._": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.3.0": {
+      "System.Diagnostics.DiagnosticSource/4.3.1": {
         "type": "package",
         "compile": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
@@ -17471,9 +17471,9 @@
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Tools": "1.1.1",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.3",
           "Newtonsoft.Json": "10.0.2"
         }
@@ -17606,7 +17606,7 @@
           "lib/netstandard1.3/Microsoft.Data.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/1.1.1": {
+      "Microsoft.EntityFrameworkCore/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Caching.Memory": "1.1.1",
@@ -17626,11 +17626,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Design/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Collections.NonGeneric": "4.3.0"
         },
@@ -17641,14 +17641,14 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "Microsoft.EntityFrameworkCore": "1.1.1",
+          "Microsoft.EntityFrameworkCore": "1.1.2",
           "NETStandard.Library": "1.6.1",
           "System.Data.Common": "4.3.0",
-          "System.Diagnostics.DiagnosticSource": "4.3.0"
+          "System.Diagnostics.DiagnosticSource": "4.3.1"
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
@@ -17657,10 +17657,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -17670,11 +17670,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Sqlite/1.1.1": {
+      "Microsoft.EntityFrameworkCore.Sqlite/1.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.Sqlite": "1.1.0",
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -17684,10 +17684,10 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/1.1.0": {
+      "Microsoft.EntityFrameworkCore.Tools/1.1.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1"
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2"
         },
         "compile": {
           "lib/netstandard1.3/_._": {}
@@ -18844,7 +18844,7 @@
           "lib/win8/_._": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.3.0": {
+      "System.Diagnostics.DiagnosticSource/4.3.1": {
         "type": "package",
         "compile": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
@@ -20415,9 +20415,9 @@
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore.Design": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Sqlite": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Tools": "1.1.1",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.3",
           "Newtonsoft.Json": "10.0.2"
         }
@@ -20584,79 +20584,79 @@
         "microsoft.data.sqlite.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore/1.1.1": {
-      "sha512": "wkPi/5FriMthUoCBjqO/hCDEGdRrJ5aTGKa9jGHK7NYw1uSxb2FXksBuqqMfFve3sd2j4+9BpYtdvAJ6fzjeXg==",
+    "Microsoft.EntityFrameworkCore/1.1.2": {
+      "sha512": "2oY1cQ3DEhpbRjlDBE1zb7IngKyPC4fslAX5WL1mnVQOLX/8BPOAjgYM2inzNK2z8ld/DxBUZEwc3xfNc8qhbw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/1.1.1",
+      "path": "microsoft.entityframeworkcore/1.1.2",
       "files": [
         "lib/net451/Microsoft.EntityFrameworkCore.dll",
         "lib/net451/Microsoft.EntityFrameworkCore.xml",
         "lib/netstandard1.3/Microsoft.EntityFrameworkCore.dll",
         "lib/netstandard1.3/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.1.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.1.1.2.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/1.1.1": {
-      "sha512": "xFeAAi9LUckgeinjji7WPMwPUbZNb6mTVRhWAlo+RVsjpnEjeAQk3Gw4OP3Ln/yncji64J7e74ue+yIArQYt+Q==",
+    "Microsoft.EntityFrameworkCore.Design/1.1.2": {
+      "sha512": "TFbj0fFE5BWJptL0BKhYOED0QOqY4VxApeLn8r9q8cINxyEj0XgjORl/a3Cp96CeASE5zsQeyMwaQCBRH+roag==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/1.1.1",
+      "path": "microsoft.entityframeworkcore.design/1.1.2",
       "files": [
         "lib/net451/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/net451/Microsoft.EntityFrameworkCore.Design.xml",
         "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.1.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.1.1.2.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/1.1.1": {
-      "sha512": "wIeIC02b3uFQ0Mgd5yDcpzbGQs383p2BAkpMjNz2xffo9QAFXO1CDavuolRk5I2Rv/iBy9igB91BZoY0tpcMzA==",
+    "Microsoft.EntityFrameworkCore.Relational/1.1.2": {
+      "sha512": "oiPXaIMk8cPbEmtcChzhPzM1ZyEYMoy8sMYWgWfv292Q0e0U2v7CIrtGylrORVZOA4lb9M0gWjbfKPtj7iDbxA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/1.1.1",
+      "path": "microsoft.entityframeworkcore.relational/1.1.2",
       "files": [
         "lib/net451/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/net451/Microsoft.EntityFrameworkCore.Relational.xml",
         "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.1.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.1.1.2.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational.Design/1.1.1": {
-      "sha512": "WZKmQwuDUTLtjhxT/6c3hiMJTwi8OBl9rsPljY/ZhcMFAsF8sLj4uVrpkuNmrg5DEK2dEtnQn6p+Y9miQiIeZw==",
+    "Microsoft.EntityFrameworkCore.Relational.Design/1.1.2": {
+      "sha512": "pu2Jxndzv3slY6Ch9mdqVfL3AFhH5XzM02Rrnf9h5lKoViprYx1O+nNqT3BxmGrPkYadY9OddG2b9+sUO3Xuzw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational.design/1.1.1",
+      "path": "microsoft.entityframeworkcore.relational.design/1.1.2",
       "files": [
         "lib/net451/Microsoft.EntityFrameworkCore.Relational.Design.dll",
         "lib/net451/Microsoft.EntityFrameworkCore.Relational.Design.xml",
         "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll",
         "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.xml",
-        "microsoft.entityframeworkcore.relational.design.1.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.design.1.1.2.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.design.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Sqlite/1.1.1": {
-      "sha512": "Zuau7we/Umqswz4yiGN5XPjIBi84CBg6xearSvEUZ07XpnMmd4wg/5+d5z9ZTMZkUxvvpw93+3BUdolFJJ1lDg==",
+    "Microsoft.EntityFrameworkCore.Sqlite/1.1.2": {
+      "sha512": "p4zU4FiY5PYz+oIRbrmYo3IX4PfjZudrw3mET2FLJY8cyFEjzgujNpmVhzBhJYcZTWRefrGfqqntp90B3bWWzA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlite/1.1.1",
+      "path": "microsoft.entityframeworkcore.sqlite/1.1.2",
       "files": [
         "lib/net451/Microsoft.EntityFrameworkCore.Sqlite.dll",
         "lib/net451/Microsoft.EntityFrameworkCore.Sqlite.xml",
         "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Sqlite.dll",
         "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Sqlite.xml",
-        "microsoft.entityframeworkcore.sqlite.1.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlite.1.1.2.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlite.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Tools/1.1.0": {
-      "sha512": "sv9JJsG4p/zu4KrRXjTsZ/Bp1mdRbOLkqrxDtQo6P5e1O+1Z6qXm4gaR5km25tpqLN4QD10lX/Kw6MEyLWf2aQ==",
+    "Microsoft.EntityFrameworkCore.Tools/1.1.1": {
+      "sha512": "nT63J9eTmK9WvVJASiPt9qbKkgNFhrPkWh9ar/t1c8kMXO969j+GO/PW39NsjfPooE9WuHrCg9vGJMKf4HtzmA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.tools/1.1.0",
+      "path": "microsoft.entityframeworkcore.tools/1.1.1",
       "files": [
         "lib/net451/_._",
         "lib/netstandard1.3/_._",
-        "microsoft.entityframeworkcore.tools.1.1.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.1.1.1.nupkg.sha512",
         "microsoft.entityframeworkcore.tools.nuspec",
         "tools/EntityFrameworkCore.PowerShell2.psd1",
         "tools/EntityFrameworkCore.PowerShell2.psm1",
@@ -25104,13 +25104,11 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/4.3.0": {
-      "sha512": "tD6kosZnTAGdrEa0tZSuFyunMbt/5KYDnHdndJYGqZoNy00XVXyACd5d6KnE1YgYv3ne2CjtAfNXo/fwEhnKUA==",
+    "System.Diagnostics.DiagnosticSource/4.3.1": {
+      "sha512": "j72A3mwamUXPgDIU1TWyzea7yqz59+iO2cmXuyzvcfuszWGq9JRbWify1k33lLQophaXOIyhPkEevfP0k4M3wg==",
       "type": "package",
-      "path": "system.diagnostics.diagnosticsource/4.3.0",
+      "path": "system.diagnostics.diagnosticsource/4.3.1",
       "files": [
-        "System.Diagnostics.DiagnosticSource.4.3.0.nupkg.sha512",
-        "System.Diagnostics.DiagnosticSource.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/net46/System.Diagnostics.DiagnosticSource.dll",
@@ -25120,7 +25118,9 @@
         "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll",
         "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.xml",
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.dll",
-        "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.xml"
+        "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.xml",
+        "system.diagnostics.diagnosticsource.4.3.1.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.nuspec"
       ]
     },
     "System.Diagnostics.StackTrace/4.0.2": {
