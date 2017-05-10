@@ -14565,14 +14565,14 @@
     ".NETPlatform,Version=v5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Domi\\.nuget\\packages\\": {}
+    "C:\\Users\\freim\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "E:\\VS17Projects\\SnowWhite\\UWP\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "E:\\VS17Projects\\SnowWhite\\UWP\\Domain\\Domain.csproj",
-      "projectJsonPath": "E:\\VS17Projects\\SnowWhite\\UWP\\Domain\\project.json",
+      "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj",
+      "projectJsonPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\Domain\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {

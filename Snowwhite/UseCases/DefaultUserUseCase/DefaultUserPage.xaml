@@ -9,6 +9,13 @@
     xmlns:newsDwarf="using:DwarfLibrary.NewsDwarf"
     xmlns:weatherDwarf="using:DwarfLibrary.WeatherDwarf"
     mc:Ignorable="d">
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <DrillInNavigationTransitionInfo/>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
 
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="16,16,16,16">
         <TextBlock Text="{x:Bind ViewModel.MirrorName}" x:Name="MirrorName" RelativePanel.AlignTopWithPanel="true" RelativePanel.AlignLeftWithPanel="true" FontSize="34"/>

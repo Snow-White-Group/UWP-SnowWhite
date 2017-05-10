@@ -29201,20 +29201,20 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Domi\\.nuget\\packages\\": {}
+    "C:\\Users\\freim\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "E:\\VS17Projects\\SnowWhite\\UWP\\ServicesGateways\\ServicesGateways.csproj",
+      "projectUniqueName": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj",
       "projectName": "ServicesGateways",
-      "projectPath": "E:\\VS17Projects\\SnowWhite\\UWP\\ServicesGateways\\ServicesGateways.csproj",
-      "projectJsonPath": "E:\\VS17Projects\\SnowWhite\\UWP\\ServicesGateways\\project.json",
+      "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj",
+      "projectJsonPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "E:\\VS17Projects\\SnowWhite\\UWP\\Domain\\Domain.csproj": {
-              "projectPath": "E:\\VS17Projects\\SnowWhite\\UWP\\Domain\\Domain.csproj"
+            "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj"
             }
           }
         }

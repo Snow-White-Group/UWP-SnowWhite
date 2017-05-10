@@ -8,7 +8,7 @@
 
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="16,16,16,16">
         <ProgressRing x:Name="pb" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" IsActive="True"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mirror mirror on the wall..." VerticalAlignment="Top" RelativePanel.Below="pb" RelativePanel.AlignHorizontalCenterWithPanel="True" FontSize="36" FontFamily="Vladimir Script"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mirror mirror on the wall..." VerticalAlignment="Top" RelativePanel.Below="pb" RelativePanel.AlignHorizontalCenterWithPanel="True" FontSize="36" FontFamily="Edwardian Script ITC"/>
 
     </RelativePanel>
 </Page>
