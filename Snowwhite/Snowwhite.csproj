@@ -128,6 +128,7 @@
     <None Include="Snowwhite_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\news_icon.png" />
     <Content Include="Assets\weather-big-snow.png" />
     <Content Include="Assets\weather-clear-night.png" />
     <Content Include="Assets\weather-clear.png" />

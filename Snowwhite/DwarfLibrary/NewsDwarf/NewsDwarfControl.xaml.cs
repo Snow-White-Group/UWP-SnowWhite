@@ -81,12 +81,20 @@ namespace DwarfLibrary.NewsDwarf
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             var input = value as int? ?? 1;
-            return System.Convert.ToDouble(input * 152);
+            return System.Convert.ToDouble(input * 220);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)
         {
             throw new NotImplementedException();
         }
+    }
+
+    class VisibleWhenZeroConverter : IValueConverter
+    {
+        public object Convert(object v, Type t, object p, string l) =>
+            Equals(0d, (int)v) ? Visibility.Visible : Visibility.Collapsed;
+
+        public object ConvertBack(object v, Type t, object p, string l) => null;
     }
 }

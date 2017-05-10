@@ -30,7 +30,7 @@ namespace Snowwhite.UseCases.DefaultUserUseCase
         #region constructur
         public DefaultUserViewModel()
         {
-            this.ShownNews = 3;
+            this.ShownNews = 1;
         }
         #endregion
 
