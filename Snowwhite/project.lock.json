@@ -21681,7 +21681,7 @@
       ]
     },
     "Microsoft.Net.Native.SharedLibrary-arm/1.6.0": {
-      "sha512": "6tms4tVQoedKirFMs8q6qCLESDW3uAmFLWwUOB4lKDGtN+MHktTvA+VomsOWYtI//ByH1VSCIBvHVIqiNY8HXQ==",
+      "sha512": "ChcAhKNCiys3rLMuB+bPgEzE/9F8PRR8zDbgbY0TCN779DXI7VGcTYoJRLHI2ilaYbrQN4CPYQbaAk7B9DNQPQ==",
       "type": "package",
       "path": "microsoft.net.native.sharedlibrary-arm/1.6.0",
       "files": [
@@ -22081,7 +22081,7 @@
       ]
     },
     "Microsoft.Net.Native.SharedLibrary-x64/1.6.0": {
-      "sha512": "pLNmswGR+pzjLOgq+0oABz3e2C5XjSmTo81MFPSN9CeKyYiMb2eybU1fJRjyk86XFMfENK26gGUSVMhAo4zH/g==",
+      "sha512": "iGRwIqFwc2zH1iRjjWKzVHcu9Ri2A/5F9Zozu/BwtVaBYv2bc+mPHzfEg2dTeE5IrZ9jDqPOUCPXChHxirQ2bg==",
       "type": "package",
       "path": "microsoft.net.native.sharedlibrary-x64/1.6.0",
       "files": [
@@ -22481,7 +22481,7 @@
       ]
     },
     "Microsoft.Net.Native.SharedLibrary-x86/1.6.0": {
-      "sha512": "AC1O3na4oqgWdvjoMjVPvt2vCO9VESTkArknbTlep5NWVRdMU2nay4XHYWBleOhweE2kw52kJHv1BGN0dcXjhQ==",
+      "sha512": "peP8zi7V5K7I8bSH3m1aIW4syZahCenajymxymU4eCIDhPFPz7ZwQB8IoFb5M2Y1DTJPKGbXuPd2MV3x4eFMeg==",
       "type": "package",
       "path": "microsoft.net.native.sharedlibrary-x86/1.6.0",
       "files": [
@@ -23024,7 +23024,7 @@
       ]
     },
     "Microsoft.NETCore.UniversalWindowsPlatform/5.3.2": {
-      "sha512": "utm/T05UroLR2+88kUfqGUhPAa1hKojOY60P4uueHbeV4ps74Ewgd64iIVTQ5nggs4J7Mz2rOpDMniziMiwxvw==",
+      "sha512": "bkCwDauf84lNL4BOXwa6+LWmimtAroK9TtdTrAlrMU4q0RipFnMx1mIpQBVZ9tqc6fD2B8BaqoqDRFlodcF6TA==",
       "type": "package",
       "path": "microsoft.netcore.universalwindowsplatform/5.3.2",
       "files": [
@@ -29562,23 +29562,23 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\freim\\.nuget\\packages\\": {}
+    "C:\\Users\\Domi\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\Snowwhite.csproj",
+      "projectUniqueName": "E:\\VS17Projects\\SnowWhite\\UWP\\Snowwhite\\Snowwhite.csproj",
       "projectName": "Snowwhite",
-      "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\Snowwhite.csproj",
-      "projectJsonPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\Snowwhite\\project.json",
+      "projectPath": "E:\\VS17Projects\\SnowWhite\\UWP\\Snowwhite\\Snowwhite.csproj",
+      "projectJsonPath": "E:\\VS17Projects\\SnowWhite\\UWP\\Snowwhite\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\Domain\\Domain.csproj"
+            "E:\\VS17Projects\\SnowWhite\\UWP\\Domain\\Domain.csproj": {
+              "projectPath": "E:\\VS17Projects\\SnowWhite\\UWP\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj": {
-              "projectPath": "C:\\Users\\freim\\Source\\Repos\\UWP-Snowwhite\\ServicesGateways\\ServicesGateways.csproj"
+            "E:\\VS17Projects\\SnowWhite\\UWP\\ServicesGateways\\ServicesGateways.csproj": {
+              "projectPath": "E:\\VS17Projects\\SnowWhite\\UWP\\ServicesGateways\\ServicesGateways.csproj"
             }
           }
         }
