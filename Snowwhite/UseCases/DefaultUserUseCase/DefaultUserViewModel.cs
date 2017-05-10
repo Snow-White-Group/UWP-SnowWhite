@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Windows.UI.Core;
-using Windows.UI.Xaml;
 using Domain.DefaultUserUseCase;
 using Domain.Entities;
 using DwarfLibrary.NewsDwarf;
 using DwarfLibrary.WeatherDwarf;
 using PropertyChanged;
+using Windows.UI.Core;
+using Windows.UI.Xaml;
 
 namespace Snowwhite.UseCases.DefaultUserUseCase
 {
@@ -16,24 +16,23 @@ namespace Snowwhite.UseCases.DefaultUserUseCase
     [ImplementPropertyChanged]
     public class DefaultUserViewModel : IDefaultUserPresenter
     {
+        #region constructur
+            public DefaultUserViewModel()
+            {
+                this.ShownNews = 1;
+            }
+            #endregion
+       
         #region public
 
-        public WeatherDwarfModel WeatherDwarfModel { get; set; }
+            public WeatherDwarfModel WeatherDwarfModel { get; set; }
 
-        public List<NewsDwarfModel> NewsDwarf { get;set; }
+            public List<NewsDwarfModel> NewsDwarf { get; set; }
 
-        public int ShownNews { get; set; }
+            public int ShownNews { get; set; }
 
-        public string MirrorName = "Hello";
-        #endregion
-
-        #region constructur
-        public DefaultUserViewModel()
-        {
-            this.ShownNews = 1;
-        }
-        #endregion
-
+            public string MirrorName = "Hello";
+            #endregion
         public void OnPresent(DwarfData dwarfData)
         {
             var news =
