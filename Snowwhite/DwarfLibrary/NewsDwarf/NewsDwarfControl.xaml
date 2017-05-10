@@ -11,24 +11,31 @@
     
     <UserControl.Resources>
         <local:ShownItemsConverter x:Name="ShownConverter"/>
+        <local:VisibleWhenZeroConverter x:Name="VisibleWhenZeroConverter" />
     </UserControl.Resources>
     
     <ListView x:Name="NewsList"
-              Height="{x:Bind ShownItems, FallbackValue=456, Converter={StaticResource ShownConverter}}"
+              Height="{x:Bind ShownItems, Mode=OneWay, Converter={StaticResource ShownConverter}}"
               MaxWidth="450"
-              ItemsSource="{x:Bind News}">
+              ItemsSource="{x:Bind News, Mode=OneWay}">
+    <ListView.Header>
+            <StackPanel Visibility="{x:Bind News.Count , Converter={StaticResource VisibleWhenZeroConverter}}" Orientation="Vertical">
+                <Image  Height="100" Width="100" Source="ms-appx:///Assets/news_icon.png" HorizontalAlignment="Center"/>
+                <TextBlock Text="Keine Narichten" HorizontalAlignment="Center" Margin="0,8,0,0"/>
+            </StackPanel>
+        </ListView.Header>
         <ListView.ItemTemplate>
             <DataTemplate
                 x:DataType="local:NewsDwarfModel">
-                <StackPanel Orientation="Horizontal" Height="152">
+                <StackPanel Orientation="Horizontal" Height="220">
                     <Ellipse Width="120" Height="120">
                         <Ellipse.Fill>
-                            <ImageBrush ImageSource="{x:Bind ImageUrl}"/>
+                            <ImageBrush ImageSource="{x:Bind ImageUrl, TargetNullValue='ms-appx:///Assets/default.png'}"/>
                         </Ellipse.Fill>
                     </Ellipse>
-                    <RelativePanel Width="250" Height="120" Padding="16,0,0,0">
+                    <RelativePanel Width="250" Height="180" Padding="16,0,0,0">
                         <TextBlock x:Name="HeadinText" Text="{x:Bind Headline}" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" FontSize="20" FontWeight="Bold" TextTrimming="CharacterEllipsis" />
-                        <TextBlock x:Name="SortText" Text="{x:Bind ShortLine}" RelativePanel.Below="HeadinText" FontSize="16" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" MaxLines="3"/>
+                        <TextBlock x:Name="SortText" Text="{x:Bind ShortLine}" RelativePanel.Below="HeadinText" FontSize="16" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" MaxLines="6"/>
                         <TextBlock Text="{x:Bind Source}" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" FontSize="14" TextAlignment="Right" FontWeight="SemiLight" TextTrimming="CharacterEllipsis"/>
                     </RelativePanel>
                 </StackPanel>

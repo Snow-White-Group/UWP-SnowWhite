@@ -25,7 +25,7 @@ namespace Snowwhite.Services
         {
             var r = Window.Current.Dispatcher?.RunAsync(
                 CoreDispatcherPriority.Normal,
-                () => { this.NavigateTo(typeof(DefaultUserPage).FullName); }).AsTask();
+                () => { this.NavigateTo(typeof(DefaultUserViewModel).FullName); }).AsTask();
 
             return r != null && r.Exception == null;
         }

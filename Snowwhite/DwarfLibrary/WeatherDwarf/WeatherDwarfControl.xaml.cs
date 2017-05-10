@@ -45,9 +45,8 @@ namespace DwarfLibrary.WeatherDwarf
 
         public WeatherDwarfControl()
         {
-           
-            this.InitializeComponent();
-            EnableAutomaticSwitch();
+           this.InitializeComponent();
+           EnableAutomaticSwitch();
         }
 
         #region function
