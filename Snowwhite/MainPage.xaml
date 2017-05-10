@@ -2,19 +2,14 @@
     x:Class="Snowwhite.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Snowwhite"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:clockDwarf1="using:DwarfLibrary.ClockDwarf"
-    xmlns:newsDwarf1="using:DwarfLibrary.NewsDwarf"
-    xmlns:weatherDwarf="using:DwarfLibrary.WeatherDwarf"
     mc:Ignorable="d">
 
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="16,16,16,16">
-        <TextBlock x:Name="mirrorName" RelativePanel.AlignTopWithPanel="true" RelativePanel.AlignLeftWithPanel="true" Text="MIRROR NAME" FontSize="34"/>
-        <clockDwarf1:ClockDwarfControl x:Name="clock" RelativePanel.Below="mirrorName" RelativePanel.AlignLeftWithPanel="true" FontWeight="Light" />
-        <newsDwarf1:NewsDwarfControl  News="{x:Bind News}" ShownItems="3" RelativePanel.AlignBottomWithPanel="true" RelativePanel.AlignLeftWithPanel="true" />
-        <weatherDwarf:WeatherDwarfControl Model="{x:Bind Weather}" RelativePanel.AlignTopWithPanel="true" RelativePanel.AlignRightWithPanel="true"/>
+        <ProgressRing x:Name="pb" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" IsActive="True"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mirror mirror on the wall..." VerticalAlignment="Top" RelativePanel.Below="pb" RelativePanel.AlignHorizontalCenterWithPanel="True" FontSize="36" FontFamily="Vladimir Script"/>
+
     </RelativePanel>
 </Page>
 
