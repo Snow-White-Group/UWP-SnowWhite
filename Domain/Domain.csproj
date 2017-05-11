@@ -52,7 +52,6 @@
     <Compile Include="Entities\News.cs" />
     <Compile Include="Entities\NewsSource.cs" />
     <Compile Include="Entities\SnowUser.cs" />
-    <Compile Include="Entities\WeatherForecast.cs" />
     <Compile Include="Entities\WeatherData.cs" />
     <Compile Include="Entities\WeatherState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
