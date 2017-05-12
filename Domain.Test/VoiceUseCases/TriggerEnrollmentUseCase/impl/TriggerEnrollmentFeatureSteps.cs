@@ -1,5 +1,6 @@
 ﻿using System;
 using Domain.Entities;
+using Domain.Services;
 using Domain.VoiceUseCases.Services;
 using Domain.VoiceUseCases.TriggerEnrollmentUseCase;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
