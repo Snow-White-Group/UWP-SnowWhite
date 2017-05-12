@@ -35,7 +35,7 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.Impl
             this.mockSnowUser = user;
         }
 
-        public void SetCurrentUserTO(MirrorUser user)
+        public void SetCurrentUserTo(MirrorUser user)
         {
             this.mockMirrorUser = user;
         }

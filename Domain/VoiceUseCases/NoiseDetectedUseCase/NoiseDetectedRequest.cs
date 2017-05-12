@@ -1,13 +1,14 @@
-﻿namespace Domain.VoiceUseCases.NoiseDetectedUseCase
+﻿using Domain.Entities;
+
+namespace Domain.VoiceUseCases.NoiseDetectedUseCase
 {
-    using Entities;
     public class NoiseDetectedRequest
     {
-        public IVoiceFile RecoredAudio { get; set; }
+        public IVoiceFile RecordedAudio { get; set; }
 
-        public NoiseDetectedRequest(IVoiceFile recoredAudio)
+        public NoiseDetectedRequest(IVoiceFile recordedAudio)
         {
-            this.RecoredAudio = recoredAudio;
+            this.RecordedAudio = recordedAudio;
         }
     }
 }
