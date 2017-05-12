@@ -39,13 +39,13 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.Impl
         [Given(@"The mirror is currently displaying the default user")]
         public void GivenTheMirrorIsCurrentlyDisplayingTheDefaultUser()
         {
-            this.mockStateService.SetCurrentUserTO(this.defaultMirrorUser);
+            this.mockStateService.SetCurrentUserTo(this.defaultMirrorUser);
         }
 
         [Given(@"The mirror is currently displaying some user")]
         public void GivenTheMirrorIsCurrentlyDisplayingSomeUser()
         {
-            this.mockStateService.SetCurrentUserTO(this.someMirrorUser);
+            this.mockStateService.SetCurrentUserTo(this.someMirrorUser);
         }
 
         [Given(@"the miror state is detection")]
@@ -57,7 +57,7 @@ namespace Domain.Test.VoiceUseCases.TriggerEnrollmentUseCase.Impl
         [Given(@"The mirror is currently enrolling some user")]
         public void GivenTheMirrorIsCurrentlyEnrollingSomeUser()
         {
-            this.mockStateService.SetCurrentUserTO(this.someMirrorUser);
+            this.mockStateService.SetCurrentUserTo(this.someMirrorUser);
             this.mockStateService.SetCurrentDetectionState(VoiceUseCasesState.EnrollmentDetection);
         }
 

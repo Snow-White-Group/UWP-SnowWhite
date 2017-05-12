@@ -1,12 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Domain.Services;
+using Domain.VoiceUseCases.AuthenticateUserUseCase;
+using Domain.VoiceUseCases.Services;
+using Domain.VoiceUseCases.UserEnrollmentUseCase;
 
 namespace Domain.VoiceUseCases.NoiseDetectedUseCase
 {
-    class NoiseDetectedInteractor
+    internal class NoiseDetectedInteractor : INoiseDetectedUseCase
     {
+        private readonly IMirrorStateServices _mirrorStateServices;
+        private readonly IUserEnrollmentUseCase _userEnrollmentUseCase;
+        private readonly IAuthenticateUserUseCase _authenticateUserUseCase;
+
+        public NoiseDetectedInteractor(IMirrorStateServices mirrorStateServices, IUserEnrollmentUseCase userEnrollmentUseCase, IAuthenticateUserUseCase authenticateUserUseCase)
+        {
+            _mirrorStateServices = mirrorStateServices;
+            _userEnrollmentUseCase = userEnrollmentUseCase;
+            _authenticateUserUseCase = authenticateUserUseCase;
+        }
+
+        public void OnNoiseDetected(NoiseDetectedRequest noiseDetectedRequest)
+        {
+            switch (_mirrorStateServices.GetCurrentDetectionState())
+            {
+                case VoiceUseCasesState.UserDetection:
+                    _authenticateUserUseCase.Authenticate(noiseDetectedRequest.RecordedAudio);
+                    break;
+                case VoiceUseCasesState.EnrollmentDetection:
+                    _userEnrollmentUseCase.Enroll(noiseDetectedRequest.RecordedAudio);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
     }
 }

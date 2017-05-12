@@ -32,7 +32,7 @@ namespace Domain.VoiceUseCases.TriggerEnrollmentUseCase
 
             _voiceUseCasesStateService.SetCurrentDetectionState(VoiceUseCasesState.EnrollmentDetection);
             _voiceUseCasesStateService.SetUserForEnrollment(request.SnowUser);
-            _mirrorStateServices.SetCurrentUserTO(new MirrorUser(request.SnowUser,false,false,null));
+            _mirrorStateServices.SetCurrentUserTo(new MirrorUser(request.SnowUser,false,false,null));
             _deliveryBoundary.DeliverEnrollmentPage();
             return true;
         }

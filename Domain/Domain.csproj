@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boundaries\IDeliveryBoundary.cs" />
-    <Compile Include="Boundaries\IRequestBoundary.cs" />
     <Compile Include="DefaultUserUseCase\DefaultUserResponse.cs" />
     <Compile Include="DefaultUserUseCase\DefaultUserUseCaseInteractor.cs" />
     <Compile Include="DefaultUserUseCase\IDefaultUserPresenter.cs" />
@@ -53,15 +52,17 @@
     <Compile Include="Entities\SnowUser.cs" />
     <Compile Include="Entities\WeatherData.cs" />
     <Compile Include="Entities\WeatherState.cs" />
+    <Compile Include="Boundaries\INoiseDetectedBoundary.cs" />
+    <Compile Include="VoiceUseCases\AuthenticateUserUseCase\IAuthenticateUserUseCase.cs" />
+    <Compile Include="VoiceUseCases\NoiseDetectedUseCase\INoiseDetectedUseCase.cs" />
+    <Compile Include="VoiceUseCases\NoiseDetectedUseCase\NoiseDetectedInteractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IConfigurationPageService.cs" />
     <Compile Include="Services\IMirrorStateServices.cs" />
     <Compile Include="Services\INewsService.cs" />
     <Compile Include="Services\IWeatherService.cs" />
-    <Compile Include="VoiceUseCases\EnrollmentUseCase\EnrollmentUseCaseRequest.cs" />
-    <Compile Include="VoiceUseCases\EnrollmentUseCase\IEnrollmentUseCase.cs" />
-    <Compile Include="VoiceUseCases\NoiseDetectedUseCase\INoiseDetectedUseCase.cs" />
-    <Compile Include="VoiceUseCases\NoiseDetectedUseCase\NoiseDetectedInteractor.cs" />
+    <Compile Include="VoiceUseCases\UserEnrollmentUseCase\UserEnrollmentUseCaseRequest.cs" />
+    <Compile Include="VoiceUseCases\UserEnrollmentUseCase\IUserEnrollmentUseCase.cs" />
     <Compile Include="VoiceUseCases\NoiseDetectedUseCase\NoiseDetectedRequest.cs" />
     <Compile Include="VoiceUseCases\Services\IVoiceUseCasesStateService.cs" />
     <Compile Include="VoiceUseCases\Services\VoiceUseCasesState.cs" />
