@@ -8,7 +8,7 @@
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             var input = value as int? ?? 1;
-            return System.Convert.ToDouble(input * 220);
+            return System.Convert.ToDouble(input * 212);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

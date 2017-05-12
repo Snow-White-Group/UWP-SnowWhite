@@ -25,21 +25,55 @@
             </StackPanel>
         </ListView.Header>
         <ListView.ItemTemplate>
+            
             <DataTemplate
                 x:DataType="newsDwarf:NewsDwarfModel">
-                <StackPanel Orientation="Horizontal" Height="220">
-                    <Ellipse Width="120" Height="120">
-                        <Ellipse.Fill>
+                <RelativePanel Width="400" Height="180" Margin="0,16,0,16">
+                    <TextBlock 
+                        x:Name="HeadinText" 
+                        Text="{x:Bind Headline}" 
+                        RelativePanel.AlignTopWithPanel="True" 
+                        RelativePanel.AlignLeftWithPanel="True"
+                        FontSize="20" 
+                        FontWeight="Bold" 
+                        MaxLines="2"
+                        TextWrapping="Wrap" 
+                        TextTrimming="CharacterEllipsis" />
+
+                    <Rectangle
+                        x:Name="Image"
+                        Width="120"
+                        Height="120"
+                        RelativePanel.Below="HeadinText"
+                        Margin="8,8,8,8"
+                        RelativePanel.AlignLeftWithPanel="True">
+                        <Rectangle.Fill >
                             <ImageBrush ImageSource="{x:Bind ImageUrl, FallbackValue='http://pixdaus.com/files/items/pics/4/17/541417_dc4ba122bcccd803c0a6d5631470b682_large.jpg' ,TargetNullValue='http://pixdaus.com/files/items/pics/4/17/541417_dc4ba122bcccd803c0a6d5631470b682_large.jpg'}"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                    <RelativePanel Width="250" Height="180" Padding="16,0,0,0">
-                        <TextBlock x:Name="HeadinText" Text="{x:Bind Headline}" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" FontSize="20" FontWeight="Bold" TextTrimming="CharacterEllipsis" />
-                        <TextBlock x:Name="SortText" Text="{x:Bind ShortLine}" RelativePanel.Below="HeadinText" FontSize="16" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" MaxLines="6"/>
-                        <TextBlock Text="{x:Bind Source}" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" FontSize="14" TextAlignment="Right" FontWeight="SemiLight" TextTrimming="CharacterEllipsis"/>
-                    </RelativePanel>
-                </StackPanel>
+                        </Rectangle.Fill>
+                    </Rectangle>
+
+                    <TextBlock 
+                        x:Name="SortText" 
+                        Text="{x:Bind ShortLine}"
+                        RelativePanel.Below="HeadinText" 
+                        RelativePanel.RightOf="Image"
+                        FontSize="16"
+                        TextWrapping="Wrap" 
+                        TextTrimming="CharacterEllipsis"
+                        MaxLines="6"/>
+
+                    <TextBlock 
+                        Text="{x:Bind Source}" 
+                        RelativePanel.AlignBottomWithPanel="True" 
+                        RelativePanel.AlignRightWithPanel="True"
+                        FontSize="14" 
+                        TextAlignment="Right" 
+                        FontWeight="ExtraLight"
+                        Foreground="CornflowerBlue"
+                        TextTrimming="CharacterEllipsis"/>
+                </RelativePanel>
             </DataTemplate>
+            
         </ListView.ItemTemplate>
         
     </ListView>

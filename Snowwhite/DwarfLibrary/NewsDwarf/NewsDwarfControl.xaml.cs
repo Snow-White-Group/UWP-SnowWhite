@@ -70,7 +70,7 @@ namespace Snowwhite.DwarfLibrary.NewsDwarf
         #region function
         private void AutoScroll()
         {
-            var period = TimeSpan.FromSeconds(5);
+            var period = TimeSpan.FromSeconds(7);
             ThreadPoolTimer.CreatePeriodicTimer(
                 (source) =>
                     {
