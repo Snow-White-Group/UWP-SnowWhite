@@ -5,6 +5,6 @@ namespace Domain.DefaultUserUseCase
 {
     public interface IDefaultUserPresenter
     {
-        void OnPresent(DwarfData dwarfData);
+        void OnPresent(DefaultUserResponse response);
     }
 }

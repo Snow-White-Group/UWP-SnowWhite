@@ -33,12 +33,13 @@ namespace Snowwhite.UseCases.DefaultUserUseCase
 
             public string MirrorName = "Hello";
             #endregion
-        public void OnPresent(DwarfData dwarfData)
+        public void OnPresent(DefaultUserResponse response)
         {
             var news =
-                dwarfData.News.Select(a => a.Articles.Select(b => new Tuple<Article, string>(b, a.Source)))
+                response.News.Select(a => a.Articles.Select(b => new Tuple<Article, string>(b, a.Source)))
                     .SelectMany(a => a)
                     .Select(a => new NewsDwarfModel(a.Item1.Title, a.Item1.Description, a.Item1.URLToImage, a.Item2));
+            Debug.WriteLine("News: " + news.Count());
 
             //Ensure UI Thread
             Window.Current.Dispatcher?.RunAsync(CoreDispatcherPriority.Normal, () => { this.NewsDwarf = news.ToList(); });
