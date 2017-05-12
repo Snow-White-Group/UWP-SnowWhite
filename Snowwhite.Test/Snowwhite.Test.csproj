@@ -52,7 +52,8 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoadingScreenTest.cs" />
+    <Compile Include="DefaultUserViewTest.cs" />
+    <Compile Include="LoadingViewTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIMap.cs">
       <DependentUpon>UIMap.uitest</DependentUpon>

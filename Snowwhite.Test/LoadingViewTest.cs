@@ -12,17 +12,17 @@ using Keyboard = Microsoft.VisualStudio.TestTools.UITesting.Keyboard;
 namespace Snowwhite.Test
 {
     /// <summary>
-    /// Zusammenfassungsbeschreibung für CodedUITest1
+    /// Zusammenfassungsbeschreibung für DefaultUserViewTest
     /// </summary>
     [CodedUITest(CodedUITestType.WindowsStore)]
-    public class LoadingScreenTest
+    public class LoadingViewTest
     {
-        public LoadingScreenTest()
+        public LoadingViewTest()
         {
         }
 
         [TestMethod]
-        public void CodedUITestMethod1()
+        public void CheckLoadingTextIsShown()
         {
             XamlWindow.Launch("d131933c-490a-4b6b-ac88-cf9b43fd999a_5v9vtwr4m7rda!App");
             this.UIMap.CheckStartUpText();
