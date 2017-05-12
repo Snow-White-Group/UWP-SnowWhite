@@ -39,15 +39,15 @@
         <StackPanel Orientation="Horizontal"
             x:Name="CurrentWeather">
             <StackPanel Orientation="Vertical">
-                <TextBlock Text="{x:Bind Model.DisplayText}" TextAlignment="Right" FontWeight="Bold" FontSize="45"/>
-                <TextBlock Text="{x:Bind Model.LocationName}" FontWeight="Light" FontSize="34"/>
+                <TextBlock Text="{x:Bind WeatherData.DisplayText}" TextAlignment="Right" FontWeight="Bold" FontSize="45"/>
+                <TextBlock Text="{x:Bind WeatherData.LocationName}" FontWeight="Light" FontSize="34"/>
             </StackPanel>
-            <Image Height="150" Width="150" Source="{x:Bind Model.CurrentState, Converter={StaticResource converter}}" />
+            <Image Height="150" Width="150" Source="{x:Bind WeatherData.CurrentState, Converter={StaticResource converter}}" />
         </StackPanel>
         <ListView 
             x:Name="ForcastWeather"
             RelativePanel.AlignRightWithPanel="true"
-            ItemsSource="{x:Bind Model.Forecasts}" Opacity="0">
+            ItemsSource="{x:Bind WeatherData.Forecasts}" Opacity="0">
             <ListView.ItemTemplate> 
                 <DataTemplate x:DataType="local:ForecastModel">
                    <RelativePanel Height="50" Width="250" >

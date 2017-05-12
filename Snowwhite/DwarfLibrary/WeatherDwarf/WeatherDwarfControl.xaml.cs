@@ -27,7 +27,7 @@ namespace Snowwhite.DwarfLibrary.WeatherDwarf
         #endregion
 
         #region public fields
-        public WeatherDwarfModel Model
+        public WeatherDwarfModel WeatherData
         {
             get
             {

@@ -41,7 +41,7 @@
             RelativePanel.AlignLeftWithPanel="true"/>
         
         <weatherDwarf:WeatherDwarfControl 
-            Model="{x:Bind ViewModel.WeatherDwarfModel, Mode=OneWay}" 
+            WeatherData="{x:Bind ViewModel.WeatherDwarfModel, Mode=OneWay}" 
             RelativePanel.AlignTopWithPanel="true" 
             RelativePanel.AlignRightWithPanel="true"/>
     </RelativePanel>
