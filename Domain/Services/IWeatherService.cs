@@ -6,6 +6,6 @@ namespace Domain.Services
 {
     public interface IWeatherService
     {
-        Task<List<WeatherData>> GetWeather(string city);
+        Task<WeatherData> GetWeather(string city);
     }
 }

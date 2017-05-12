@@ -20,9 +20,29 @@
     </Page.Transitions>
 
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="16,16,16,16">
-        <TextBlock Text="{x:Bind ViewModel.MirrorName}" x:Name="MirrorName" RelativePanel.AlignTopWithPanel="true" RelativePanel.AlignLeftWithPanel="true" FontSize="34"/>
-        <clockDwarf:ClockDwarfControl RelativePanel.Below="MirrorName" RelativePanel.AlignLeftWithPanel="true" FontWeight="Light" />
-        <newsDwarf:NewsDwarfControl  News="{x:Bind ViewModel.NewsDwarf, Mode=OneWay}" ShownItems="{x:Bind ViewModel.ShownNews, Mode=OneWay, FallbackValue=1}" RelativePanel.AlignBottomWithPanel="true" RelativePanel.AlignLeftWithPanel="true" MinWidth="200" MinHeight="200"/>
-        <weatherDwarf:WeatherDwarfControl Model="{x:Bind ViewModel.WeatherDwarfModel, Mode=OneWay}" RelativePanel.AlignTopWithPanel="true" RelativePanel.AlignRightWithPanel="true"/>
+        <TextBlock 
+            Text="{x:Bind ViewModel.MirrorName}"
+            x:Name="MirrorName"
+            RelativePanel.AlignTopWithPanel="true"
+            RelativePanel.AlignLeftWithPanel="true" 
+            FontSize="34"/>
+       
+        <clockDwarf:ClockDwarfControl
+            RelativePanel.Above="NewsDwarfControl"
+            RelativePanel.Below="MirrorName"
+            RelativePanel.AlignLeftWithPanel="true"
+            FontWeight="Light" />
+        
+        <newsDwarf:NewsDwarfControl 
+            x:Name="NewsDwarfControl"
+            News="{x:Bind ViewModel.NewsDwarf, Mode=OneWay}"
+            ShownItems="{x:Bind ViewModel.ShownNews, Mode=OneWay, FallbackValue=1}"
+            RelativePanel.AlignBottomWithPanel="true" 
+            RelativePanel.AlignLeftWithPanel="true"/>
+        
+        <weatherDwarf:WeatherDwarfControl 
+            Model="{x:Bind ViewModel.WeatherDwarfModel, Mode=OneWay}" 
+            RelativePanel.AlignTopWithPanel="true" 
+            RelativePanel.AlignRightWithPanel="true"/>
     </RelativePanel>
 </Page>

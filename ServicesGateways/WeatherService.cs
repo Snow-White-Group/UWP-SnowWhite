@@ -24,7 +24,7 @@ namespace ServicesGateways
         // db context for the local db
         //private static readonly ServicesDbContext db = new ServicesDbContext();
 
-        public async Task<List<WeatherData>> GetWeather(string city)
+        public async Task<WeatherData> GetWeather(string city)
         {
             // delete all existing rows
             //db.Weather.RemoveRange(db.Weather);
@@ -60,6 +60,9 @@ namespace ServicesGateways
 
             // returns the forecasts
             return forecasts;
+        }
+    */
+            return null;
         }
     }
 }

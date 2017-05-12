@@ -37,7 +37,7 @@ namespace Domain.DefaultUserUseCase
 
             await _deliveryBoundary.DeliverDefaultUserPage().ConfigureAwait(false);
             _defaultUserPresenter.OnPresent(new DefaultUserResponse(weather, news));
-            _mirrorStateServices.SetCurrentUserTO(_mirrorStateServices.LoadDefaultUser());
+            _mirrorStateServices.SetCurrentUserTo(_mirrorStateServices.LoadDefaultUser());
         }
     }
 }

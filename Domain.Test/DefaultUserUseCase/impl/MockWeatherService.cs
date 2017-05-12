@@ -13,7 +13,7 @@ namespace Domain.Test.DefaultUserUseCase.Impl
         public Task<WeatherData> GetWeather(string city)
         {
             this.Called = true;
-            var weather = new WeatherData(1, WeatherState.Sunny, DateTime.Now, null, null);
+            var weather = new WeatherData(1, WeatherState.Sunny, DateTime.Now, null);
           return Task<WeatherData>.Factory.StartNew(() => weather);
         }
     }
