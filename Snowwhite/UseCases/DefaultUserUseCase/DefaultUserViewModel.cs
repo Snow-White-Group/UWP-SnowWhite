@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Domain.DefaultUserUseCase;
 using Domain.Entities;
-using DwarfLibrary.NewsDwarf;
 using DwarfLibrary.WeatherDwarf;
 using PropertyChanged;
+using Snowwhite.DwarfLibrary.NewsDwarf;
+using Snowwhite.DwarfLibrary.WeatherDwarf;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 
 namespace Snowwhite.UseCases.DefaultUserUseCase
 {
-    using System.Diagnostics;
-
     [ImplementPropertyChanged]
     public class DefaultUserViewModel : IDefaultUserPresenter
     {

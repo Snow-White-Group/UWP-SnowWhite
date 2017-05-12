@@ -1,100 +1,92 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using Windows.System.Threading;
-using Windows.UI.Core;
-using PropertyChanged;
-using Domain.Entities;
+using System.Diagnostics.CodeAnalysis;
+
 using ExtensionMethods;
 
+using PropertyChanged;
+
+using Windows.System.Threading;
+using Windows.UI.Core;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
-
-namespace DwarfLibrary.NewsDwarf
+namespace Snowwhite.DwarfLibrary.NewsDwarf
 {
-
+    /// <summary>
+    /// The news dwarf control.
+    /// </summary>
     [ImplementPropertyChanged]
     public sealed partial class NewsDwarfControl : UserControl
     {
+        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", Justification = "Reviewed. Suppression is OK here.")]
+        [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "Reviewed. Suppression is OK here.")]
+
+        #region constuctor
+        public NewsDwarfControl()
+        {
+            this.InitializeComponent();
+            this.AutoScroll();
+            this.currentIndex = 0;
+        }
+        #endregion
+        
         #region public fields
         public static readonly DependencyProperty NewsProperty =
          DependencyProperty.Register("News", typeof(List<NewsDwarfModel>), typeof(NewsDwarfControl), null);
+
         public static readonly DependencyProperty ShownItemsProperty =
             DependencyProperty.Register("ShownItems", typeof(int), typeof(NewsDwarfControl), null);
 
         public List<NewsDwarfModel> News
         {
-            get => (List<NewsDwarfModel>) GetValue(NewsProperty);
-            set  => SetValue(NewsProperty , value );
+            get { return (List<NewsDwarfModel>) this.GetValue(NewsProperty); }
+            set { this.SetValue(NewsProperty , value ); }
         }
 
         public int ShownItems
         {
-            get => (int) GetValue(ShownItemsProperty);
+            get
+            {
+                return (int)this.GetValue(ShownItemsProperty);
+            }
 
-        set => SetValue(ShownItemsProperty, value);
-        
+            set
+            {
+                this.SetValue(ShownItemsProperty, value);
+            }
+
+
         }
         #endregion
 
-            #region private fields
-        private int currentIndex = 0;
+        #region private fields
+        private int currentIndex;
         #endregion
-        public NewsDwarfControl()
-        {
-            this.InitializeComponent();
-            AutoScroll();
-        }
 
         #region function
         private void AutoScroll()
         {
             var period = TimeSpan.FromSeconds(5);
-            ThreadPoolTimer.CreatePeriodicTimer((source) =>
-            {
-                Dispatcher?.RunAsync(CoreDispatcherPriority.Low,
-                () =>
+            ThreadPoolTimer.CreatePeriodicTimer(
+                (source) =>
                     {
-                        if (News == null) return;
-                    currentIndex = (currentIndex + 1) % News.Count;
-                    NewsList?.ScrollToIndex(currentIndex).ConfigureAwait(false);
-                });
-            }, period);
+                        this.Dispatcher?.RunAsync(
+                            CoreDispatcherPriority.Low,
+                            () =>
+                                {
+                                    if (this.News == null)
+                                    {
+                                        return;
+                                    }
+
+                                    this.currentIndex = (this.currentIndex + 1) % this.News.Count;
+                                    NewsList?.ScrollToIndex(this.currentIndex).ConfigureAwait(false);
+                                });
+                    },
+                period);
         }
         #endregion
-    }
-
-    public class ShownItemsConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, string language)
-        {
-            var input = value as int? ?? 1;
-            return System.Convert.ToDouble(input * 220);
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, string language)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    class VisibleWhenZeroConverter : IValueConverter
-    {
-        public object Convert(object v, Type t, object p, string l) =>
-            Equals(0d, (int)v) ? Visibility.Visible : Visibility.Collapsed;
-
-        public object ConvertBack(object v, Type t, object p, string l) => null;
     }
 }

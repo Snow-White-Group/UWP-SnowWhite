@@ -32,6 +32,8 @@ namespace ServicesGateways
             List<WeatherData> forecasts = new List<WeatherData>();
 
             // request for weather
+
+            /**
             string weatherResponse = await service.MakeRequest("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + API_KEY);
 
             WeatherForecast weather = JsonConvert.DeserializeObject<WeatherForecast>(weatherResponse);

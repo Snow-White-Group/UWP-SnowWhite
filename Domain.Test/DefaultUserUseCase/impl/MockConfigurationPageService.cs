@@ -1,7 +1,7 @@
 ﻿using Domain.Entities;
 using Domain.Services;
 
-namespace Domain.Test.DefaultUserUseCase.impl
+namespace Domain.Test.DefaultUserUseCase.Impl
 {
     internal class MockConfigurationPageService : IConfigurationPageService
     {

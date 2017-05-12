@@ -4,19 +4,17 @@ using System.Threading.Tasks;
 using Domain.Entities;
 using Domain.Services;
 
-namespace Domain.Test.DefaultUserUseCase.impl
+namespace Domain.Test.DefaultUserUseCase.Impl
 {
     internal class MockWeatherService : IWeatherService
     {
         public bool Called { get; private set; }
 
-        public Task<WeatherForecast> GetWeather(string city)
+        public Task<WeatherData> GetWeather(string city)
         {
             this.Called = true;
-            var weather = new WeatherForecast();
-            weather.city = new City();
-            weather.city.name = "Karlsruhe";
-            return Task<WeatherForecast>.Factory.StartNew(() => weather);
+            var weather = new WeatherData(1, WeatherState.Sunny, DateTime.Now, null, null);
+          return Task<WeatherData>.Factory.StartNew(() => weather);
         }
     }
 }
