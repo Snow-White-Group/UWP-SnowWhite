@@ -24,21 +24,39 @@ namespace ServicesGateways
         // db context for the local db
         //private static readonly ServicesDbContext db = new ServicesDbContext();
 
-        public async Task<WeatherForecast> GetWeather(string city)
+        public async Task<WeatherData> GetWeather(string city)
         {
             // delete all existing rows
             //db.Weather.RemoveRange(db.Weather);
 
             // request for weather
+
+            /**
             string weatherResponse = await service.MakeRequest("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + API_KEY);
 
             WeatherForecast weather = JsonConvert.DeserializeObject<WeatherForecast>(weatherResponse);
             weather.LastUpdate = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
 
+            var first = weather;
+            var list = weather.list;
+            var main = list.main;
+            var CurrentTempeture = main.temp_max;
+            var CurrentState = WeatherState.Sunny;
+            var CurrentDate = new DateTime();
+
+            foreach (WeatherForecast w in weather.list)
+            var CurrentTempeture = weather.list.main;
+            var CurrentState;
+            var CurrentDate;
+            var Forecasts;
+            var LocationName;
+ 
+        WeatherData weatherData = new WeatherData(weather.list.);
+       **/
             //db.Weather.Add(weather);
             //db.SaveChanges();
 
-            return weather;
+            return null;
         }
     }
 }

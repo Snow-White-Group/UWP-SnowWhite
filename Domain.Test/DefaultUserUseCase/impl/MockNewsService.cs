@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Domain.Entities;
 using Domain.Services;
 
-namespace Domain.Test.DefaultUserUseCase.impl
+namespace Domain.Test.DefaultUserUseCase.Impl
 {
     internal class MockNewsService : INewsService
     {
