@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Domain.Services;
 
 namespace Domain.VoiceUseCases.Services
 {

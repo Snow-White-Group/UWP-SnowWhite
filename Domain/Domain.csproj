@@ -63,9 +63,9 @@
     <Compile Include="Services\IWeatherService.cs" />
     <Compile Include="VoiceUseCases\UserEnrollmentUseCase\UserEnrollmentUseCaseRequest.cs" />
     <Compile Include="VoiceUseCases\UserEnrollmentUseCase\IUserEnrollmentUseCase.cs" />
-    <Compile Include="VoiceUseCases\NoiseDetectedUseCase\NoiseDetectedRequest.cs" />
-    <Compile Include="VoiceUseCases\Services\IVoiceUseCasesStateService.cs" />
-    <Compile Include="VoiceUseCases\Services\VoiceUseCasesState.cs" />
+    <Compile Include="Services\NoiseDetectedRequest.cs" />
+    <Compile Include="Services\IVoiceUseCasesStateService.cs" />
+    <Compile Include="Services\VoiceUseCasesState.cs" />
     <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\ITriggerEnrollmentUseCase.cs" />
     <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\TriggerEnrollmentInteractor.cs" />
     <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\TriggerEnrollmentRequest.cs" />

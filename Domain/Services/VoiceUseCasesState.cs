@@ -1,4 +1,4 @@
-﻿namespace Domain.VoiceUseCases.Services
+﻿namespace Domain.Services
 {
     public enum VoiceUseCasesState
         

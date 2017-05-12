@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace Domain.VoiceUseCases.NoiseDetectedUseCase
+namespace Domain.Services
 {
     public class NoiseDetectedRequest
     {

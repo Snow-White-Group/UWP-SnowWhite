@@ -2908,8 +2908,7 @@
         "type": "project",
         "framework": ".NETPlatform,Version=v5.0",
         "dependencies": {
-          "Microsoft.NETCore": "5.0.0",
-          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+          "Microsoft.NETCore": "5.0.0"
         }
       },
       "ServicesGateways/1.0.0": {
@@ -5835,8 +5834,7 @@
         "type": "project",
         "framework": ".NETPlatform,Version=v5.0",
         "dependencies": {
-          "Microsoft.NETCore": "5.0.0",
-          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+          "Microsoft.NETCore": "5.0.0"
         }
       },
       "ServicesGateways/1.0.0": {
@@ -8801,8 +8799,7 @@
         "type": "project",
         "framework": ".NETPlatform,Version=v5.0",
         "dependencies": {
-          "Microsoft.NETCore": "5.0.0",
-          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+          "Microsoft.NETCore": "5.0.0"
         }
       },
       "ServicesGateways/1.0.0": {
@@ -11737,8 +11734,7 @@
         "type": "project",
         "framework": ".NETPlatform,Version=v5.0",
         "dependencies": {
-          "Microsoft.NETCore": "5.0.0",
-          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+          "Microsoft.NETCore": "5.0.0"
         }
       },
       "ServicesGateways/1.0.0": {
@@ -14712,8 +14708,7 @@
         "type": "project",
         "framework": ".NETPlatform,Version=v5.0",
         "dependencies": {
-          "Microsoft.NETCore": "5.0.0",
-          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+          "Microsoft.NETCore": "5.0.0"
         }
       },
       "ServicesGateways/1.0.0": {
@@ -17648,8 +17643,7 @@
         "type": "project",
         "framework": ".NETPlatform,Version=v5.0",
         "dependencies": {
-          "Microsoft.NETCore": "5.0.0",
-          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+          "Microsoft.NETCore": "5.0.0"
         }
       },
       "ServicesGateways/1.0.0": {
@@ -20623,8 +20617,7 @@
         "type": "project",
         "framework": ".NETPlatform,Version=v5.0",
         "dependencies": {
-          "Microsoft.NETCore": "5.0.0",
-          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+          "Microsoft.NETCore": "5.0.0"
         }
       },
       "ServicesGateways/1.0.0": {
