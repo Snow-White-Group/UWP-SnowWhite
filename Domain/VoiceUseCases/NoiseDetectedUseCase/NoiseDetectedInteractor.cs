@@ -1,7 +1,6 @@
 ﻿using System;
 using Domain.Services;
 using Domain.VoiceUseCases.AuthenticateUserUseCase;
-using Domain.VoiceUseCases.Services;
 using Domain.VoiceUseCases.UserEnrollmentUseCase;
 
 namespace Domain.VoiceUseCases.NoiseDetectedUseCase
@@ -21,6 +20,9 @@ namespace Domain.VoiceUseCases.NoiseDetectedUseCase
 
         public void OnNoiseDetected(NoiseDetectedRequest noiseDetectedRequest)
         {
+            //if a user is logged in now change of state!
+            if (!_mirrorStateServices.GetCurrentUser().IsDefaultUser) return;
+
             switch (_mirrorStateServices.GetCurrentDetectionState())
             {
                 case VoiceUseCasesState.UserDetection:
