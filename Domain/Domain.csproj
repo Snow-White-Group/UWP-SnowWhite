@@ -61,6 +61,7 @@
     <Compile Include="Services\IMirrorStateServices.cs" />
     <Compile Include="Services\INewsService.cs" />
     <Compile Include="Services\IWeatherService.cs" />
+    <Compile Include="VoiceUseCases\UserEnrollmentUseCase\IUserEnrollmentPresenter.cs" />
     <Compile Include="VoiceUseCases\UserEnrollmentUseCase\UserEnrollmentUseCaseRequest.cs" />
     <Compile Include="VoiceUseCases\UserEnrollmentUseCase\IUserEnrollmentUseCase.cs" />
     <Compile Include="Services\NoiseDetectedRequest.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\ITriggerEnrollmentUseCase.cs" />
     <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\TriggerEnrollmentInteractor.cs" />
     <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\TriggerEnrollmentRequest.cs" />
+    <Compile Include="VoiceUseCases\UserEnrollmentUseCase\UserEnrollmentUseCaseResponse.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
