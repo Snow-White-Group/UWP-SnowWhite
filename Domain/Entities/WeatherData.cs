@@ -5,18 +5,18 @@ namespace Domain.Entities
 {
     public class WeatherData
     {
-        public int CurrentTempeture;
+        public double CurrentTempeture;
         public WeatherState CurrentState;
         public DateTime CurrentDate;
         public WeatherData Forecast;
         public string LocationName;
 
-        public WeatherData(int currentTempeture, WeatherState currentState, DateTime currentDate, WeatherData forecast, string locationName)
+        public WeatherData(double currentTempeture, WeatherState currentState, DateTime currentDate, string locationName)
         {
             this.CurrentTempeture = currentTempeture;
             this.CurrentState = currentState;
             this.CurrentDate = currentDate;
-            this.Forecast = forecast;
+            //this.Forecast = forecast; was willst du hier Cem?!
             this.LocationName = locationName;
         }
 

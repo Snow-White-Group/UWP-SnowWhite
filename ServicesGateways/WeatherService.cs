@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using Windows.Data.Json;
+using ServicesGateways;
 
 namespace ServicesGateways
 {
@@ -24,36 +24,40 @@ namespace ServicesGateways
         // db context for the local db
         //private static readonly ServicesDbContext db = new ServicesDbContext();
 
-        public async Task<WeatherData> GetWeather(string city)
+        public async Task<List<WeatherData>> GetWeather(string city)
         {
             // delete all existing rows
             //db.Weather.RemoveRange(db.Weather);
+
+            List<WeatherData> forecasts = new List<WeatherData>();
 
             // request for weather
             string weatherResponse = await service.MakeRequest("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + API_KEY);
 
             WeatherForecast weather = JsonConvert.DeserializeObject<WeatherForecast>(weatherResponse);
             weather.LastUpdate = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
+            
+            double CurrentTemperature;
+            WeatherState CurrentState;
+            DateTime CurrentDate;
 
-            var first = weather;
-            var list = weather.list;
-            var main = list.main;
-            var CurrentTempeture = main.temp_max;
-            var CurrentState = WeatherState.Sunny;
-            var CurrentDate = new DateTime();
+            foreach (List w in weather.List)
+            {
+                // max temparature
+                CurrentTemperature = w.Main.Temp_max;
+                CurrentState = w.Clouds.All < 3 ? WeatherState.Sunny :
+                               w.Rain.ThreeHours > 30.0 ? WeatherState.Raining :  WeatherState.Cloudly ;
+                CurrentDate = new DateTime(w.DT);
 
-            foreach (WeatherForecast w in weather.list)
-            var CurrentTempeture = weather.list.main;
-            var CurrentState;
-            var CurrentDate;
-            var Forecasts;
-            var LocationName;
+                forecasts.Add(new WeatherData(CurrentTemperature, CurrentState, CurrentDate, weather.City.Name));
 
-        WeatherData weatherData = new WeatherData(weather.list.);
-            //db.Weather.Add(weather);
+                // save in db
+                //db.Weather.Add(weather);
+            }
             //db.SaveChanges();
 
-            return weather;
+            // returns the forecasts
+            return forecasts;
         }
     }
 }
