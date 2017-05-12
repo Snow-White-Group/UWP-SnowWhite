@@ -30,6 +30,8 @@ namespace ServicesGateways
             //db.Weather.RemoveRange(db.Weather);
 
             // request for weather
+
+            /**
             string weatherResponse = await service.MakeRequest("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + API_KEY);
 
             WeatherForecast weather = JsonConvert.DeserializeObject<WeatherForecast>(weatherResponse);
@@ -48,12 +50,13 @@ namespace ServicesGateways
             var CurrentDate;
             var Forecasts;
             var LocationName;
-
+ 
         WeatherData weatherData = new WeatherData(weather.list.);
+       **/
             //db.Weather.Add(weather);
             //db.SaveChanges();
 
-            return weather;
+            return null;
         }
     }
 }

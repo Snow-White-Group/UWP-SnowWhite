@@ -1,7 +1,7 @@
 ﻿using Domain.DefaultUserUseCase;
 using Domain.Entities;
 
-namespace Domain.Test.DefaultUserUseCase.impl
+namespace Domain.Test.DefaultUserUseCase.Impl
 {
     internal class MockDefaultUserPresenter : IDefaultUserPresenter
     {

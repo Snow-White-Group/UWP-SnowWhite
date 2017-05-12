@@ -5,9 +5,9 @@
     xmlns:local="using:Snowwhite.UseCases.DefaultUserUseCase"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:clockDwarf="using:DwarfLibrary.ClockDwarf"
-    xmlns:newsDwarf="using:DwarfLibrary.NewsDwarf"
-    xmlns:weatherDwarf="using:DwarfLibrary.WeatherDwarf"
+    xmlns:clockDwarf="using:Snowwhite.DwarfLibrary.ClockDwarf"
+    xmlns:newsDwarf="using:Snowwhite.DwarfLibrary.NewsDwarf"
+    xmlns:weatherDwarf="using:Snowwhite.DwarfLibrary.WeatherDwarf"
     mc:Ignorable="d">
     <Page.Transitions>
         <TransitionCollection>
