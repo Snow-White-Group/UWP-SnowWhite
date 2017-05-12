@@ -45,6 +45,7 @@ namespace ServicesGateways
                     continue;
                 };
                 targetnews.LastUpdate = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
+                
                 news.Add(targetnews);
                 //db.News.Add(targetnews);
             }

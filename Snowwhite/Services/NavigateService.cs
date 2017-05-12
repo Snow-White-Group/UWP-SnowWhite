@@ -8,6 +8,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Domain.Boundaries;
 using Snowwhite.UseCases.DefaultUserUseCase;
+using Snowwhite.ViewModels.DefaultUserUseCase;
 
 namespace Snowwhite.Services
 {

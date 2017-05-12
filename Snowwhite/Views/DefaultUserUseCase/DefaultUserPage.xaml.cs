@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Snowwhite.ViewModels.DefaultUserUseCase;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -31,7 +32,6 @@ namespace Snowwhite.UseCases.DefaultUserUseCase
         public DefaultUserPage()
         {
             this.InitializeComponent();
-            this.DataContext = DependencyContainer.LoadDefaultUserViewModel();
         }
 
         public DefaultUserViewModel ViewModel => (DefaultUserViewModel)this.DataContext;

@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-
-using ExtensionMethods;
-
 using PropertyChanged;
 
 using Windows.System.Threading;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Snowwhite.Utility;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 namespace Snowwhite.DwarfLibrary.NewsDwarf
@@ -42,7 +41,10 @@ namespace Snowwhite.DwarfLibrary.NewsDwarf
         public List<NewsDwarfModel> News
         {
             get { return (List<NewsDwarfModel>) this.GetValue(NewsProperty); }
-            set { this.SetValue(NewsProperty , value ); }
+            set
+            {
+                this.SetValue(NewsProperty , value );
+            }
         }
 
         public int ShownItems
@@ -76,6 +78,7 @@ namespace Snowwhite.DwarfLibrary.NewsDwarf
                             CoreDispatcherPriority.Low,
                             () =>
                                 {
+
                                     if (this.News == null)
                                     {
                                         return;

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Xaml;
@@ -9,11 +6,11 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Media;
 
-namespace ExtensionMethods
+namespace Snowwhite.Utility
 {
-    public static class MyExtensions
+    public static class ControlExtensions
     {
-        #region ListBase 
+        #region ListControlBase 
         //FROM: http://stackoverflow.com/questions/32557216/windows-10-scrollintoview-is-not-scrolling-to-the-items-in-the-middle-of-a-lis
         public static ScrollViewer GetScrollViewer(this DependencyObject element)
         {

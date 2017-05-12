@@ -18,8 +18,8 @@
               Height="{x:Bind ShownItems, Mode=OneWay, Converter={StaticResource ShownConverter}}"
               MaxWidth="450"
               ItemsSource="{x:Bind News, Mode=OneWay}">
-    <ListView.Header>
-            <StackPanel Visibility="{x:Bind News.Count , Converter={StaticResource VisibleWhenZeroConverter}}" Orientation="Vertical">
+    <ListView.Header >
+            <StackPanel Visibility="{x:Bind News, Converter={StaticResource VisibleWhenZeroConverter}, Mode = OneWay}" Orientation="Vertical">
                 <Image  Height="100" Width="100" Source="ms-appx:///Assets/news_icon.png" HorizontalAlignment="Center"/>
                 <TextBlock Text="Keine Narichten" HorizontalAlignment="Center" Margin="0,8,0,0"/>
             </StackPanel>
@@ -30,7 +30,7 @@
                 <StackPanel Orientation="Horizontal" Height="220">
                     <Ellipse Width="120" Height="120">
                         <Ellipse.Fill>
-                            <ImageBrush ImageSource="{x:Bind ImageUrl, TargetNullValue='ms-appx:///Assets/default.png'}"/>
+                            <ImageBrush ImageSource="{x:Bind ImageUrl, FallbackValue='http://pixdaus.com/files/items/pics/4/17/541417_dc4ba122bcccd803c0a6d5631470b682_large.jpg' ,TargetNullValue='http://pixdaus.com/files/items/pics/4/17/541417_dc4ba122bcccd803c0a6d5631470b682_large.jpg'}"/>
                         </Ellipse.Fill>
                     </Ellipse>
                     <RelativePanel Width="250" Height="180" Padding="16,0,0,0">

@@ -5,6 +5,7 @@ using Domain.Services;
 using ServicesGateways;
 using Snowwhite.Services;
 using Snowwhite.UseCases.DefaultUserUseCase;
+using Snowwhite.ViewModels.DefaultUserUseCase;
 
 namespace Snowwhite
 {

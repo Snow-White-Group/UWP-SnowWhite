@@ -8,7 +8,9 @@
     xmlns:clockDwarf="using:Snowwhite.DwarfLibrary.ClockDwarf"
     xmlns:newsDwarf="using:Snowwhite.DwarfLibrary.NewsDwarf"
     xmlns:weatherDwarf="using:Snowwhite.DwarfLibrary.WeatherDwarf"
+    DataContext="{Binding DefaultUserPageInstance, Source={StaticResource Locator}}"
     mc:Ignorable="d">
+    
     <Page.Transitions>
         <TransitionCollection>
             <NavigationThemeTransition>

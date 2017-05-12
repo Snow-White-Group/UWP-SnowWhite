@@ -102,14 +102,15 @@
     <Compile Include="DwarfLibrary\NewsDwarf\VisibleWhenZeroConverter.cs" />
     <Compile Include="DwarfLibrary\WeatherDwarf\WeatherStateToImageConverter.cs" />
     <Compile Include="Services\NavigateService.cs" />
-    <Compile Include="UseCases\DefaultUserUseCase\DefaultUserPage.xaml.cs">
+    <Compile Include="Utility\ListExtensions.cs" />
+    <Compile Include="Views\DefaultUserUseCase\DefaultUserPage.xaml.cs">
       <DependentUpon>DefaultUserPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UseCases\DefaultUserUseCase\DefaultUserViewModel.cs" />
+    <Compile Include="ViewModels\DefaultUserUseCase\DefaultUserViewModel.cs" />
     <Compile Include="DwarfLibrary\ClockDwarf\ClockDwarfControl.xaml.cs">
       <DependentUpon>ClockDwarfControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DwarfLibrary\MyExtensions.cs" />
+    <Compile Include="Utility\ControlExtensions.cs" />
     <Compile Include="DwarfLibrary\NewsDwarf\NewsDwarfControl.xaml.cs">
       <DependentUpon>NewsDwarfControl.xaml</DependentUpon>
     </Compile>
@@ -119,10 +120,11 @@
       <DependentUpon>WeatherDwarfControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="DwarfLibrary\WeatherDwarf\WeatherDwarfModel.cs" />
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -175,7 +177,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="UseCases\DefaultUserUseCase\DefaultUserPage.xaml">
+    <Page Include="Views\DefaultUserUseCase\DefaultUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,7 +193,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
