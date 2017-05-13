@@ -28,6 +28,7 @@ namespace Snowwhite.DwarfLibrary.NewsDwarf
             this.InitializeComponent();
             this.AutoScroll();
             this.currentIndex = 0;
+            this.ScrollSpeed = 10;
         }
         #endregion
         
@@ -37,6 +38,9 @@ namespace Snowwhite.DwarfLibrary.NewsDwarf
 
         public static readonly DependencyProperty ShownItemsProperty =
             DependencyProperty.Register("ShownItems", typeof(int), typeof(NewsDwarfControl), null);
+
+        public static readonly DependencyProperty ScrollSpeedProperty =
+            DependencyProperty.Register("ScrollSpeed", typeof(int), typeof(NewsDwarfControl), null);
 
         public List<NewsDwarfModel> News
         {
@@ -58,6 +62,23 @@ namespace Snowwhite.DwarfLibrary.NewsDwarf
             {
                 this.SetValue(ShownItemsProperty, value);
             }
+        }
+
+        public ThreadPoolTimer Thread { get; set; }
+
+        public int ScrollSpeed
+        {
+            get
+            {
+                return (int)this.GetValue(ScrollSpeedProperty);
+            }
+
+            set
+            {
+                Thread.Cancel();
+                this.SetValue(ScrollSpeedProperty, value);
+                AutoScroll();
+            }
 
 
         }
@@ -70,8 +91,8 @@ namespace Snowwhite.DwarfLibrary.NewsDwarf
         #region function
         private void AutoScroll()
         {
-            var period = TimeSpan.FromSeconds(7);
-            ThreadPoolTimer.CreatePeriodicTimer(
+            var period = TimeSpan.FromSeconds(ScrollSpeed);
+            Thread = ThreadPoolTimer.CreatePeriodicTimer(
                 (source) =>
                     {
                         this.Dispatcher?.RunAsync(

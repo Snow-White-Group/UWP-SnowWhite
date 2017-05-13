@@ -37,6 +37,7 @@
             x:Name="NewsDwarfControl"
             News="{x:Bind ViewModel.NewsDwarf, Mode=OneWay}"
             ShownItems="{x:Bind ViewModel.ShownNews, Mode=OneWay, FallbackValue=1}"
+            ScrollSpeed="{x:Bind ViewModel.ScrollSpeed, Mode=OneWay, FallbackValue=10}"
             RelativePanel.AlignBottomWithPanel="true" 
             RelativePanel.AlignLeftWithPanel="true"/>
         

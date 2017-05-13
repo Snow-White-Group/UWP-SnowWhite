@@ -23,11 +23,11 @@ namespace Snowwhite.ViewModels.DefaultUserUseCase
         public DefaultUserViewModel()
             {
                 this.ShownNews = 3;
+                this.ScrollSpeed = 10;
             }
         #endregion
        
         #region public
-
             public WeatherDwarfModel WeatherDwarfModel { get; set; }
 
             public List<NewsDwarfModel> NewsDwarf { get; set; }
@@ -35,6 +35,8 @@ namespace Snowwhite.ViewModels.DefaultUserUseCase
             public int ShownNews { get; set; }
 
             public string MirrorName = "Hello";
+
+            public int ScrollSpeed { set; get; }
         #endregion
 
         public void OnPresent(DefaultUserResponse response)
