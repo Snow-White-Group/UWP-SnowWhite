@@ -46,6 +46,8 @@ namespace Snowwhite.ViewModels.DefaultUserUseCase
                     .SelectMany(a => a)
                     .Select(a => new NewsDwarfModel(a.Item1.Title, a.Item1.Description, a.Item1.URLToImage, a.Item2))
                     .Where(a => a.Headline != null && a.ImageUrl != null && a.ShortLine != null && a.Source != null)
+                    .Where(a => a.ShortLine.Length > 155)
+                    .Select(a => new NewsDwarfModel(a.Headline.Trim(), a.ShortLine.Trim(), a.ImageUrl, a.Source))
                     .ToList()
                     .Shuffle();
 

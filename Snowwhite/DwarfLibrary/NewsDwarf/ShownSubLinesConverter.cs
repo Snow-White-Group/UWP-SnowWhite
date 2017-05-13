@@ -3,12 +3,13 @@
     using System;
     using Windows.UI.Xaml.Data;
 
-    public class ShownItemsConverter : IValueConverter
+    public class ShownSubLinesConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            var input = value as int? ?? 1;
-            return System.Convert.ToDouble(input * 192);
+            var input = (int) value;
+            if (input > 40) return 4;
+            else return 5;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

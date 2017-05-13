@@ -11,6 +11,7 @@
     
     <UserControl.Resources>
         <newsDwarf:ShownItemsConverter x:Name="ShownConverter"/>
+        <newsDwarf:ShownSubLinesConverter x:Name="LinesConverter"/>
         <newsDwarf:VisibleWhenZeroConverter x:Name="VisibleWhenZeroConverter" />
     </UserControl.Resources>
     
@@ -28,7 +29,7 @@
             
             <DataTemplate
                 x:DataType="newsDwarf:NewsDwarfModel">
-                <RelativePanel Width="400" Height="180" Margin="0,16,0,16">
+                <RelativePanel Width="400" Height="160" Margin="0,16,0,16">
                     <TextBlock 
                         x:Name="HeadinText" 
                         Text="{x:Bind Headline}" 
@@ -40,27 +41,16 @@
                         TextWrapping="Wrap" 
                         TextTrimming="CharacterEllipsis" />
 
-                    <Rectangle
-                        x:Name="Image"
-                        Width="120"
-                        Height="120"
-                        RelativePanel.Below="HeadinText"
-                        Margin="8,8,8,8"
-                        RelativePanel.AlignLeftWithPanel="True">
-                        <Rectangle.Fill >
-                            <ImageBrush ImageSource="{x:Bind ImageUrl, FallbackValue='http://pixdaus.com/files/items/pics/4/17/541417_dc4ba122bcccd803c0a6d5631470b682_large.jpg' ,TargetNullValue='http://pixdaus.com/files/items/pics/4/17/541417_dc4ba122bcccd803c0a6d5631470b682_large.jpg'}"/>
-                        </Rectangle.Fill>
-                    </Rectangle>
-
                     <TextBlock 
                         x:Name="SortText" 
                         Text="{x:Bind ShortLine}"
                         RelativePanel.Below="HeadinText" 
-                        RelativePanel.RightOf="Image"
+                        RelativePanel.AlignRightWithPanel="True"
                         FontSize="16"
                         TextWrapping="Wrap" 
                         TextTrimming="CharacterEllipsis"
-                        MaxLines="6"/>
+                        MaxLines="{Binding Text.Length, ElementName=HeadinText, Converter={StaticResource LinesConverter}}" 
+                        TextAlignment="Justify"/>
 
                     <TextBlock 
                         Text="{x:Bind Source}" 

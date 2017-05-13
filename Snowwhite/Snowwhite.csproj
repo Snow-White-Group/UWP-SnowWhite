@@ -98,6 +98,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="DependencyContainer.cs" />
+    <Compile Include="DwarfLibrary\NewsDwarf\ShownSubLinesConverter.cs" />
     <Compile Include="DwarfLibrary\NewsDwarf\ShowItemsConverter.cs" />
     <Compile Include="DwarfLibrary\NewsDwarf\VisibleWhenZeroConverter.cs" />
     <Compile Include="DwarfLibrary\WeatherDwarf\WeatherStateToImageConverter.cs" />
