@@ -101,6 +101,9 @@
     <Compile Include="DwarfLibrary\NewsDwarf\ShownSubLinesConverter.cs" />
     <Compile Include="DwarfLibrary\NewsDwarf\ShowItemsConverter.cs" />
     <Compile Include="DwarfLibrary\NewsDwarf\VisibleWhenZeroConverter.cs" />
+    <Compile Include="DwarfLibrary\VoiceDwarf\VoiceDwarfControl.xaml.cs">
+      <DependentUpon>VoiceDwarfControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DwarfLibrary\WeatherDwarf\WeatherStateToImageConverter.cs" />
     <Compile Include="Services\NavigateService.cs" />
     <Compile Include="Utility\ListExtensions.cs" />
@@ -178,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="DwarfLibrary\VoiceDwarf\VoiceDwarfControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DefaultUserUseCase\DefaultUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

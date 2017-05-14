@@ -8,6 +8,7 @@
     xmlns:clockDwarf="using:Snowwhite.DwarfLibrary.ClockDwarf"
     xmlns:newsDwarf="using:Snowwhite.DwarfLibrary.NewsDwarf"
     xmlns:weatherDwarf="using:Snowwhite.DwarfLibrary.WeatherDwarf"
+    xmlns:voiceDwarf="using:Snowwhite.DwarfLibrary.VoiceDwarf"
     DataContext="{Binding DefaultUserPageInstance, Source={StaticResource Locator}}"
     mc:Ignorable="d">
     
@@ -42,8 +43,16 @@
             RelativePanel.AlignLeftWithPanel="true"/>
         
         <weatherDwarf:WeatherDwarfControl 
+            x:Name="WeatherDwarfControl"
             WeatherData="{x:Bind ViewModel.WeatherDwarfModel, Mode=OneWay}" 
             RelativePanel.AlignTopWithPanel="true" 
             RelativePanel.AlignRightWithPanel="true"/>
+        
+        <voiceDwarf:VoiceDwarfControl
+            
+            RelativePanel.AlignRightWithPanel="True"
+            RelativePanel.AlignBottomWithPanel="True"
+            RelativePanel.LeftOf="NewsDwarfControl"
+            />
     </RelativePanel>
 </Page>
