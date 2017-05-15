@@ -111,6 +111,7 @@
     <Compile Include="ServicesDbContext.cs" />
     <Compile Include="NewsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpeechRecognitionService.cs" />
     <Compile Include="WeatherForecast.cs" />
     <Compile Include="WeatherService.cs" />
     <Compile Include="WebService.cs" />
@@ -121,6 +122,9 @@
       <Project>{4282ca9c-94b9-4c39-81cd-fe2499ac80fc}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AudioFiles\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
