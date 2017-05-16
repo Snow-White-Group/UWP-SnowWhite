@@ -41,6 +41,24 @@ namespace Snowwhite.ViewModels.DefaultUserUseCase
 
         public void OnPresent(DefaultUserResponse response)
         {
+            ExtractNewsData(response);
+            ExtractWeatherData(response);
+        }
+
+        private void ExtractWeatherData(DefaultUserResponse response)
+        {
+            var weather = response.Weather;
+            if (weather == null) return;
+            var forcast = weather.Forecast
+                .Select(w => new ForecastModel(w.CurrentDate, w.CurrentTempeture, w.CurrentState, WeatherUnit.Celsius))
+                .ToList();
+            var model = new WeatherDwarfModel(weather.CurrentTempeture, weather.CurrentState, weather.CurrentDate, forcast,
+                weather.LocationName, WeatherUnit.Celsius);
+            Window.Current.Dispatcher?.RunAsync(CoreDispatcherPriority.Normal, () => { WeatherDwarfModel = model; });
+        }
+
+        private void ExtractNewsData(DefaultUserResponse response)
+        {
             var news =
                 response.News.Select(a => a.Articles.Select(b => new Tuple<Article, string>(b, a.Source)))
                     .SelectMany(a => a)
@@ -51,11 +69,7 @@ namespace Snowwhite.ViewModels.DefaultUserUseCase
                     .ToList()
                     .Shuffle();
 
-            Debug.WriteLine("News: " + news.Count());
-
-            //Ensure UI Thread
             Window.Current.Dispatcher?.RunAsync(CoreDispatcherPriority.Normal, () => { NewsDwarf = news.ToList(); });
-            
         }
     }
 }

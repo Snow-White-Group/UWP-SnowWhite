@@ -29,37 +29,41 @@ namespace ServicesGateways
             //delete all existing rows
             //db.Weather.RemoveRange(db.Weather);
 
-            List<WeatherData> forecasts = new List<WeatherData>();
+            var forecasts = new List<WeatherData>();
 
             //request for weather
-            string weatherResponse = await service.MakeRequest("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + API_KEY);
+            var weatherResponse = await service.MakeRequest("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + API_KEY);
 
-            WeatherForecast weather = JsonConvert.DeserializeObject<WeatherForecast>(weatherResponse);
-            weather.LastUpdate = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
+            var weather = JsonConvert.DeserializeObject<WeatherForecast>(weatherResponse);
+            weather.LastUpdate = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
             
-            double CurrentTemperature;
-            WeatherState CurrentState;
-            DateTime CurrentDate;
+           
 
             foreach (List w in weather.List)
             {
                 //max temparature
-                CurrentTemperature = w.Main.Temp_max;
-                CurrentState = w.Clouds.All < 3 ? WeatherState.Sunny :
+                var currentTemperature = w.Main.Temp_max;
+                var currentState = w.Clouds.All < 3 ? WeatherState.Sunny :
                                w.Rain.ThreeHours > 30.0 ? WeatherState.Raining :  WeatherState.Cloudly ;
                 // do not know wheather this works..
-                CurrentDate = new DateTime(w.DT);
+                var currentDate = new DateTime(w.DT);
+               
 
-                forecasts.Add(new WeatherData(CurrentTemperature, CurrentState, CurrentDate, weather.City.Name));
+                forecasts.Add(new WeatherData(currentTemperature, currentState, currentDate, weather.City.Name));
 
                 //save in db
-                db.Weather.Add(weather);
+                //db.Weather.Add(weather);
             }
+            if (forecasts.Count < 1) return null;
+            var today = forecasts.First();
+ 
+            if (!forecasts.Remove(today)) return null;
+            today.Forecast = forecasts;
+
             //db.SaveChanges();
 
             //returns the forecasts
-            return forecasts;
+            return today;
         }
-    */
     }
-    }
+}

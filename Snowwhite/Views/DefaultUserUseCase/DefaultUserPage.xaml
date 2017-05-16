@@ -49,7 +49,6 @@
             RelativePanel.AlignRightWithPanel="true"/>
         
         <voiceDwarf:VoiceDwarfControl
-            
             RelativePanel.AlignRightWithPanel="True"
             RelativePanel.AlignBottomWithPanel="True"
             RelativePanel.LeftOf="NewsDwarfControl"

@@ -29,7 +29,7 @@
             
             <DataTemplate
                 x:DataType="newsDwarf:NewsDwarfModel">
-                <RelativePanel Width="400" Height="160" Margin="0,16,0,16">
+                <RelativePanel Width="400" Height="160" Margin="-8,16,0,16">
                     <TextBlock 
                         x:Name="HeadinText" 
                         Text="{x:Bind Headline}" 

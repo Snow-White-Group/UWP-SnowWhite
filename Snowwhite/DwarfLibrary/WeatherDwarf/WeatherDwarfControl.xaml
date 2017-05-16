@@ -2,7 +2,6 @@
     x:Class="Snowwhite.DwarfLibrary.WeatherDwarf.WeatherDwarfControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:DwarfLibrary.WeatherDwarf"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:weatherDwarf="using:Snowwhite.DwarfLibrary.WeatherDwarf"
@@ -11,11 +10,11 @@
     d:DesignWidth="400">
 
     <UserControl.Resources>
-        <weatherDwarf:WeatherStateToImageConverter x:Name="converter"/>
+        <weatherDwarf:WeatherStateToImageConverter x:Name="Converter"/>
     </UserControl.Resources>
 
-    <RelativePanel x:Name="Content"
-                   Width="280">
+    <StackPanel x:Name="Content">
+        
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualStateGroup.Transitions>
@@ -36,26 +35,42 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <StackPanel Orientation="Horizontal"
-            x:Name="CurrentWeather">
-            <StackPanel Orientation="Vertical">
-                <TextBlock Text="{x:Bind WeatherData.DisplayText}" TextAlignment="Right" FontWeight="Bold" FontSize="45"/>
-                <TextBlock Text="{x:Bind WeatherData.LocationName}" FontWeight="Light" FontSize="34"/>
-            </StackPanel>
-            <Image Height="150" Width="150" Source="{x:Bind WeatherData.CurrentState, Converter={StaticResource converter}}" />
-        </StackPanel>
+
+        <RelativePanel  x:Name="CurrentWeather" Height="180">
+            <TextBlock x:Name="CurrentTemp"
+                       RelativePanel.LeftOf="WeatherImg"
+                       Text="{x:Bind WeatherData.DisplayText, Mode=OneTime}" 
+                       TextAlignment="Right"
+                       FontWeight="Bold"
+                       FontSize="45"/>
+            
+            <TextBlock x:Name="Location"
+                       RelativePanel.Below="CurrentTemp"
+                       RelativePanel.LeftOf="WeatherImg"
+                       Text="{x:Bind WeatherData.LocationName, Mode=OneTime}"
+                       FontWeight="Light"
+                       FontSize="34"/>
+            
+            <Image x:Name="WeatherImg"
+                   RelativePanel.AlignRightWithPanel="True"
+                   Height="120" 
+                   Width="120" 
+                   Source="{x:Bind WeatherData.CurrentState, Mode=OneTime, Converter={StaticResource Converter}, FallbackValue=ms-appx:///Assets/weather-none-available.png}" />
+        </RelativePanel>
+        
         <ListView 
+            Margin="0,-180,0,0"
             x:Name="ForcastWeather"
             RelativePanel.AlignRightWithPanel="true"
-            ItemsSource="{x:Bind WeatherData.Forecasts}" Opacity="0">
+            ItemsSource="{x:Bind WeatherData.Forecasts, Mode=OneTime}" Opacity="0">
             <ListView.ItemTemplate> 
-                <DataTemplate x:DataType="local:ForecastModel">
-                   <RelativePanel Height="50" Width="250" >
-                        <TextBlock RelativePanel.AlignLeftWithPanel="True" Text="{x:Bind DisplayText, Mode=OneTime}" FontSize="20" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,15" />
-                        <Image RelativePanel.AlignRightWithPanel="True" Height="50" Width="50" Source="{x:Bind WeatherState, Converter={StaticResource converter}}" />
+                <DataTemplate x:DataType="weatherDwarf:ForecastModel">
+                   <RelativePanel Height="50" Width="250"  HorizontalAlignment="Left">
+                        <TextBlock RelativePanel.LeftOf="img" Text="{x:Bind DisplayText, Mode=OneTime}" Margin="0,0,16,0" FontSize="20" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,15" />
+                        <Image x:Name="img" RelativePanel.AlignRightWithPanel="True" Height="50" Width="50" Source="{x:Bind WeatherState, Converter={StaticResource Converter}, Mode=OneTime}" />
                     </RelativePanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </RelativePanel>
+    </StackPanel>
 </UserControl>

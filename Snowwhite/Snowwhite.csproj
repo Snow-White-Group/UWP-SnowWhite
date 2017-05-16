@@ -105,6 +105,7 @@
       <DependentUpon>VoiceDwarfControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="DwarfLibrary\WeatherDwarf\WeatherStateToImageConverter.cs" />
+    <Compile Include="DwarfLibrary\WeatherDwarf\WeatherUnit.cs" />
     <Compile Include="Services\NavigateService.cs" />
     <Compile Include="Utility\ListExtensions.cs" />
     <Compile Include="Views\DefaultUserUseCase\DefaultUserPage.xaml.cs">

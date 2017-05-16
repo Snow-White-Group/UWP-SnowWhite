@@ -32,7 +32,7 @@ namespace ServicesGateways
             //db.News.RemoveRange(db.News);
 
             // get newest news from each source
-            foreach (Source newsSource in sources.Sources)
+            foreach (var newsSource in sources.Sources)
             {
                 // request for news
                 string newsResponse = await service.MakeRequest("https://newsapi.org/v1/articles?source=" + newsSource.ID + "&sortBy=latest&apiKey=" + API_KEY);

@@ -16,7 +16,7 @@ namespace Snowwhite.DwarfLibrary.WeatherDwarf
     {
         public static readonly DependencyProperty WeatherProperty =
            DependencyProperty.Register("Weather", typeof(WeatherDwarfModel), typeof(WeatherDwarfModel), null);
-       
+
         #region constuctor
         public WeatherDwarfControl()
         {
@@ -37,15 +37,17 @@ namespace Snowwhite.DwarfLibrary.WeatherDwarf
             set
             {
                 this.SetValue(WeatherProperty, value);
+                this.Bindings.Update();
             }
         }
         #endregion
+
 
         #region private fields
         private int currentState;
         #endregion
 
-        #region function
+        #region functions
         private void EnableAutomaticSwitch()
         {
             var period = TimeSpan.FromSeconds(15);
@@ -56,6 +58,7 @@ namespace Snowwhite.DwarfLibrary.WeatherDwarf
                             CoreDispatcherPriority.Low,
                             () =>
                                 {
+                                    if(WeatherData == null) return;
                                     VisualStateManager.GoToState(this, this.VisualStateGroup.States.ToArray()[this.currentState].Name, true);
                                     this.currentState = (this.currentState + 1) % 2;
                                 });
@@ -64,4 +67,6 @@ namespace Snowwhite.DwarfLibrary.WeatherDwarf
         }
         #endregion
     }
+
+ 
 }
