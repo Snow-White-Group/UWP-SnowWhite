@@ -34,7 +34,7 @@ namespace Snowwhite.ViewModels.DefaultUserUseCase
 
             public int ShownNews { get; set; }
 
-            public string MirrorName = "Hello";
+            public string MirrorName = "DEVELOPER_PREVIEW_MIRROR";
 
             public int ScrollSpeed { set; get; }
         #endregion
