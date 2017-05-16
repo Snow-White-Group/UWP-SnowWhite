@@ -45,7 +45,6 @@ namespace ServicesGateways
 
     public class Rain
     {
-        [JsonProperty("Name = 3h")]
         public double ThreeHours { get; set; }
     }
 

@@ -32,7 +32,7 @@ namespace Domain.DefaultUserUseCase
         public async void TriggerDefaultUser()
         {
             var weather = await _weatherService.GetWeather("Karlsruhe");
-            var newsSources = await _newsService.GetSources();
+            var newsSources = await _newsService.GetSources("en");
             var news = await _newsService.GetNews(newsSources);
 
             await _deliveryBoundary.DeliverDefaultUserPage().ConfigureAwait(false);

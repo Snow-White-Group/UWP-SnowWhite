@@ -39,6 +39,8 @@ namespace ServicesGateways
 
                 // parse json to news object and add to list if no error occured
                 News targetnews = JsonConvert.DeserializeObject<News>(newsResponse);
+                // work arround
+                targetnews.Source = newsSource.Name;
                 if (targetnews.Status.Equals("error"))
                 {
                     badGuys.Add(targetnews);
