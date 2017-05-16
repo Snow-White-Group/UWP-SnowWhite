@@ -16,19 +16,7 @@ namespace Domain.Entities
             this.CurrentTempeture = currentTempeture;
             this.CurrentState = currentState;
             this.CurrentDate = currentDate;
-            //this.Forecast = forecast; was willst du hier Cem?!
             this.LocationName = locationName;
-        }
-
-        public void AddForecast(WeatherData weather)
-        {
-            if(this.Forecast == null)
-            {
-                this.Forecast = weather;
-            } else
-            {
-                this.Forecast.AddForecast(weather);
-            }
         }
     }
 }

@@ -22,18 +22,16 @@ namespace ServicesGateways
         private static readonly WebService service = new WebService();
 
         // db context for the local db
-        //private static readonly ServicesDbContext db = new ServicesDbContext();
+        private static readonly ServicesDbContext db = new ServicesDbContext();
 
         public async Task<WeatherData> GetWeather(string city)
         {
-            // delete all existing rows
+            //delete all existing rows
             //db.Weather.RemoveRange(db.Weather);
 
             List<WeatherData> forecasts = new List<WeatherData>();
 
-            // request for weather
-
-            /**
+            //request for weather
             string weatherResponse = await service.MakeRequest("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + API_KEY);
 
             WeatherForecast weather = JsonConvert.DeserializeObject<WeatherForecast>(weatherResponse);
@@ -45,24 +43,23 @@ namespace ServicesGateways
 
             foreach (List w in weather.List)
             {
-                // max temparature
+                //max temparature
                 CurrentTemperature = w.Main.Temp_max;
                 CurrentState = w.Clouds.All < 3 ? WeatherState.Sunny :
                                w.Rain.ThreeHours > 30.0 ? WeatherState.Raining :  WeatherState.Cloudly ;
+                // do not know wheather this works..
                 CurrentDate = new DateTime(w.DT);
 
                 forecasts.Add(new WeatherData(CurrentTemperature, CurrentState, CurrentDate, weather.City.Name));
 
-                // save in db
-                //db.Weather.Add(weather);
+                //save in db
+                db.Weather.Add(weather);
             }
             //db.SaveChanges();
 
-            // returns the forecasts
+            //returns the forecasts
             return forecasts;
         }
     */
-            return null;
-        }
     }
-}
+    }
