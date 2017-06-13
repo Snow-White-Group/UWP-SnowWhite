@@ -18,7 +18,7 @@ namespace Domain.VoiceUseCases.NoiseDetectedUseCase
             _authenticateUserUseCase = authenticateUserUseCase;
         }
 
-        public void OnNoiseDetected(NoiseDetectedRequest noiseDetectedRequest)
+        public void OnNoiseCompleted(NoiseDetectedRequest noiseDetectedRequest)
         {
             //if a user is logged in now change of state!
             if (!_mirrorStateServices.GetCurrentUser().IsDefaultUser) return;
@@ -34,6 +34,11 @@ namespace Domain.VoiceUseCases.NoiseDetectedUseCase
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        public void OnNoiseDetected(INoiseEvent eEvent)
+        {
+            throw new NotImplementedException();
         }
     }
 }

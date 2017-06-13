@@ -3,8 +3,9 @@
 namespace Domain.VoiceUseCases.NoiseDetectedUseCase
 {
     // see https://docs.google.com/document/d/1yUpelTJoRxF9umwHOJSW4e-bFlqAic3YuWJPYUUCpoc
-    interface INoiseDetectedUseCase
+    public interface INoiseDetectedUseCase
     {
-        void OnNoiseDetected(NoiseDetectedRequest noiseDetectedRequest);
+        void OnNoiseCompleted(NoiseDetectedRequest noiseDetectedRequest);
+        void OnNoiseDetected(INoiseEvent eEvent);
     }
 }

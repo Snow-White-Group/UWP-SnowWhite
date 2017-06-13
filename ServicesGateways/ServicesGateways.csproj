@@ -46,6 +46,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -108,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MirrorStateService.cs" />
+    <Compile Include="NoiseDetection\NoiseDetectionService.cs" />
+    <Compile Include="NoiseDetection\RingBuffer.cs" />
+    <Compile Include="NoiseDetection\SilenceDetector.cs" />
     <Compile Include="ServicesDbContext.cs" />
     <Compile Include="NewsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

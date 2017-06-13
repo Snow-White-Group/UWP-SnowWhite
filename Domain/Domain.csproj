@@ -53,8 +53,10 @@
     <Compile Include="Entities\WeatherData.cs" />
     <Compile Include="Entities\WeatherState.cs" />
     <Compile Include="Boundaries\INoiseDetectedBoundary.cs" />
+    <Compile Include="Services\INoiseDetectionService.cs" />
     <Compile Include="VoiceUseCases\AuthenticateUserUseCase\IAuthenticateUserUseCase.cs" />
     <Compile Include="VoiceUseCases\NoiseDetectedUseCase\INoiseDetectedUseCase.cs" />
+    <Compile Include="VoiceUseCases\NoiseDetectedUseCase\MicrophoneInput.cs" />
     <Compile Include="VoiceUseCases\NoiseDetectedUseCase\NoiseDetectedInteractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IConfigurationPageService.cs" />
