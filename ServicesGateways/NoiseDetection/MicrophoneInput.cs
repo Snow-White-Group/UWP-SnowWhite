@@ -1,6 +1,7 @@
 ﻿using Domain.Services;
+using Domain.VoiceUseCases;
 
-namespace Domain.VoiceUseCases.NoiseDetectedUseCase
+namespace ServicesGateways.NoiseDetection
 {
     public class MicrophoneInput : INoiseEvent
     {

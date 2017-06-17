@@ -67,6 +67,7 @@ namespace ServicesGateways.NoiseDetection
             this._count = 0;
             this._lastRecoring = new RingBuffer<double>(FiveSecounds);
             InitGraph();
+           
         }
 
         public async void Run(IBackgroundTaskInstance taskInstance)
@@ -162,7 +163,7 @@ namespace ServicesGateways.NoiseDetection
             //Record Noise for at least 5 secounds
             if (_count < FiveSecounds || _isRecoding != true) return;
             // if there was enough sound in this 5 secounds, keep recoring
-            if (_lastRecoring.Fold((b) => b.Sum()) > BufferTol && _count > OneMinute) return;
+            if (_lastRecoring.Fold((b) => b.Sum()) > BufferTol && _count < 2* FiveSecounds) return;
             _count = 0;
             _isRecoding = false;
             _fileOutputNode.Stop();

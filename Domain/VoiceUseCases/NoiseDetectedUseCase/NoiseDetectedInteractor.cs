@@ -10,12 +10,14 @@ namespace Domain.VoiceUseCases.NoiseDetectedUseCase
         private readonly IMirrorStateServices _mirrorStateServices;
         private readonly IUserEnrollmentUseCase _userEnrollmentUseCase;
         private readonly IAuthenticateUserUseCase _authenticateUserUseCase;
+        private readonly INoiseActionPresenter _noiseActionPresenter;
 
-        public NoiseDetectedInteractor(IMirrorStateServices mirrorStateServices, IUserEnrollmentUseCase userEnrollmentUseCase, IAuthenticateUserUseCase authenticateUserUseCase)
+        public NoiseDetectedInteractor(IMirrorStateServices mirrorStateServices, IUserEnrollmentUseCase userEnrollmentUseCase, IAuthenticateUserUseCase authenticateUserUseCase, INoiseActionPresenter noiseActionPresenter)
         {
             _mirrorStateServices = mirrorStateServices;
             _userEnrollmentUseCase = userEnrollmentUseCase;
             _authenticateUserUseCase = authenticateUserUseCase;
+            _noiseActionPresenter = noiseActionPresenter;
         }
 
         public void OnNoiseCompleted(NoiseDetectedRequest noiseDetectedRequest)
@@ -38,7 +40,7 @@ namespace Domain.VoiceUseCases.NoiseDetectedUseCase
 
         public void OnNoiseDetected(INoiseEvent eEvent)
         {
-            throw new NotImplementedException();
+            _noiseActionPresenter.OnPresent(eEvent);
         }
     }
 }

@@ -11,37 +11,55 @@
 
 
     <StackPanel Orientation="Horizontal" MinWidth="280">
-       
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Disabled">
+                    <VisualState.Setters>
+                        <Setter Target="InnerCircle.(Shape.Fill).(SolidColorBrush.Color)">
+                            <Setter.Value>
+                                <Color>#77B9A3A7</Color>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="InnerCircle.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="InnerCircle.(FrameworkElement.Height)" Value="120"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Recording"/>
+                <VisualState x:Name="Nothing">
+                    <VisualState.Setters>
+                        <Setter Target="InnerCircle.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="InnerCircle.(FrameworkElement.Height)" Value="120"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
         <!--Event text. Should show someting like "did not understand"-->
-        <TextBlock x:Name="EventText" MinWidth="160" FontSize="20"  Text="Event Text" TextAlignment="Right" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,0,16,0"> 
+        <TextBlock x:Name="MyEventText" MinWidth="160" FontSize="20"  Text="{x:Bind EventText, Mode=OneWay}" TextAlignment="Right" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,0,16,0"> 
             <!--Basic Animation for showing and hiding-->
             <TextBlock.Resources>
                 <Storyboard x:Name="EventShow">
-                    <PopInThemeAnimation Storyboard.TargetName="EventText"/>
+                    <PopInThemeAnimation Storyboard.TargetName="MyEventText"/>
                 </Storyboard>
                 <Storyboard x:Name="EventHide">
-                    <PopOutThemeAnimation Storyboard.TargetName="EventText"/>
+                    <PopOutThemeAnimation Storyboard.TargetName="MyEventText"/>
                 </Storyboard>
             </TextBlock.Resources>
         </TextBlock>
-        
+
         <!--Big circle. This on is gonna changes its Width-->
         <StackPanel Width="120">
-            <Ellipse x:Name="OuterCircle" Width="120" Height="120" Margin="0">
-                <Ellipse.Fill>
-                    <SolidColorBrush Color="#FF492029" />
-                </Ellipse.Fill>
-            </Ellipse>
+            <Ellipse x:Name="OuterCircle" Width="120" Height="120" Margin="0" Fill="#3F03A9F4"/>
 
-        <!--Small circle. Stable Width-->
+            <!--Small circle. Stable Width-->
             <Ellipse x:Name="InnerCircle" Width="60" Height="60" Margin="0,-120,0,0">
                 <Ellipse.Fill>
-                    <SolidColorBrush Color="#FFA61B1B" />
+                    <SolidColorBrush Color="#03a9f4" />
                 </Ellipse.Fill>
             </Ellipse>
 
-        <!--Circle text. Only numbers!-->
-            <TextBlock Text="1"  Height="30" Width="30" Margin="0,-120,0,0" RenderTransformOrigin="0.604,0.881" TextAlignment="Center" FontSize="22"/>
+            <!--Circle text. Only numbers!-->
+            <TextBlock Text="{x:Bind InnerText, Mode=OneWay}"  Height="30" Width="30" Margin="0,-120,0,0" RenderTransformOrigin="0.604,0.881" TextAlignment="Center" FontSize="22"/>
         </StackPanel>
     </StackPanel>
 </UserControl>

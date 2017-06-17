@@ -49,6 +49,8 @@
             RelativePanel.AlignRightWithPanel="true"/>
         
         <voiceDwarf:VoiceDwarfControl
+            EventText="{x:Bind ViewModel.MyEventText, Mode=OneWay}"
+            DwarfState="{x:Bind ViewModel.VoiceDwarfState, Mode=OneWay}"
             RelativePanel.AlignRightWithPanel="True"
             RelativePanel.AlignBottomWithPanel="True"
             RelativePanel.LeftOf="NewsDwarfControl"

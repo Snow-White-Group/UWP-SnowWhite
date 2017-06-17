@@ -2,7 +2,11 @@
 using Domain.Boundaries;
 using Domain.DefaultUserUseCase;
 using Domain.Services;
+using Domain.StartupUseCase;
+using Domain.VoiceUseCases.NoiseDetectedUseCase;
+using Domain.VoiceUseCases.TriggerEnrollmentUseCase;
 using ServicesGateways;
+using ServicesGateways.NoiseDetection;
 using Snowwhite.Services;
 using Snowwhite.UseCases.DefaultUserUseCase;
 using Snowwhite.ViewModels.DefaultUserUseCase;
@@ -20,7 +24,7 @@ namespace Snowwhite
             RegistrationRoot();
             using (var scope = container.BeginLifetimeScope())
             {
-                container.Resolve<IDefaultUserUseCase>().TriggerDefaultUser();
+                container.Resolve<IStartupUseCase>().StartApplication();
             }
         }
 
@@ -53,8 +57,13 @@ namespace Snowwhite
             builder.RegisterType<DefaultUserUseCaseInteractor>().As<IDefaultUserUseCase>().SingleInstance();
             builder.RegisterType<DefaultUserViewModel>()
                 .As<IDefaultUserPresenter>()
+                .As<INoiseActionPresenter>()
                 .As<DefaultUserViewModel>()
                 .SingleInstance();
+
+            builder.RegisterType<NoiseDetectionService>().As<INoiseDetectionService>().SingleInstance();
+            builder.RegisterType<TempNoiseDetectedInteractor>().As<INoiseDetectedUseCase>().SingleInstance();
+            builder.RegisterType<StartupInteractor>().As<IStartupUseCase>().SingleInstance();
 
             container = builder.Build();
         }

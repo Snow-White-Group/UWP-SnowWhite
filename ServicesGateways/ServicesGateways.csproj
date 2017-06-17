@@ -69,6 +69,7 @@
     <PlatformTarget>ARM</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <PlatformTarget>ARM</PlatformTarget>
@@ -80,6 +81,7 @@
     <PlatformTarget>ARM</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <PlatformTarget>x64</PlatformTarget>
@@ -109,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MirrorStateService.cs" />
+    <Compile Include="NoiseDetection\MicrophoneInput.cs" />
     <Compile Include="NoiseDetection\NoiseDetectionService.cs" />
     <Compile Include="NoiseDetection\RingBuffer.cs" />
     <Compile Include="NoiseDetection\SilenceDetector.cs" />
