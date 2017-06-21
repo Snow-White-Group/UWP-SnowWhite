@@ -13,6 +13,6 @@ namespace Domain.Services
 
         Task<List<MirrorAction>> GetPostfach(string secretName);
 
-        Task CheckPostfach(string secretName);
+        Task<List<MirrorAction>> CheckPostfach(string secretName);
     }
 }

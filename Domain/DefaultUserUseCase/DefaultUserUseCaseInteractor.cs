@@ -4,6 +4,10 @@ using Domain.Entities;
 using Domain.Services;
 using System;
 using System.Diagnostics;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Windows.ApplicationModel.Background;
+using Windows.System.Threading;
 
 namespace Domain.DefaultUserUseCase
 {
@@ -44,10 +48,40 @@ namespace Domain.DefaultUserUseCase
             var displayName = (await _appSettingsService.GetLocalMirrorNames()).DisplayName;
             var secretName = (await _appSettingsService.GetLocalMirrorNames()).SecretName;
 
+            List<MirrorAction> actions = new List<MirrorAction>();
+
+            Task postfachTask = Task.Run(async () =>
+            {
+                actions = await _handshakeService.CheckPostfach(secretName);
+                
+            });
+
+            //// background task in uwp isn't that easy...no time
+            //await Task.Run(() => {
+            //    actions = _handshakeService.CheckPostfach(secretName).Result;
+            //    Task.Delay(6000);
+            //});
+
             await _deliveryBoundary.DeliverDefaultUserPage().ConfigureAwait(false);
             _defaultUserPresenter.OnPresent(new DefaultUserResponse(weather, news, displayName));
             _mirrorStateServices.SetCurrentUserTo(_mirrorStateServices.LoadDefaultUser());
-            await _handshakeService.CheckPostfach(secretName);
+
+            //foreach(var action in actions)
+            //{
+            //    if (action.TargetAction == Entities.Action.Handshake)
+            //    {
+            //        _mirrorStateServices.SetCurrentUserTo(
+            //            new MirrorUser(new SnowUser(action.User.FirstName, action.User.LastName, action.User.Email, action.User.SnowId),
+            //            false,
+            //            true,
+            //            null
+            //        ));
+            //    }
+            //    else
+            //    {
+            //        _mirrorStateServices.SetCurrentUserTo(_mirrorStateServices.LoadDefaultUser());
+            //    }
+            //}
         }
     }
 }

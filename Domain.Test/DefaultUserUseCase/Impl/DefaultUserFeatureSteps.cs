@@ -32,12 +32,13 @@ namespace Domain.Test.DefaultUserUseCase.Impl
             this.deliveryBoundary = new MockDeliveryBoundary();
             this.mirrorStateServices = new MockStateService();
             this.defaultUserPresenter = new MockDefaultUserPresenter();
+
             this.interactor = new DefaultUserUseCaseInteractor(
                 this.weatherService,
                 this.newsService,
                 this.deliveryBoundary,
                 this.mirrorStateServices,
-                this.defaultUserPresenter);
+                this.defaultUserPresenter, null, null);
         }
         
         [When(@"the default user gets triggered")]
