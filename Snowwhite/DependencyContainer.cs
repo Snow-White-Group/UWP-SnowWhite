@@ -64,6 +64,8 @@ namespace Snowwhite
             builder.RegisterType<NoiseDetectionService>().As<INoiseDetectionService>().SingleInstance();
             builder.RegisterType<TempNoiseDetectedInteractor>().As<INoiseDetectedUseCase>().SingleInstance();
             builder.RegisterType<StartupInteractor>().As<IStartupUseCase>().SingleInstance();
+            builder.RegisterType<HandshakeService>().As<IHandshakeService>().SingleInstance();
+            builder.RegisterType<AppSettingsService>().As<IAppSettingsService>().SingleInstance();
 
             container = builder.Build();
         }

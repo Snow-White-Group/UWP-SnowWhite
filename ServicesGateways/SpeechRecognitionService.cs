@@ -24,7 +24,7 @@ namespace Snowwhite.Services
         private Windows.Globalization.Language lan = new Windows.Globalization.Language("us-en");
         public SpeechRecognizer recognizer = new SpeechRecognizer();
 
-        private WebService webService = new WebService();
+        private CloudService webService = new CloudService();
         private InMemoryRandomAccessStream buffer = null;
         private MediaCapture capture = new MediaCapture();
         private bool record;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ServicesGateways
 {
-    public class WebService
+    public class CloudService
     {
         // http client with timeout
         private static readonly HttpClient httpClient = new HttpClient(new HttpClientHandler())

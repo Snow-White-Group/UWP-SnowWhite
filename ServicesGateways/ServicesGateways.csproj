@@ -110,6 +110,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppSettingsService.cs" />
     <Compile Include="HandshakeService.cs" />
     <Compile Include="MirrorStateService.cs" />
     <Compile Include="NoiseDetection\MicrophoneInput.cs" />
@@ -122,7 +123,7 @@
     <Compile Include="SpeechRecognitionService.cs" />
     <Compile Include="WeatherForecast.cs" />
     <Compile Include="WeatherService.cs" />
-    <Compile Include="WebService.cs" />
+    <Compile Include="CloudService.cs" />
     <EmbeddedResource Include="Properties\ServicesGateways.rd.xml" />
   </ItemGroup>
   <ItemGroup>

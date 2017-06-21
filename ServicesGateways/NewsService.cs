@@ -16,7 +16,7 @@ namespace ServicesGateways
         private static readonly string API_KEY = "de79b1bf710e4d319ce44f6ef3de9df9";
 
         // instantiate the service for making requests and get responses
-        private static readonly WebService service = new WebService();
+        private static readonly CloudService service = new CloudService();
 
         // db context for the local db
         private static readonly ServicesDbContext db = new ServicesDbContext();

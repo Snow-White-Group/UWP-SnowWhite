@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Domain.Services;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace ServicesGateways
 {
-    public class HandshakeService
+    public class HandshakeService : IHandshakeService
     {
         // instantiate the service for making requests and get responses
-        private static readonly WebService service = new WebService();
+        private static readonly CloudService service = new CloudService();
 
         public async Task<MirrorNames> GetMirrorNames()
         {
