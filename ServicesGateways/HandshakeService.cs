@@ -21,19 +21,13 @@ namespace ServicesGateways
             return mirrorNames;
         }
 
-        public async Task GetPostfach(string mirrorId)
+        public async Task<List<MirrorAction>> GetPostfach(string mirrorId)
         {
-            var postfachResponse = await service.MakeRequest("http://snowwhite-configurationpage.azurewebsites.net/Configuration/GetPostbox?id=" + mirrorId);
-            // user model is different and no mirror model
-            // var postfach = JsonConvert.DeserializeObject<Actions>(postfachResponse);
+             var postfachResponse = await service.MakeRequest("http://snowwhite-configurationpage.azurewebsites.net/Configuration/GetPostbox?id=" + mirrorId);
+             
+             var postfach = JsonConvert.DeserializeObject<List<MirrorAction>>(postfachResponse);
 
-            // return List<Action>;
-        }
-
-        public async Task MakeHandshake(string secretName)
-        {
-            var postfachResponse = await service.MakeRequest("http://snowwhite-configurationpage.azurewebsites.net/Configuration/Handshake?secretname=" + secretName);
-            // what here?
+             return postfach;
         }
     }
 }

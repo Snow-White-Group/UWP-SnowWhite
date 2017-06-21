@@ -46,6 +46,7 @@
     <Compile Include="DefaultUserUseCase\IDefaultUserUseCase.cs" />
     <Compile Include="Entities\IProfile.cs" />
     <Compile Include="Entities\IVoiceFile.cs" />
+    <Compile Include="Entities\MirrorAction.cs" />
     <Compile Include="Entities\MirrorNames.cs" />
     <Compile Include="Entities\MirrorUser.cs" />
     <Compile Include="Entities\News.cs" />
