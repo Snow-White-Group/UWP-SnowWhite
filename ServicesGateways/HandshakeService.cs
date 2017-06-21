@@ -22,13 +22,24 @@ namespace ServicesGateways
             return mirrorNames;
         }
 
-        public async Task<List<MirrorAction>> GetPostfach(string mirrorId)
+        public async Task<List<MirrorAction>> GetPostfach(string secretName)
         {
-             var postfachResponse = await service.MakeRequest("http://snowwhite-configurationpage.azurewebsites.net/Configuration/GetPostbox?id=" + mirrorId);
+             var postfachResponse = await service.MakeRequest("http://snowwhite-configurationpage.azurewebsites.net/Configuration/GetPostbox?id=" + secretName);
              
              var postfach = JsonConvert.DeserializeObject<List<MirrorAction>>(postfachResponse);
 
              return postfach;
+        }
+
+        public async Task CheckPostfach(string secretName)
+        {
+            var mirrorActions = GetPostfach(secretName);
+            if (mirrorActions != null)
+            {
+                // do smth..
+            }
+            await Task.Delay(6000);
+            await CheckPostfach(secretName);
         }
     }
 }

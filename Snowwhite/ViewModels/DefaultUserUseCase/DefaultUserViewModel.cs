@@ -21,7 +21,6 @@ namespace Snowwhite.ViewModels.DefaultUserUseCase
 {
     [ImplementPropertyChanged]
     public class DefaultUserViewModel : ViewModelBase, IDefaultUserPresenter, INoiseActionPresenter
-
     {
         #region constructur
         public DefaultUserViewModel()
@@ -41,7 +40,7 @@ namespace Snowwhite.ViewModels.DefaultUserUseCase
 
             public int ShownNews { get; set; }
 
-            public string MirrorName = "DEVELOPER_PREVIEW_MIRROR";
+            public string MirrorName { get; set; }
 
             public int ScrollSpeed { set; get; }
 
@@ -58,8 +57,14 @@ namespace Snowwhite.ViewModels.DefaultUserUseCase
 
         public void OnPresent(DefaultUserResponse response)
         {
+            ExtractMirrorName(response);
             ExtractNewsData(response);
             ExtractWeatherData(response);
+        }
+
+        private void ExtractMirrorName(DefaultUserResponse response)
+        {
+            MirrorName = response.Name;
         }
 
         private void ExtractWeatherData(DefaultUserResponse response)
@@ -91,7 +96,6 @@ namespace Snowwhite.ViewModels.DefaultUserUseCase
 
         public async Task OnPresent(INoiseEvent eEvent)
         {
-            
             var inTraining = eEvent.GetCurrentState() == NoiseServiceState.Training;
             var isRecording = eEvent.IsRecoring();
             Debug.WriteLine(isRecording);

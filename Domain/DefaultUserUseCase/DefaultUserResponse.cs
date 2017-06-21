@@ -7,11 +7,13 @@ namespace Domain.DefaultUserUseCase
     {
         public WeatherData Weather { get; }
         public List<News> News { get; }
+        public string Name { get; }
 
-        public DefaultUserResponse(WeatherData weather, List<News> news)
+        public DefaultUserResponse(WeatherData weather, List<News> news, string name)
         {
             Weather = weather;
             News = news;
+            Name = name;
         }
     }
 }

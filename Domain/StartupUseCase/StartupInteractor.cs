@@ -18,7 +18,7 @@ namespace Domain.StartupUseCase
 
         public void StartApplication()
         {
-            _appSettingsService.GetMirrorNames();
+            _appSettingsService.GetLocalMirrorNames();
             _defaultUserInteractor.TriggerDefaultUser();
         }
     }

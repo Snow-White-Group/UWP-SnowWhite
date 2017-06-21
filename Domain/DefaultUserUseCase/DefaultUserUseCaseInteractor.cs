@@ -14,19 +14,26 @@ namespace Domain.DefaultUserUseCase
         private readonly IDeliveryBoundary _deliveryBoundary;
         private readonly IMirrorStateServices _mirrorStateServices;
         private readonly IDefaultUserPresenter _defaultUserPresenter;
+        private readonly IAppSettingsService _appSettingsService;
+        private readonly IHandshakeService _handshakeService;
 
         public DefaultUserUseCaseInteractor(
             IWeatherService weatherService, 
             INewsService newsService, 
             IDeliveryBoundary deliveryBoundary,
             IMirrorStateServices mirrorStateServices, 
-            IDefaultUserPresenter defaultUserPresenter)
+            IDefaultUserPresenter defaultUserPresenter,
+            IAppSettingsService appSettingsService,
+            IHandshakeService handshakeService
+            )
         {
             _weatherService = weatherService;
             _newsService = newsService;
             _deliveryBoundary = deliveryBoundary;
             _mirrorStateServices = mirrorStateServices;
             _defaultUserPresenter = defaultUserPresenter;
+            _appSettingsService = appSettingsService;
+            _handshakeService = handshakeService;
         }
 
         public async void TriggerDefaultUser()
@@ -34,10 +41,13 @@ namespace Domain.DefaultUserUseCase
             var weather = await _weatherService.GetWeather("Karlsruhe");
             var newsSources = await _newsService.GetSources("en");
             var news = await _newsService.GetNews(newsSources);
+            var displayName = (await _appSettingsService.GetLocalMirrorNames()).DisplayName;
+            var secretName = (await _appSettingsService.GetLocalMirrorNames()).SecretName;
 
             await _deliveryBoundary.DeliverDefaultUserPage().ConfigureAwait(false);
-            _defaultUserPresenter.OnPresent(new DefaultUserResponse(weather, news));
+            _defaultUserPresenter.OnPresent(new DefaultUserResponse(weather, news, displayName));
             _mirrorStateServices.SetCurrentUserTo(_mirrorStateServices.LoadDefaultUser());
+            await _handshakeService.CheckPostfach(secretName);
         }
     }
 }

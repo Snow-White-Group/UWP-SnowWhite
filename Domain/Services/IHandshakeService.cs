@@ -11,6 +11,8 @@ namespace Domain.Services
     {
         Task<MirrorNames> GetMirrorNames();
 
-        Task<List<MirrorAction>> GetPostfach(string mirrorId);
+        Task<List<MirrorAction>> GetPostfach(string secretName);
+
+        Task CheckPostfach(string secretName);
     }
 }
