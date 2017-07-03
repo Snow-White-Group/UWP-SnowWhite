@@ -23,6 +23,7 @@ namespace Domain.Test.DefaultUserUseCase.Impl
         private MockDeliveryBoundary deliveryBoundary;
         private MockStateService mirrorStateServices;
         private MockDefaultUserPresenter defaultUserPresenter;
+        private MockAppSettings settings;
         
         [Given(@"the device gets booted")]
         public void GivenTheDeviceGetsBooted()
@@ -32,13 +33,15 @@ namespace Domain.Test.DefaultUserUseCase.Impl
             this.deliveryBoundary = new MockDeliveryBoundary();
             this.mirrorStateServices = new MockStateService();
             this.defaultUserPresenter = new MockDefaultUserPresenter();
-
+            this.settings = new MockAppSettings();
+      
             this.interactor = new DefaultUserUseCaseInteractor(
                 this.weatherService,
                 this.newsService,
                 this.deliveryBoundary,
                 this.mirrorStateServices,
-                this.defaultUserPresenter, null, null);
+                this.defaultUserPresenter,
+                settings);
         }
         
         [When(@"the default user gets triggered")]
