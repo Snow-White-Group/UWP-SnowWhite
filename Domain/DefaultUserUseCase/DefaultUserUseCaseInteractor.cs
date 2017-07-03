@@ -1,13 +1,5 @@
-﻿using System.Linq;
-using Domain.Boundaries;
-using Domain.Entities;
+﻿using Domain.Boundaries;
 using Domain.Services;
-using System;
-using System.Diagnostics;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Windows.ApplicationModel.Background;
-using Windows.System.Threading;
 
 namespace Domain.DefaultUserUseCase
 {
