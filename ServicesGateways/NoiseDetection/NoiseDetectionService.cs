@@ -18,15 +18,15 @@ namespace ServicesGateways.NoiseDetection
 {
     public class NoiseDetectionService : INoiseDetectionService
     {
-        #region unsafe Interface
-        [ComImport]
-        [Guid("5b0d3235-4dba-4d44-865e-8f1d0e4fd04d")]
-        [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-        unsafe interface IMemoryBufferByteAccess
-        {
-            void GetBuffer(out byte* buffer, out uint capacity);
-        }
-        #endregion
+        //#region unsafe Interface
+        //[ComImport]
+        //[Guid("5b0d3235-4dba-4d44-865e-8f1d0e4fd04d")]
+        //[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        //unsafe interface IMemoryBufferByteAccess
+        //{
+        //    void GetBuffer(out byte* buffer, out uint capacity);
+        //}
+        //#endregion
 
         #region audiograph
         private AudioGraph _audioGraph;
@@ -110,32 +110,32 @@ namespace ServicesGateways.NoiseDetection
         private void AudioGraph_QuantumStarted(AudioGraph sender, object args)
         {
             var frame = _frameOutputNode.GetFrame();
-            ProcessFrameOutput(frame);
+            //ProcessFrameOutput(frame);
         }
 
-        private unsafe void ProcessFrameOutput(AudioFrame frame)
-        {
-            using (var buffer = frame.LockBuffer(AudioBufferAccessMode.Write))
-            using (var reference = buffer.CreateReference())
-            {
-                byte* dataInBytes;
-                uint capacityInBytes;
-                float* dataInFloat;
+        //private unsafe void ProcessFrameOutput(AudioFrame frame)
+        //{
+        //    using (var buffer = frame.LockBuffer(AudioBufferAccessMode.Write))
+        //    using (var reference = buffer.CreateReference())
+        //    {
+        //        byte* dataInBytes;
+        //        uint capacityInBytes;
+        //        float* dataInFloat;
 
-                // Get the buffer from the AudioFrame
-                ((IMemoryBufferByteAccess)reference).GetBuffer(out dataInBytes, out capacityInBytes);
+        //        // Get the buffer from the AudioFrame
+        //        ((IMemoryBufferByteAccess)reference).GetBuffer(out dataInBytes, out capacityInBytes);
 
-                //cal level
-                dataInFloat = (float*)dataInBytes;
-                float max = 0;
-                for (int i = 0; i < _audioGraph.SamplesPerQuantum; i++)
-                {
-                    max = Math.Max(Math.Abs(dataInFloat[i]), max);
-                }
+        //        //cal level
+        //        dataInFloat = (float*)dataInBytes;
+        //        float max = 0;
+        //        for (int i = 0; i < _audioGraph.SamplesPerQuantum; i++)
+        //        {
+        //            max = Math.Max(Math.Abs(dataInFloat[i]), max);
+        //        }
 
-                ProzessEvent(_detector.Calculate(max));
-            }
-        }
+        //        ProzessEvent(_detector.Calculate(max));
+        //    }
+        //}
         #endregion
 
         private void ProzessEvent(MicrophoneInput a)
