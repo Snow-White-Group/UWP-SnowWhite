@@ -19,7 +19,6 @@ namespace Domain.DefaultUserUseCase
         private readonly IMirrorStateServices _mirrorStateServices;
         private readonly IDefaultUserPresenter _defaultUserPresenter;
         private readonly IAppSettingsService _appSettingsService;
-        private readonly IHandshakeService _handshakeService;
 
         public DefaultUserUseCaseInteractor(
             IWeatherService weatherService, 
@@ -27,9 +26,7 @@ namespace Domain.DefaultUserUseCase
             IDeliveryBoundary deliveryBoundary,
             IMirrorStateServices mirrorStateServices, 
             IDefaultUserPresenter defaultUserPresenter,
-            IAppSettingsService appSettingsService,
-            IHandshakeService handshakeService
-            )
+            IAppSettingsService appSettingsService)
         {
             _weatherService = weatherService;
             _newsService = newsService;
@@ -37,7 +34,6 @@ namespace Domain.DefaultUserUseCase
             _mirrorStateServices = mirrorStateServices;
             _defaultUserPresenter = defaultUserPresenter;
             _appSettingsService = appSettingsService;
-            _handshakeService = handshakeService;
         }
 
         public async void TriggerDefaultUser()
@@ -45,16 +41,16 @@ namespace Domain.DefaultUserUseCase
             var weather = await _weatherService.GetWeather("Karlsruhe");
             var newsSources = await _newsService.GetSources("en");
             var news = await _newsService.GetNews(newsSources);
-            var displayName = (await _appSettingsService.GetLocalMirrorNames()).DisplayName;
-            var secretName = (await _appSettingsService.GetLocalMirrorNames()).SecretName;
+            var displayName = ( _appSettingsService.GetLocalMirrorNames()).DisplayName;
+            var secretName = ( _appSettingsService.GetLocalMirrorNames()).SecretName;
 
-            List<MirrorAction> actions = new List<MirrorAction>();
+            //List<MirrorAction> actions = new List<MirrorAction>();
 
-            Task postfachTask = Task.Run(async () =>
-            {
-                actions = await _handshakeService.CheckPostfach(secretName);
+            //Task postfachTask = Task.Run(async () =>
+            //{
+            //    actions = await _handshakeService.CheckPostfach(secretName);
                 
-            });
+            //});
 
             //// background task in uwp isn't that easy...no time
             //await Task.Run(() => {

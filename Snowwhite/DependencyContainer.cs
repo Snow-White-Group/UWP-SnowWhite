@@ -13,6 +13,8 @@ using Snowwhite.ViewModels.DefaultUserUseCase;
 
 namespace Snowwhite
 {
+    using Domain.HandshakeUseCase;
+    using Domain.SetUpUseCase;
     using System;
 
     public class DependencyContainer
@@ -66,6 +68,8 @@ namespace Snowwhite
             builder.RegisterType<StartupInteractor>().As<IStartupUseCase>().SingleInstance();
             builder.RegisterType<HandshakeService>().As<IHandshakeService>().SingleInstance();
             builder.RegisterType<AppSettingsService>().As<IAppSettingsService>().SingleInstance();
+            builder.RegisterType<SetUpCoreInteractor>().As<IHandShakeUseCase>().SingleInstance();
+            builder.RegisterType<HandshakeInteractor>().As<IHandshakeUseCase>().SingleInstance();
 
             container = builder.Build();
         }

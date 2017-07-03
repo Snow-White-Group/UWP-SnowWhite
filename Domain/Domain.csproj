@@ -55,9 +55,13 @@
     <Compile Include="Entities\WeatherData.cs" />
     <Compile Include="Entities\WeatherState.cs" />
     <Compile Include="Boundaries\INoiseDetectedBoundary.cs" />
+    <Compile Include="HandshakeUseCase\HandshakeInteractor.cs" />
+    <Compile Include="HandshakeUseCase\IHandshakeUseCase.cs" />
     <Compile Include="Services\IAppSettingsService.cs" />
     <Compile Include="Services\IHandshakeService.cs" />
     <Compile Include="Services\INoiseDetectionService.cs" />
+    <Compile Include="SetUpUseCase\SetUpCoreInteractor.cs" />
+    <Compile Include="SetUpUseCase\ISetUpUseCase.cs" />
     <Compile Include="StartupUseCase\IStartupUseCase.cs" />
     <Compile Include="StartupUseCase\StartupInteractor.cs" />
     <Compile Include="VoiceUseCases\AuthenticateUserUseCase\IAuthenticateUserUseCase.cs" />
@@ -87,6 +91,7 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\3.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

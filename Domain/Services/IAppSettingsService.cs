@@ -9,6 +9,8 @@ namespace Domain.Services
 {
     public interface IAppSettingsService
     {
-        Task<MirrorNames> GetLocalMirrorNames();
+        MirrorNames GetLocalMirrorNames();
+
+        void PutLocalMirrorNames(MirrorNames names);
     }
 }

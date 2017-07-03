@@ -12,7 +12,7 @@ namespace ServicesGateways
     {
         private static readonly Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
 
-        public async Task<MirrorNames> GetLocalMirrorNames()
+        public MirrorNames GetLocalMirrorNames()
         {
             MirrorNames names = null;
 
@@ -23,17 +23,20 @@ namespace ServicesGateways
                     DisplayName = localSettings.Values["DisplayName"].ToString(),
                     SecretName = localSettings.Values["SecretName"].ToString()
                 };
+                return names;
             }
             else
             {
-                HandshakeService _handshakeServ = new HandshakeService();
-                names = await _handshakeServ.GetMirrorNames();
-
-                localSettings.Values["DisplayName"] = names.DisplayName;
-                localSettings.Values["SecretName"] = names.SecretName;
+                return null;
+                
             }
+        }
 
-            return names;
+        public void PutLocalMirrorNames(MirrorNames names)
+        {
+          
+            localSettings.Values["DisplayName"] = names.DisplayName;
+            localSettings.Values["SecretName"] = names.SecretName;
         }
     }
 }

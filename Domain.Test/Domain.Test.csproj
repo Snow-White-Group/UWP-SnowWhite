@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Domain.Test</RootNamespace>
     <AssemblyName>Domain.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
@@ -19,6 +19,7 @@
     <TestProjectType>UnitTest</TestProjectType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -63,11 +64,32 @@
       <DependentUpon>DefaultUser.feature</DependentUpon>
     </Compile>
     <Compile Include="DefaultUserUseCase\Impl\DefaultUserFeatureSteps.cs" />
+    <Compile Include="DefaultUserUseCase\Impl\MockAppSettings.cs" />
     <Compile Include="DefaultUserUseCase\Impl\MockConfigurationPageService.cs" />
     <Compile Include="DefaultUserUseCase\Impl\MockDefaultUserPresenter.cs" />
     <Compile Include="DefaultUserUseCase\Impl\MockNewsService.cs" />
     <Compile Include="DefaultUserUseCase\Impl\MockWeatherService.cs" />
+    <Compile Include="HandShakeUseCaseSteps.cs" />
+    <Compile Include="HandshakeUseCase\HandShakeUseCase.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandShakeUseCase.feature</DependentUpon>
+    </Compile>
+    <Compile Include="HandshakeUseCase\Impl\HandShakeUseCaseSteps.cs" />
+    <Compile Include="HandshakeUseCase\Impl\MockAppSettings.cs" />
+    <Compile Include="HandshakeUseCase\Impl\MockCloudCommunicationService.cs" />
+    <Compile Include="HandshakeUseCase\Impl\MockdefaultUser.cs" />
+    <Compile Include="MockClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartUpUseCase\Impl\MockAppSettings.cs" />
+    <Compile Include="StartUpUseCase\Impl\MockDefaultUser.cs" />
+    <Compile Include="StartUpUseCase\Impl\MockSetUP.cs" />
+    <Compile Include="StartUpUseCase\StartUp.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StartUp.feature</DependentUpon>
+    </Compile>
+    <Compile Include="StartUpUseCase\Impl\StartUpFeatureSteps.cs" />
     <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\Impl\MockDeliveryBoundary.cs" />
     <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\Impl\MockStateService.cs" />
     <Compile Include="VoiceUseCases\TriggerEnrollmentUseCase\Impl\TriggerEnrollmentFeatureSteps.cs" />
@@ -92,6 +114,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DefaultUser.feature.cs</LastGenOutput>
     </None>
+    <None Include="HandshakeUseCase\HandShakeUseCase.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HandShakeUseCase.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
     <None Include="Settings.StyleCop" />
@@ -100,6 +126,10 @@
     </None>
     <None Include="SpecRunTestProfile_2011_09.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="StartUpUseCase\StartUp.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>StartUp.feature.cs</LastGenOutput>
     </None>
     <None Include="VoiceUseCases\TriggerEnrollmentUseCase\TriggerEnrollment.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
