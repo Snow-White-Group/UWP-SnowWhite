@@ -1,7 +1,6 @@
 ﻿using Domain.DefaultUserUseCase;
 using Domain.Services;
 using Domain.SetUpUseCase;
-using Windows.Storage;
 
 namespace Domain.StartupUseCase
 {
