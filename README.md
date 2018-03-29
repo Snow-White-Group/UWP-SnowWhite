@@ -5,3 +5,4 @@
 This is the UWP, which is displayed on the mirror. We are using a RaspberryPi 3 with Windows-IOT to get this to work. Below you can see a development preview of our project.
 
 ![Screenshot](/screenshot.png)
+![Product](/product.jpg)
